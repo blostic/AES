@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Dec 17 19:15:53 2013
-Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Web Edition
+Analysis & Synthesis Status : Successful - Sat Dec 28 12:19:12 2013
+Quartus II 32-bit Version : 12.1 Build 177 11/07/2012 SJ Web Edition
 Revision Name : AES_Penar_Skibiak
 Top-level Entity Name : Main
 Family : Cyclone II
-Total logic elements : 210
-    Total combinational functions : 210
+Total logic elements : 209
+    Total combinational functions : 209
     Dedicated logic registers : 54
 Total registers : 54
 Total pins : 12

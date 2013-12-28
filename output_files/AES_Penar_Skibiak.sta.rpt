@@ -1,6 +1,6 @@
 TimeQuest Timing Analyzer report for AES_Penar_Skibiak
-Tue Dec 17 19:16:50 2013
-Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+Sat Dec 28 12:20:12 2013
+Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
 ---------------------
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 123.58 MHz ; 123.58 MHz      ; CLK        ;      ;
+; 126.25 MHz ; 126.25 MHz      ; CLK        ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -116,7 +116,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; CLK   ; -7.092 ; -294.037      ;
+; CLK   ; -6.921 ; -290.853      ;
 +-------+--------+---------------+
 
 
@@ -150,112 +150,112 @@ No paths to report.
 +-------+--------+-----------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Setup: 'CLK'                                                                                                                            ;
-+--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
-; -7.092 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 8.131      ;
-; -7.092 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 8.131      ;
-; -7.075 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.007     ; 8.104      ;
-; -7.060 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 8.099      ;
-; -7.060 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 8.099      ;
-; -7.043 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.007     ; 8.072      ;
-; -6.996 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.004      ; 8.036      ;
-; -6.996 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.004      ; 8.036      ;
-; -6.979 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.006     ; 8.009      ;
-; -6.916 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.004      ; 7.956      ;
-; -6.916 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.004      ; 7.956      ;
-; -6.899 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.929      ;
-; -6.850 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.004      ; 7.890      ;
-; -6.850 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.004      ; 7.890      ;
-; -6.833 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.863      ;
-; -6.785 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.820      ;
-; -6.784 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.819      ;
-; -6.784 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.819      ;
-; -6.782 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.817      ;
-; -6.782 ; LCD_controller:dut|clk_count[5]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.004      ; 7.822      ;
-; -6.782 ; LCD_controller:dut|clk_count[5]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.004      ; 7.822      ;
-; -6.781 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[6]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.816      ;
-; -6.781 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[10] ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.816      ;
-; -6.780 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[8]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.815      ;
-; -6.778 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.813      ;
-; -6.765 ; LCD_controller:dut|clk_count[5]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.795      ;
-; -6.753 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.788      ;
-; -6.752 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.787      ;
-; -6.752 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.787      ;
-; -6.750 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.785      ;
-; -6.749 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[6]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.784      ;
-; -6.749 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[10] ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.784      ;
-; -6.748 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[8]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.783      ;
-; -6.746 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.781      ;
-; -6.715 ; LCD_controller:dut|clk_count[6]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.004      ; 7.755      ;
-; -6.715 ; LCD_controller:dut|clk_count[6]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.004      ; 7.755      ;
-; -6.698 ; LCD_controller:dut|clk_count[6]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.728      ;
-; -6.690 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|e             ; CLK          ; CLK         ; 1.000        ; 0.003      ; 7.729      ;
-; -6.689 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.725      ;
-; -6.688 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.724      ;
-; -6.688 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.724      ;
-; -6.686 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.722      ;
-; -6.685 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.721      ;
-; -6.685 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.721      ;
-; -6.684 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.720      ;
-; -6.682 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.718      ;
-; -6.675 ; LCD_controller:dut|clk_count[9]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.006      ; 7.717      ;
-; -6.675 ; LCD_controller:dut|clk_count[9]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.006      ; 7.717      ;
-; -6.671 ; LCD_controller:dut|clk_count[7]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.004      ; 7.711      ;
-; -6.671 ; LCD_controller:dut|clk_count[7]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.004      ; 7.711      ;
-; -6.658 ; LCD_controller:dut|clk_count[9]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.690      ;
-; -6.658 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|e             ; CLK          ; CLK         ; 1.000        ; 0.003      ; 7.697      ;
-; -6.654 ; LCD_controller:dut|clk_count[7]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.684      ;
-; -6.622 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.655      ;
-; -6.622 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.655      ;
-; -6.609 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.645      ;
-; -6.608 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.644      ;
-; -6.608 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.644      ;
-; -6.606 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.642      ;
-; -6.605 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.641      ;
-; -6.605 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.641      ;
-; -6.604 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.640      ;
-; -6.602 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.638      ;
-; -6.594 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|e             ; CLK          ; CLK         ; 1.000        ; 0.004      ; 7.634      ;
-; -6.590 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.623      ;
-; -6.590 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.623      ;
-; -6.551 ; LCD_controller:dut|clk_count[11] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.007      ; 7.594      ;
-; -6.551 ; LCD_controller:dut|clk_count[11] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.007      ; 7.594      ;
-; -6.543 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.579      ;
-; -6.542 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.578      ;
-; -6.542 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.578      ;
-; -6.540 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.576      ;
-; -6.539 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.575      ;
-; -6.539 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.575      ;
-; -6.538 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.574      ;
-; -6.536 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.572      ;
-; -6.534 ; LCD_controller:dut|clk_count[11] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.567      ;
-; -6.531 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[21] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.563      ;
-; -6.530 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[11] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.562      ;
-; -6.530 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[14] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.562      ;
-; -6.529 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.565      ;
-; -6.529 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.565      ;
-; -6.529 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[17] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.561      ;
-; -6.528 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.564      ;
-; -6.528 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[0]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.564      ;
-; -6.526 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[16] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.558      ;
-; -6.526 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.560      ;
-; -6.526 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.560      ;
-; -6.524 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[19] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.556      ;
-; -6.523 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[15] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.555      ;
-; -6.523 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[20] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.555      ;
-; -6.522 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[18] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.554      ;
-; -6.514 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|e             ; CLK          ; CLK         ; 1.000        ; 0.004      ; 7.554      ;
-; -6.499 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[21] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.531      ;
-; -6.498 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[11] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.530      ;
-; -6.498 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[14] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.530      ;
-; -6.497 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.533      ;
-; -6.497 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.533      ;
-; -6.497 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[17] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.529      ;
-; -6.496 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.532      ;
-+--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLK'                                                                                                                           ;
++--------+---------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; -6.921 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.955      ;
+; -6.921 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.955      ;
+; -6.921 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.955      ;
+; -6.921 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.955      ;
+; -6.921 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.955      ;
+; -6.897 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.931      ;
+; -6.897 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.931      ;
+; -6.897 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.931      ;
+; -6.897 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.931      ;
+; -6.897 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.931      ;
+; -6.830 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.864      ;
+; -6.830 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.864      ;
+; -6.830 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.864      ;
+; -6.830 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.864      ;
+; -6.830 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.864      ;
+; -6.757 ; LCD_controller:dut|clk_count[3] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.791      ;
+; -6.757 ; LCD_controller:dut|clk_count[3] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.791      ;
+; -6.757 ; LCD_controller:dut|clk_count[3] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.791      ;
+; -6.757 ; LCD_controller:dut|clk_count[3] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.791      ;
+; -6.757 ; LCD_controller:dut|clk_count[3] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.791      ;
+; -6.686 ; LCD_controller:dut|clk_count[4] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.720      ;
+; -6.686 ; LCD_controller:dut|clk_count[4] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.720      ;
+; -6.686 ; LCD_controller:dut|clk_count[4] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.720      ;
+; -6.686 ; LCD_controller:dut|clk_count[4] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.720      ;
+; -6.686 ; LCD_controller:dut|clk_count[4] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.720      ;
+; -6.663 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[17] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.696      ;
+; -6.662 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[16] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.695      ;
+; -6.662 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[25] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.695      ;
+; -6.659 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[23] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.692      ;
+; -6.639 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[17] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.672      ;
+; -6.638 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[16] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.671      ;
+; -6.638 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[25] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.671      ;
+; -6.635 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[23] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.668      ;
+; -6.621 ; LCD_controller:dut|clk_count[5] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.655      ;
+; -6.621 ; LCD_controller:dut|clk_count[5] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.655      ;
+; -6.621 ; LCD_controller:dut|clk_count[5] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.655      ;
+; -6.621 ; LCD_controller:dut|clk_count[5] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.655      ;
+; -6.621 ; LCD_controller:dut|clk_count[5] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.655      ;
+; -6.602 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.638      ;
+; -6.600 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.636      ;
+; -6.599 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.635      ;
+; -6.598 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.634      ;
+; -6.597 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[14] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.633      ;
+; -6.597 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[19] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.627      ;
+; -6.597 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[20] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.627      ;
+; -6.596 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.632      ;
+; -6.596 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[18] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.626      ;
+; -6.596 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[21] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.626      ;
+; -6.595 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[0]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.631      ;
+; -6.593 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.629      ;
+; -6.592 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[22] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.622      ;
+; -6.591 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[26] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.621      ;
+; -6.589 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.625      ;
+; -6.587 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.623      ;
+; -6.586 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[24] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.616      ;
+; -6.583 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.619      ;
+; -6.578 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.614      ;
+; -6.576 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.612      ;
+; -6.575 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.611      ;
+; -6.574 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.610      ;
+; -6.573 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[14] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.609      ;
+; -6.573 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[19] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.603      ;
+; -6.573 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[20] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.603      ;
+; -6.572 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|clk_count[17] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.605      ;
+; -6.572 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.608      ;
+; -6.572 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[18] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.602      ;
+; -6.572 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[21] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.602      ;
+; -6.571 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|e             ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.603      ;
+; -6.571 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|clk_count[16] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.604      ;
+; -6.571 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|clk_count[25] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.604      ;
+; -6.571 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[0]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.607      ;
+; -6.569 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.605      ;
+; -6.568 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|clk_count[23] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 7.601      ;
+; -6.568 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[22] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.598      ;
+; -6.567 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[26] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.597      ;
+; -6.565 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.601      ;
+; -6.564 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[30] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 7.595      ;
+; -6.563 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[29] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 7.594      ;
+; -6.563 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.599      ;
+; -6.562 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[24] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 7.592      ;
+; -6.560 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[27] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 7.591      ;
+; -6.559 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[28] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 7.590      ;
+; -6.559 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.595      ;
+; -6.547 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|e             ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.579      ;
+; -6.546 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[13] ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.581      ;
+; -6.542 ; LCD_controller:dut|clk_count[6] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.576      ;
+; -6.542 ; LCD_controller:dut|clk_count[6] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.576      ;
+; -6.542 ; LCD_controller:dut|clk_count[6] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.576      ;
+; -6.542 ; LCD_controller:dut|clk_count[6] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.576      ;
+; -6.542 ; LCD_controller:dut|clk_count[6] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 7.576      ;
+; -6.541 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[15] ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.576      ;
+; -6.540 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[30] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 7.571      ;
+; -6.539 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[29] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 7.570      ;
+; -6.536 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[27] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 7.567      ;
+; -6.535 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[28] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 7.566      ;
+; -6.522 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[13] ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.557      ;
+; -6.517 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[15] ; CLK          ; CLK         ; 1.000        ; -0.001     ; 7.552      ;
+; -6.511 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.547      ;
+; -6.509 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.545      ;
+; -6.508 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|clk_count[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 7.544      ;
++--------+---------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -263,106 +263,106 @@ No paths to report.
 +-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                           ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.391 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|state.initialize ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; char[1]                             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; char[2]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.657      ;
-; 0.391 ; char[0]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; char[3]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; char[0]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; lcd_enable                          ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; LCD_controller:dut|state.send       ; LCD_controller:dut|state.send       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; LCD_controller:dut|state.power_up   ; LCD_controller:dut|state.power_up   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|state.initialize ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; LCD_controller:dut|rs               ; LCD_controller:dut|rs               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.657      ;
-; 0.741 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|lcd_data[4]      ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.006      ;
-; 0.752 ; char[3]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.018      ;
-; 0.756 ; char[3]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.022      ;
-; 0.757 ; char[3]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.023      ;
-; 0.806 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|busy             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.072      ;
-; 0.810 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|state.ready      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.076      ;
-; 0.834 ; lcd_bus[2]                          ; LCD_controller:dut|lcd_data[2]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.100      ;
-; 0.842 ; LCD_controller:dut|clk_count[31]    ; LCD_controller:dut|state.send       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.108      ;
-; 0.851 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|busy             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.117      ;
-; 0.860 ; char[1]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.126      ;
-; 0.870 ; char[0]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.136      ;
-; 0.968 ; lcd_bus[1]                          ; LCD_controller:dut|lcd_data[1]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.234      ;
-; 1.009 ; char[2]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.275      ;
-; 1.031 ; char[0]                             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.297      ;
-; 1.046 ; char[3]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; -0.010     ; 1.302      ;
-; 1.149 ; char[3]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.415      ;
-; 1.155 ; lcd_enable                          ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.010      ; 1.431      ;
-; 1.179 ; LCD_controller:dut|state.send       ; LCD_controller:dut|rs               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.445      ;
-; 1.196 ; LCD_controller:dut|state.send       ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.462      ;
-; 1.212 ; lcd_enable                          ; LCD_controller:dut|busy             ; CLK          ; CLK         ; 0.000        ; 0.005      ; 1.483      ;
-; 1.240 ; lcd_bus[3]                          ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.506      ;
-; 1.247 ; char[1]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.513      ;
-; 1.250 ; LCD_controller:dut|busy             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; -0.005     ; 1.511      ;
-; 1.260 ; char[0]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.526      ;
-; 1.275 ; char[2]                             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.541      ;
-; 1.281 ; char[2]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.547      ;
-; 1.313 ; lcd_bus[0]                          ; LCD_controller:dut|lcd_data[0]      ; CLK          ; CLK         ; 0.000        ; -0.006     ; 1.573      ;
-; 1.334 ; char[2]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.010      ; 1.610      ;
-; 1.339 ; char[2]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.010      ; 1.615      ;
-; 1.340 ; char[2]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.010      ; 1.616      ;
-; 1.358 ; char[1]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.010      ; 1.634      ;
-; 1.358 ; char[1]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.010      ; 1.634      ;
-; 1.361 ; char[1]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.010      ; 1.637      ;
-; 1.392 ; char[0]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.010      ; 1.668      ;
-; 1.395 ; char[1]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.661      ;
-; 1.396 ; char[0]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.010      ; 1.672      ;
-; 1.397 ; char[0]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.010      ; 1.673      ;
-; 1.397 ; char[1]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.663      ;
-; 1.398 ; char[2]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.664      ;
-; 1.426 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[9]     ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.691      ;
-; 1.435 ; char[3]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; -0.010     ; 1.691      ;
-; 1.448 ; lcd_enable                          ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.714      ;
-; 1.450 ; lcd_enable                          ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.716      ;
-; 1.454 ; lcd_enable                          ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.720      ;
-; 1.454 ; LCD_controller:dut|clk_count[31]    ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.720      ;
-; 1.455 ; char[3]                             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; -0.010     ; 1.711      ;
-; 1.459 ; char[3]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; -0.010     ; 1.715      ;
-; 1.461 ; char[3]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; -0.010     ; 1.717      ;
-; 1.483 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; -0.004     ; 1.745      ;
-; 1.543 ; LCD_controller:dut|e                ; LCD_controller:dut|e                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.809      ;
-; 1.586 ; char[0]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.852      ;
-; 1.587 ; lcd_enable                          ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.853      ;
-; 1.602 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|state.ready      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.868      ;
-; 1.643 ; LCD_controller:dut|busy             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; -0.005     ; 1.904      ;
-; 1.645 ; LCD_controller:dut|busy             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; -0.005     ; 1.906      ;
-; 1.649 ; LCD_controller:dut|busy             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; -0.005     ; 1.910      ;
-; 1.657 ; LCD_controller:dut|state.power_up   ; LCD_controller:dut|state.initialize ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.927      ;
-; 1.698 ; LCD_controller:dut|state.send       ; LCD_controller:dut|state.ready      ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.968      ;
-; 1.723 ; LCD_controller:dut|clk_count[8]     ; LCD_controller:dut|clk_count[8]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.989      ;
-; 1.730 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|rs               ; CLK          ; CLK         ; 0.000        ; -0.004     ; 1.992      ;
-; 1.731 ; LCD_controller:dut|clk_count[4]     ; LCD_controller:dut|clk_count[4]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.997      ;
-; 1.731 ; LCD_controller:dut|clk_count[7]     ; LCD_controller:dut|clk_count[7]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.997      ;
-; 1.732 ; char[2]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.010      ; 2.008      ;
-; 1.736 ; char[2]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.010      ; 2.012      ;
-; 1.736 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.005      ; 2.007      ;
-; 1.737 ; LCD_controller:dut|clk_count[5]     ; LCD_controller:dut|clk_count[5]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.003      ;
-; 1.742 ; LCD_controller:dut|clk_count[6]     ; LCD_controller:dut|clk_count[6]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.008      ;
-; 1.743 ; LCD_controller:dut|clk_count[16]    ; LCD_controller:dut|clk_count[16]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.009      ;
-; 1.750 ; LCD_controller:dut|clk_count[20]    ; LCD_controller:dut|clk_count[20]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.016      ;
-; 1.752 ; char[1]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.010      ; 2.028      ;
-; 1.756 ; char[1]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.010      ; 2.032      ;
-; 1.782 ; LCD_controller:dut|busy             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; -0.005     ; 2.043      ;
-; 1.786 ; char[0]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.010      ; 2.062      ;
-; 1.790 ; char[0]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.010      ; 2.066      ;
-; 1.811 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[30]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.077      ;
-; 1.812 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[24]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.078      ;
-; 1.812 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[29]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.078      ;
-; 1.814 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[25]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.080      ;
-; 1.816 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[27]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.082      ;
-; 1.819 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|lcd_data[0]      ; CLK          ; CLK         ; 0.000        ; -0.001     ; 2.084      ;
-; 1.819 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|lcd_data[4]      ; CLK          ; CLK         ; 0.000        ; -0.001     ; 2.084      ;
-; 1.820 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[23]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.086      ;
-; 1.820 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[28]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.086      ;
-; 1.821 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[22]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.087      ;
-; 1.822 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[26]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.088      ;
-; 1.823 ; LCD_controller:dut|clk_count[0]     ; LCD_controller:dut|clk_count[0]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.089      ;
-; 1.894 ; LCD_controller:dut|clk_count[1]     ; LCD_controller:dut|clk_count[1]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.160      ;
-; 1.898 ; LCD_controller:dut|clk_count[3]     ; LCD_controller:dut|clk_count[3]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.164      ;
-; 1.902 ; LCD_controller:dut|clk_count[13]    ; LCD_controller:dut|clk_count[13]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.168      ;
-; 1.903 ; LCD_controller:dut|clk_count[12]    ; LCD_controller:dut|clk_count[12]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.169      ;
-; 1.908 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|clk_count[9]     ; CLK          ; CLK         ; 0.000        ; -0.001     ; 2.173      ;
-; 1.910 ; LCD_controller:dut|clk_count[2]     ; LCD_controller:dut|clk_count[2]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.176      ;
+; 0.600 ; char[0]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.866      ;
+; 0.600 ; char[0]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.866      ;
+; 0.602 ; char[0]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.868      ;
+; 0.602 ; char[0]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.868      ;
+; 0.706 ; char[1]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.972      ;
+; 0.710 ; char[1]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.976      ;
+; 0.710 ; char[1]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.976      ;
+; 0.715 ; char[1]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.981      ;
+; 0.804 ; LCD_controller:dut|clk_count[31]    ; LCD_controller:dut|state.send       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.070      ;
+; 0.805 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|busy             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.071      ;
+; 0.853 ; char[3]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.119      ;
+; 0.861 ; char[3]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.127      ;
+; 0.864 ; char[3]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.130      ;
+; 0.865 ; char[3]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.131      ;
+; 0.870 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|busy             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.136      ;
+; 0.874 ; char[0]                             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.140      ;
+; 0.879 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|state.ready      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.145      ;
+; 0.882 ; char[2]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.148      ;
+; 0.893 ; char[2]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.159      ;
+; 0.893 ; char[2]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.159      ;
+; 0.894 ; char[2]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.160      ;
+; 0.962 ; lcd_bus[1]                          ; LCD_controller:dut|lcd_data[1]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.228      ;
+; 0.985 ; lcd_enable                          ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.251      ;
+; 0.986 ; lcd_enable                          ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.252      ;
+; 0.986 ; lcd_enable                          ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.252      ;
+; 0.987 ; lcd_bus[3]                          ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.253      ;
+; 0.989 ; lcd_enable                          ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.255      ;
+; 0.990 ; lcd_bus[2]                          ; LCD_controller:dut|lcd_data[2]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.256      ;
+; 1.044 ; char[0]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.310      ;
+; 1.056 ; char[0]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.322      ;
+; 1.061 ; lcd_enable                          ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.327      ;
+; 1.112 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.380      ;
+; 1.149 ; LCD_controller:dut|state.send       ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.415      ;
+; 1.158 ; char[1]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.424      ;
+; 1.169 ; char[1]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.435      ;
+; 1.222 ; LCD_controller:dut|state.power_up   ; LCD_controller:dut|state.initialize ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.489      ;
+; 1.223 ; LCD_controller:dut|state.power_up   ; LCD_controller:dut|rs               ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.491      ;
+; 1.232 ; LCD_controller:dut|state.send       ; LCD_controller:dut|rs               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.498      ;
+; 1.254 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|lcd_data[4]      ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.522      ;
+; 1.286 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.553      ;
+; 1.301 ; char[3]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.567      ;
+; 1.312 ; char[0]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.578      ;
+; 1.312 ; char[3]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.578      ;
+; 1.330 ; char[2]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.596      ;
+; 1.334 ; char[0]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.600      ;
+; 1.345 ; char[2]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.611      ;
+; 1.383 ; lcd_enable                          ; LCD_controller:dut|busy             ; CLK          ; CLK         ; 0.000        ; -0.002     ; 1.647      ;
+; 1.390 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|state.send       ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.657      ;
+; 1.393 ; lcd_enable                          ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.659      ;
+; 1.393 ; lcd_enable                          ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.659      ;
+; 1.393 ; lcd_enable                          ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.659      ;
+; 1.393 ; lcd_enable                          ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.659      ;
+; 1.393 ; lcd_enable                          ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.659      ;
+; 1.393 ; LCD_controller:dut|clk_count[31]    ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.659      ;
+; 1.400 ; LCD_controller:dut|busy             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.668      ;
+; 1.405 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|e                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.671      ;
+; 1.426 ; char[1]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.692      ;
+; 1.427 ; char[1]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.693      ;
+; 1.431 ; char[1]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.697      ;
+; 1.467 ; lcd_enable                          ; LCD_controller:dut|lcd_data[2]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.733      ;
+; 1.500 ; LCD_controller:dut|state.power_up   ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.768      ;
+; 1.501 ; LCD_controller:dut|clk_count[31]    ; LCD_controller:dut|e                ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.766      ;
+; 1.514 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.782      ;
+; 1.514 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|lcd_data[2]      ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.782      ;
+; 1.586 ; char[3]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.852      ;
+; 1.590 ; char[3]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.856      ;
+; 1.595 ; lcd_bus[4]                          ; LCD_controller:dut|rs               ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.860      ;
+; 1.598 ; char[2]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.864      ;
+; 1.609 ; LCD_controller:dut|clk_count[30]    ; LCD_controller:dut|state.power_up   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.875      ;
+; 1.619 ; char[2]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.885      ;
+; 1.627 ; lcd_bus[0]                          ; LCD_controller:dut|lcd_data[0]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.893      ;
+; 1.643 ; LCD_controller:dut|clk_count[26]    ; LCD_controller:dut|state.power_up   ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.910      ;
+; 1.659 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|lcd_data[2]      ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.927      ;
+; 1.660 ; LCD_controller:dut|clk_count[0]     ; LCD_controller:dut|clk_count[0]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.926      ;
+; 1.663 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[8]     ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.933      ;
+; 1.667 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[9]     ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.937      ;
+; 1.668 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[12]    ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.938      ;
+; 1.676 ; LCD_controller:dut|state.send       ; LCD_controller:dut|lcd_data[0]      ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.943      ;
+; 1.676 ; LCD_controller:dut|state.send       ; LCD_controller:dut|lcd_data[1]      ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.943      ;
+; 1.676 ; LCD_controller:dut|state.send       ; LCD_controller:dut|lcd_data[2]      ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.943      ;
+; 1.676 ; LCD_controller:dut|state.send       ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.943      ;
+; 1.676 ; LCD_controller:dut|state.send       ; LCD_controller:dut|lcd_data[4]      ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.943      ;
+; 1.676 ; lcd_enable                          ; LCD_controller:dut|state.send       ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.941      ;
+; 1.684 ; LCD_controller:dut|clk_count[31]    ; LCD_controller:dut|state.power_up   ; CLK          ; CLK         ; 0.000        ; -0.002     ; 1.948      ;
+; 1.716 ; LCD_controller:dut|clk_count[10]    ; LCD_controller:dut|clk_count[10]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.982      ;
+; 1.716 ; LCD_controller:dut|busy             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.984      ;
+; 1.717 ; LCD_controller:dut|busy             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.985      ;
+; 1.717 ; LCD_controller:dut|busy             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.985      ;
+; 1.720 ; LCD_controller:dut|busy             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.988      ;
+; 1.739 ; LCD_controller:dut|clk_count[2]     ; LCD_controller:dut|clk_count[2]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.005      ;
+; 1.744 ; LCD_controller:dut|clk_count[27]    ; LCD_controller:dut|state.power_up   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 2.010      ;
 +-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -479,15 +479,15 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; e            ; CLK        ; 11.901 ; 11.901 ; Rise       ; CLK             ;
-; lcd_data[*]  ; CLK        ; 11.053 ; 11.053 ; Rise       ; CLK             ;
-;  lcd_data[0] ; CLK        ; 9.703  ; 9.703  ; Rise       ; CLK             ;
-;  lcd_data[1] ; CLK        ; 8.394  ; 8.394  ; Rise       ; CLK             ;
-;  lcd_data[2] ; CLK        ; 9.593  ; 9.593  ; Rise       ; CLK             ;
-;  lcd_data[3] ; CLK        ; 8.952  ; 8.952  ; Rise       ; CLK             ;
-;  lcd_data[4] ; CLK        ; 11.043 ; 11.043 ; Rise       ; CLK             ;
-;  lcd_data[5] ; CLK        ; 11.053 ; 11.053 ; Rise       ; CLK             ;
-; rs           ; CLK        ; 10.633 ; 10.633 ; Rise       ; CLK             ;
+; e            ; CLK        ; 9.246  ; 9.246  ; Rise       ; CLK             ;
+; lcd_data[*]  ; CLK        ; 12.379 ; 12.379 ; Rise       ; CLK             ;
+;  lcd_data[0] ; CLK        ; 12.379 ; 12.379 ; Rise       ; CLK             ;
+;  lcd_data[1] ; CLK        ; 8.906  ; 8.906  ; Rise       ; CLK             ;
+;  lcd_data[2] ; CLK        ; 10.409 ; 10.409 ; Rise       ; CLK             ;
+;  lcd_data[3] ; CLK        ; 8.922  ; 8.922  ; Rise       ; CLK             ;
+;  lcd_data[4] ; CLK        ; 8.722  ; 8.722  ; Rise       ; CLK             ;
+;  lcd_data[5] ; CLK        ; 8.732  ; 8.732  ; Rise       ; CLK             ;
+; rs           ; CLK        ; 12.066 ; 12.066 ; Rise       ; CLK             ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -496,15 +496,15 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; e            ; CLK        ; 11.901 ; 11.901 ; Rise       ; CLK             ;
-; lcd_data[*]  ; CLK        ; 8.394  ; 8.394  ; Rise       ; CLK             ;
-;  lcd_data[0] ; CLK        ; 9.703  ; 9.703  ; Rise       ; CLK             ;
-;  lcd_data[1] ; CLK        ; 8.394  ; 8.394  ; Rise       ; CLK             ;
-;  lcd_data[2] ; CLK        ; 9.593  ; 9.593  ; Rise       ; CLK             ;
-;  lcd_data[3] ; CLK        ; 8.952  ; 8.952  ; Rise       ; CLK             ;
-;  lcd_data[4] ; CLK        ; 11.043 ; 11.043 ; Rise       ; CLK             ;
-;  lcd_data[5] ; CLK        ; 11.053 ; 11.053 ; Rise       ; CLK             ;
-; rs           ; CLK        ; 10.633 ; 10.633 ; Rise       ; CLK             ;
+; e            ; CLK        ; 9.246  ; 9.246  ; Rise       ; CLK             ;
+; lcd_data[*]  ; CLK        ; 8.722  ; 8.722  ; Rise       ; CLK             ;
+;  lcd_data[0] ; CLK        ; 12.379 ; 12.379 ; Rise       ; CLK             ;
+;  lcd_data[1] ; CLK        ; 8.906  ; 8.906  ; Rise       ; CLK             ;
+;  lcd_data[2] ; CLK        ; 10.409 ; 10.409 ; Rise       ; CLK             ;
+;  lcd_data[3] ; CLK        ; 8.922  ; 8.922  ; Rise       ; CLK             ;
+;  lcd_data[4] ; CLK        ; 8.722  ; 8.722  ; Rise       ; CLK             ;
+;  lcd_data[5] ; CLK        ; 8.732  ; 8.732  ; Rise       ; CLK             ;
+; rs           ; CLK        ; 12.066 ; 12.066 ; Rise       ; CLK             ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -513,7 +513,7 @@ No paths to report.
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; CLK   ; -2.792 ; -106.866      ;
+; CLK   ; -2.707 ; -104.168      ;
 +-------+--------+---------------+
 
 
@@ -547,112 +547,112 @@ No paths to report.
 +-------+--------+-----------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'CLK'                                                                                                                            ;
-+--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
-; -2.792 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.002      ; 3.826      ;
-; -2.792 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.002      ; 3.826      ;
-; -2.778 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.007     ; 3.803      ;
-; -2.765 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.002      ; 3.799      ;
-; -2.765 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.002      ; 3.799      ;
-; -2.751 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.007     ; 3.776      ;
-; -2.735 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.770      ;
-; -2.735 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.770      ;
-; -2.721 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.747      ;
-; -2.695 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.730      ;
-; -2.695 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.730      ;
-; -2.681 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.707      ;
-; -2.662 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.697      ;
-; -2.662 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.697      ;
-; -2.648 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.674      ;
-; -2.630 ; LCD_controller:dut|clk_count[5]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.665      ;
-; -2.630 ; LCD_controller:dut|clk_count[5]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.665      ;
-; -2.616 ; LCD_controller:dut|clk_count[5]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.642      ;
-; -2.597 ; LCD_controller:dut|clk_count[6]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.632      ;
-; -2.597 ; LCD_controller:dut|clk_count[6]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.632      ;
-; -2.583 ; LCD_controller:dut|clk_count[6]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.609      ;
-; -2.580 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.609      ;
-; -2.580 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.609      ;
-; -2.568 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.599      ;
-; -2.568 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.599      ;
-; -2.567 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.598      ;
-; -2.567 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.598      ;
-; -2.567 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[8]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.598      ;
-; -2.566 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.597      ;
-; -2.565 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[6]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.596      ;
-; -2.565 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[10] ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.596      ;
-; -2.563 ; LCD_controller:dut|clk_count[7]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.598      ;
-; -2.563 ; LCD_controller:dut|clk_count[7]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.598      ;
-; -2.553 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.582      ;
-; -2.553 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.582      ;
-; -2.549 ; LCD_controller:dut|clk_count[7]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.575      ;
-; -2.548 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|e             ; CLK          ; CLK         ; 1.000        ; 0.002      ; 3.582      ;
-; -2.546 ; LCD_controller:dut|clk_count[9]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.005      ; 3.583      ;
-; -2.546 ; LCD_controller:dut|clk_count[9]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.005      ; 3.583      ;
-; -2.541 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.572      ;
-; -2.541 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.572      ;
-; -2.540 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.571      ;
-; -2.540 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.571      ;
-; -2.540 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[8]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.571      ;
-; -2.539 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.570      ;
-; -2.538 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[6]  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.569      ;
-; -2.538 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[10] ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.569      ;
-; -2.532 ; LCD_controller:dut|clk_count[9]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.560      ;
-; -2.523 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 3.553      ;
-; -2.523 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 3.553      ;
-; -2.521 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|e             ; CLK          ; CLK         ; 1.000        ; 0.002      ; 3.555      ;
-; -2.511 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.543      ;
-; -2.511 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.543      ;
-; -2.510 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.542      ;
-; -2.510 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.542      ;
-; -2.510 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.542      ;
-; -2.509 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.541      ;
-; -2.508 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.540      ;
-; -2.508 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.540      ;
-; -2.491 ; LCD_controller:dut|clk_count[2]  ; LCD_controller:dut|e             ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.526      ;
-; -2.487 ; LCD_controller:dut|clk_count[11] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.006      ; 3.525      ;
-; -2.487 ; LCD_controller:dut|clk_count[11] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.006      ; 3.525      ;
-; -2.483 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 3.513      ;
-; -2.483 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 3.513      ;
-; -2.473 ; LCD_controller:dut|clk_count[11] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.502      ;
-; -2.471 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.503      ;
-; -2.471 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.503      ;
-; -2.470 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.502      ;
-; -2.470 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.502      ;
-; -2.470 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.502      ;
-; -2.469 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.501      ;
-; -2.468 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.500      ;
-; -2.468 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.500      ;
-; -2.464 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[21] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.492      ;
-; -2.464 ; LCD_controller:dut|clk_count[8]  ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.499      ;
-; -2.464 ; LCD_controller:dut|clk_count[8]  ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.499      ;
-; -2.463 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[11] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.491      ;
-; -2.463 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[14] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.491      ;
-; -2.463 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[17] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.491      ;
-; -2.462 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[16] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.490      ;
-; -2.459 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[19] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.487      ;
-; -2.458 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[20] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.486      ;
-; -2.457 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[18] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.485      ;
-; -2.456 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[15] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.484      ;
-; -2.451 ; LCD_controller:dut|clk_count[3]  ; LCD_controller:dut|e             ; CLK          ; CLK         ; 1.000        ; 0.003      ; 3.486      ;
-; -2.450 ; LCD_controller:dut|clk_count[8]  ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.476      ;
-; -2.450 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 3.480      ;
-; -2.450 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.002     ; 3.480      ;
-; -2.449 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.481      ;
-; -2.448 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[0]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.480      ;
-; -2.447 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[12] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.479      ;
-; -2.447 ; LCD_controller:dut|clk_count[0]  ; LCD_controller:dut|clk_count[13] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.479      ;
-; -2.438 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.470      ;
-; -2.438 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.470      ;
-; -2.437 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.469      ;
-; -2.437 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.469      ;
-; -2.437 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[8]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.469      ;
-; -2.437 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[21] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.465      ;
-; -2.436 ; LCD_controller:dut|clk_count[4]  ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.468      ;
-; -2.436 ; LCD_controller:dut|clk_count[1]  ; LCD_controller:dut|clk_count[11] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.464      ;
-+--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLK'                                                                                                                           ;
++--------+---------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.707 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.736      ;
+; -2.707 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.736      ;
+; -2.707 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.736      ;
+; -2.707 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.736      ;
+; -2.707 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.736      ;
+; -2.684 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.713      ;
+; -2.684 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.713      ;
+; -2.684 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.713      ;
+; -2.684 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.713      ;
+; -2.684 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.713      ;
+; -2.653 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.682      ;
+; -2.653 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.682      ;
+; -2.653 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.682      ;
+; -2.653 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.682      ;
+; -2.653 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.682      ;
+; -2.616 ; LCD_controller:dut|clk_count[3] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.645      ;
+; -2.616 ; LCD_controller:dut|clk_count[3] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.645      ;
+; -2.616 ; LCD_controller:dut|clk_count[3] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.645      ;
+; -2.616 ; LCD_controller:dut|clk_count[3] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.645      ;
+; -2.616 ; LCD_controller:dut|clk_count[3] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.645      ;
+; -2.581 ; LCD_controller:dut|clk_count[4] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.610      ;
+; -2.581 ; LCD_controller:dut|clk_count[4] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.610      ;
+; -2.581 ; LCD_controller:dut|clk_count[4] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.610      ;
+; -2.581 ; LCD_controller:dut|clk_count[4] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.610      ;
+; -2.581 ; LCD_controller:dut|clk_count[4] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.610      ;
+; -2.549 ; LCD_controller:dut|clk_count[5] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.578      ;
+; -2.549 ; LCD_controller:dut|clk_count[5] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.578      ;
+; -2.549 ; LCD_controller:dut|clk_count[5] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.578      ;
+; -2.549 ; LCD_controller:dut|clk_count[5] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.578      ;
+; -2.549 ; LCD_controller:dut|clk_count[5] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.578      ;
+; -2.509 ; LCD_controller:dut|clk_count[6] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.538      ;
+; -2.509 ; LCD_controller:dut|clk_count[6] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.538      ;
+; -2.509 ; LCD_controller:dut|clk_count[6] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.538      ;
+; -2.509 ; LCD_controller:dut|clk_count[6] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.538      ;
+; -2.509 ; LCD_controller:dut|clk_count[6] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.538      ;
+; -2.476 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[16] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.505      ;
+; -2.476 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[17] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.505      ;
+; -2.475 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[25] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.504      ;
+; -2.474 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|e             ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.502      ;
+; -2.471 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[23] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.500      ;
+; -2.469 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.501      ;
+; -2.468 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.500      ;
+; -2.468 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.500      ;
+; -2.467 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[14] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.499      ;
+; -2.466 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.498      ;
+; -2.466 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[19] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.492      ;
+; -2.466 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[20] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.492      ;
+; -2.465 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.497      ;
+; -2.465 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[18] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.491      ;
+; -2.465 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[21] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.491      ;
+; -2.465 ; LCD_controller:dut|clk_count[7] ; LCD_controller:dut|lcd_data[0]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.494      ;
+; -2.465 ; LCD_controller:dut|clk_count[7] ; LCD_controller:dut|lcd_data[1]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.494      ;
+; -2.465 ; LCD_controller:dut|clk_count[7] ; LCD_controller:dut|lcd_data[2]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.494      ;
+; -2.465 ; LCD_controller:dut|clk_count[7] ; LCD_controller:dut|lcd_data[3]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.494      ;
+; -2.465 ; LCD_controller:dut|clk_count[7] ; LCD_controller:dut|lcd_data[4]   ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.494      ;
+; -2.463 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[0]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.495      ;
+; -2.462 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.494      ;
+; -2.462 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[22] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.488      ;
+; -2.461 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[26] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.487      ;
+; -2.460 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.492      ;
+; -2.459 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.491      ;
+; -2.457 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[24] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.483      ;
+; -2.456 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.488      ;
+; -2.453 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[16] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.482      ;
+; -2.453 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[17] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.482      ;
+; -2.452 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[25] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.481      ;
+; -2.451 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|e             ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.479      ;
+; -2.448 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[23] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.477      ;
+; -2.446 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[3]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.478      ;
+; -2.445 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[1]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.477      ;
+; -2.445 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[11] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.477      ;
+; -2.444 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[14] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.476      ;
+; -2.443 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[30] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 3.470      ;
+; -2.443 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[5]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.475      ;
+; -2.443 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[19] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.469      ;
+; -2.443 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[20] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.469      ;
+; -2.442 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[29] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 3.469      ;
+; -2.442 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[7]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.474      ;
+; -2.442 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[18] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.468      ;
+; -2.442 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[21] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.468      ;
+; -2.440 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[0]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.472      ;
+; -2.439 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[27] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 3.466      ;
+; -2.439 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[6]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.471      ;
+; -2.439 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[22] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.465      ;
+; -2.438 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[26] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.464      ;
+; -2.437 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[28] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 3.464      ;
+; -2.437 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[10] ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.469      ;
+; -2.436 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[4]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.468      ;
+; -2.434 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[24] ; CLK          ; CLK         ; 1.000        ; -0.006     ; 3.460      ;
+; -2.433 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[2]  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.465      ;
+; -2.430 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[13] ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.461      ;
+; -2.426 ; LCD_controller:dut|clk_count[0] ; LCD_controller:dut|clk_count[15] ; CLK          ; CLK         ; 1.000        ; -0.001     ; 3.457      ;
+; -2.422 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|clk_count[16] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.451      ;
+; -2.422 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|clk_count[17] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.451      ;
+; -2.421 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|clk_count[25] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.450      ;
+; -2.420 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|e             ; CLK          ; CLK         ; 1.000        ; -0.004     ; 3.448      ;
+; -2.420 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[30] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 3.447      ;
+; -2.419 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[29] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 3.446      ;
+; -2.417 ; LCD_controller:dut|clk_count[2] ; LCD_controller:dut|clk_count[23] ; CLK          ; CLK         ; 1.000        ; -0.003     ; 3.446      ;
+; -2.416 ; LCD_controller:dut|clk_count[1] ; LCD_controller:dut|clk_count[27] ; CLK          ; CLK         ; 1.000        ; -0.005     ; 3.443      ;
++--------+---------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -660,106 +660,106 @@ No paths to report.
 +-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                           ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.215 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|state.initialize ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; char[1]                             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; char[2]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; char[0]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; char[3]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; char[0]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; lcd_enable                          ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; LCD_controller:dut|state.send       ; LCD_controller:dut|state.send       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; LCD_controller:dut|state.power_up   ; LCD_controller:dut|state.power_up   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|state.initialize ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; LCD_controller:dut|rs               ; LCD_controller:dut|rs               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.339 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|lcd_data[4]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.491      ;
-; 0.354 ; char[3]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.506      ;
-; 0.354 ; char[3]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.506      ;
-; 0.363 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|state.ready      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.515      ;
-; 0.364 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|busy             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.516      ;
-; 0.370 ; char[3]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.522      ;
-; 0.373 ; lcd_bus[2]                          ; LCD_controller:dut|lcd_data[2]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.525      ;
-; 0.377 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|busy             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.529      ;
-; 0.382 ; LCD_controller:dut|clk_count[31]    ; LCD_controller:dut|state.send       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.534      ;
-; 0.387 ; char[1]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.539      ;
-; 0.391 ; char[0]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.543      ;
-; 0.439 ; lcd_bus[1]                          ; LCD_controller:dut|lcd_data[1]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.591      ;
-; 0.456 ; char[2]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.608      ;
-; 0.459 ; char[0]                             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.611      ;
-; 0.493 ; char[3]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; -0.009     ; 0.636      ;
-; 0.519 ; char[3]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.671      ;
-; 0.522 ; lcd_enable                          ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.683      ;
-; 0.538 ; LCD_controller:dut|state.send       ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.690      ;
-; 0.538 ; LCD_controller:dut|state.send       ; LCD_controller:dut|rs               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.690      ;
-; 0.547 ; char[1]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.699      ;
-; 0.548 ; lcd_enable                          ; LCD_controller:dut|busy             ; CLK          ; CLK         ; 0.000        ; 0.004      ; 0.704      ;
-; 0.555 ; char[0]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.707      ;
-; 0.556 ; LCD_controller:dut|busy             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; -0.004     ; 0.704      ;
-; 0.557 ; char[2]                             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.709      ;
-; 0.560 ; lcd_bus[3]                          ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.712      ;
-; 0.564 ; char[2]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.716      ;
-; 0.595 ; lcd_bus[0]                          ; LCD_controller:dut|lcd_data[0]      ; CLK          ; CLK         ; 0.000        ; -0.005     ; 0.742      ;
-; 0.610 ; char[2]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.771      ;
-; 0.613 ; char[2]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.774      ;
-; 0.614 ; char[2]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.775      ;
-; 0.614 ; char[1]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.766      ;
-; 0.615 ; char[1]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.776      ;
-; 0.615 ; char[1]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.776      ;
-; 0.616 ; char[1]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.768      ;
-; 0.618 ; char[1]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.779      ;
-; 0.618 ; char[2]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.770      ;
-; 0.626 ; char[0]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.787      ;
-; 0.631 ; char[0]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.792      ;
-; 0.632 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[9]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.784      ;
-; 0.632 ; char[0]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.793      ;
-; 0.654 ; lcd_enable                          ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.806      ;
-; 0.656 ; lcd_enable                          ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.808      ;
-; 0.659 ; lcd_enable                          ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.811      ;
-; 0.662 ; LCD_controller:dut|clk_count[31]    ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.814      ;
-; 0.666 ; LCD_controller:dut|e                ; LCD_controller:dut|e                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.818      ;
-; 0.675 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; -0.003     ; 0.824      ;
-; 0.675 ; char[3]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; -0.009     ; 0.818      ;
-; 0.684 ; char[3]                             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; -0.009     ; 0.827      ;
-; 0.689 ; char[3]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; -0.009     ; 0.832      ;
-; 0.691 ; char[3]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; -0.009     ; 0.834      ;
-; 0.694 ; char[0]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.846      ;
-; 0.700 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|state.ready      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.852      ;
-; 0.726 ; LCD_controller:dut|busy             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; -0.004     ; 0.874      ;
-; 0.728 ; LCD_controller:dut|busy             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; -0.004     ; 0.876      ;
-; 0.731 ; LCD_controller:dut|busy             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; -0.004     ; 0.879      ;
-; 0.737 ; LCD_controller:dut|state.power_up   ; LCD_controller:dut|state.initialize ; CLK          ; CLK         ; 0.000        ; 0.003      ; 0.892      ;
-; 0.764 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|rs               ; CLK          ; CLK         ; 0.000        ; -0.003     ; 0.913      ;
-; 0.773 ; LCD_controller:dut|state.send       ; LCD_controller:dut|state.ready      ; CLK          ; CLK         ; 0.000        ; 0.003      ; 0.928      ;
-; 0.778 ; char[2]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.939      ;
-; 0.780 ; char[2]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.941      ;
-; 0.781 ; char[1]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.942      ;
-; 0.782 ; LCD_controller:dut|clk_count[8]     ; LCD_controller:dut|clk_count[8]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.934      ;
-; 0.783 ; LCD_controller:dut|clk_count[4]     ; LCD_controller:dut|clk_count[4]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.935      ;
-; 0.783 ; char[1]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.944      ;
-; 0.784 ; LCD_controller:dut|clk_count[20]    ; LCD_controller:dut|clk_count[20]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.936      ;
-; 0.786 ; LCD_controller:dut|clk_count[5]     ; LCD_controller:dut|clk_count[5]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.938      ;
-; 0.786 ; LCD_controller:dut|clk_count[7]     ; LCD_controller:dut|clk_count[7]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.938      ;
-; 0.791 ; LCD_controller:dut|clk_count[6]     ; LCD_controller:dut|clk_count[6]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.943      ;
-; 0.791 ; LCD_controller:dut|clk_count[16]    ; LCD_controller:dut|clk_count[16]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.943      ;
-; 0.795 ; char[0]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.956      ;
-; 0.797 ; char[0]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.009      ; 0.958      ;
-; 0.798 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.005      ; 0.955      ;
-; 0.804 ; LCD_controller:dut|clk_count[0]     ; LCD_controller:dut|clk_count[0]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.956      ;
-; 0.807 ; lcd_enable                          ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.959      ;
-; 0.808 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[30]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.960      ;
-; 0.809 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[24]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.961      ;
-; 0.809 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[29]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.961      ;
-; 0.813 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[25]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.965      ;
-; 0.813 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[27]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.965      ;
-; 0.817 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[23]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.969      ;
-; 0.818 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[22]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.970      ;
-; 0.818 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[26]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.970      ;
-; 0.818 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[28]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.970      ;
-; 0.832 ; LCD_controller:dut|clk_count[1]     ; LCD_controller:dut|clk_count[1]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.984      ;
-; 0.835 ; LCD_controller:dut|clk_count[3]     ; LCD_controller:dut|clk_count[3]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.987      ;
-; 0.837 ; LCD_controller:dut|clk_count[19]    ; LCD_controller:dut|clk_count[19]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.989      ;
-; 0.841 ; LCD_controller:dut|clk_count[2]     ; LCD_controller:dut|clk_count[2]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.993      ;
-; 0.842 ; LCD_controller:dut|clk_count[13]    ; LCD_controller:dut|clk_count[13]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.994      ;
-; 0.843 ; LCD_controller:dut|clk_count[12]    ; LCD_controller:dut|clk_count[12]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.995      ;
-; 0.849 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|clk_count[9]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.001      ;
-; 0.858 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[13]    ; CLK          ; CLK         ; 0.000        ; 0.003      ; 1.013      ;
-; 0.858 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[12]    ; CLK          ; CLK         ; 0.000        ; 0.003      ; 1.013      ;
+; 0.286 ; char[0]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.438      ;
+; 0.286 ; char[0]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.438      ;
+; 0.288 ; char[0]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.440      ;
+; 0.288 ; char[0]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.440      ;
+; 0.323 ; char[1]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.475      ;
+; 0.325 ; char[1]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.325 ; char[1]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.330 ; char[1]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.482      ;
+; 0.359 ; LCD_controller:dut|clk_count[31]    ; LCD_controller:dut|state.send       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.364 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|busy             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.388 ; char[3]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.540      ;
+; 0.390 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|busy             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.542      ;
+; 0.396 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|state.ready      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.548      ;
+; 0.397 ; char[3]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.549      ;
+; 0.398 ; char[3]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.550      ;
+; 0.399 ; char[2]                             ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.551      ;
+; 0.402 ; char[3]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.554      ;
+; 0.406 ; char[0]                             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.558      ;
+; 0.407 ; char[2]                             ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.559      ;
+; 0.408 ; char[2]                             ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.560      ;
+; 0.414 ; char[2]                             ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.566      ;
+; 0.443 ; lcd_bus[1]                          ; LCD_controller:dut|lcd_data[1]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.595      ;
+; 0.443 ; lcd_enable                          ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.595      ;
+; 0.443 ; lcd_enable                          ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.595      ;
+; 0.443 ; lcd_enable                          ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.595      ;
+; 0.446 ; lcd_bus[2]                          ; LCD_controller:dut|lcd_data[2]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.598      ;
+; 0.446 ; lcd_enable                          ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.598      ;
+; 0.450 ; lcd_bus[3]                          ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.602      ;
+; 0.480 ; char[0]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.632      ;
+; 0.485 ; lcd_enable                          ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.637      ;
+; 0.486 ; char[0]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.638      ;
+; 0.503 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.656      ;
+; 0.514 ; LCD_controller:dut|state.send       ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.666      ;
+; 0.523 ; char[1]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.675      ;
+; 0.529 ; char[1]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.681      ;
+; 0.535 ; LCD_controller:dut|state.send       ; LCD_controller:dut|rs               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.687      ;
+; 0.547 ; LCD_controller:dut|state.power_up   ; LCD_controller:dut|state.initialize ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.700      ;
+; 0.572 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|lcd_data[4]      ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.725      ;
+; 0.575 ; LCD_controller:dut|state.power_up   ; LCD_controller:dut|rs               ; CLK          ; CLK         ; 0.000        ; 0.002      ; 0.729      ;
+; 0.577 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.730      ;
+; 0.587 ; char[3]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.593 ; char[3]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.745      ;
+; 0.595 ; char[2]                             ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.747      ;
+; 0.597 ; char[0]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.749      ;
+; 0.597 ; char[0]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.749      ;
+; 0.604 ; char[2]                             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.756      ;
+; 0.609 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|e                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.761      ;
+; 0.615 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|state.send       ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.768      ;
+; 0.630 ; LCD_controller:dut|clk_count[31]    ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.782      ;
+; 0.633 ; char[1]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.785      ;
+; 0.636 ; char[1]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.788      ;
+; 0.639 ; lcd_enable                          ; LCD_controller:dut|busy             ; CLK          ; CLK         ; 0.000        ; -0.001     ; 0.790      ;
+; 0.640 ; char[1]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.792      ;
+; 0.653 ; LCD_controller:dut|busy             ; lcd_enable                          ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.806      ;
+; 0.667 ; LCD_controller:dut|clk_count[31]    ; LCD_controller:dut|e                ; CLK          ; CLK         ; 0.000        ; -0.001     ; 0.818      ;
+; 0.671 ; lcd_enable                          ; LCD_controller:dut|lcd_data[2]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.823      ;
+; 0.693 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|lcd_data[3]      ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.846      ;
+; 0.694 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|lcd_data[2]      ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.847      ;
+; 0.695 ; LCD_controller:dut|state.power_up   ; LCD_controller:dut|clk_count[31]    ; CLK          ; CLK         ; 0.000        ; 0.002      ; 0.849      ;
+; 0.698 ; lcd_bus[4]                          ; LCD_controller:dut|rs               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.850      ;
+; 0.711 ; char[3]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.863      ;
+; 0.712 ; lcd_enable                          ; lcd_bus[4]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.864      ;
+; 0.712 ; lcd_enable                          ; lcd_bus[0]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.864      ;
+; 0.712 ; lcd_enable                          ; lcd_bus[1]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.864      ;
+; 0.712 ; lcd_enable                          ; lcd_bus[2]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.864      ;
+; 0.712 ; lcd_enable                          ; lcd_bus[3]                          ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.864      ;
+; 0.712 ; char[2]                             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.864      ;
+; 0.714 ; char[3]                             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.866      ;
+; 0.718 ; LCD_controller:dut|clk_count[30]    ; LCD_controller:dut|state.power_up   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.870      ;
+; 0.722 ; char[2]                             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.874      ;
+; 0.725 ; LCD_controller:dut|clk_count[26]    ; LCD_controller:dut|state.power_up   ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.878      ;
+; 0.728 ; lcd_bus[0]                          ; LCD_controller:dut|lcd_data[0]      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.880      ;
+; 0.735 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[8]     ; CLK          ; CLK         ; 0.000        ; 0.003      ; 0.890      ;
+; 0.741 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[9]     ; CLK          ; CLK         ; 0.000        ; 0.003      ; 0.896      ;
+; 0.742 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|clk_count[12]    ; CLK          ; CLK         ; 0.000        ; 0.003      ; 0.897      ;
+; 0.755 ; LCD_controller:dut|clk_count[0]     ; LCD_controller:dut|clk_count[0]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.907      ;
+; 0.762 ; lcd_enable                          ; LCD_controller:dut|state.send       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.914      ;
+; 0.762 ; LCD_controller:dut|state.ready      ; LCD_controller:dut|lcd_data[2]      ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.915      ;
+; 0.762 ; LCD_controller:dut|clk_count[31]    ; LCD_controller:dut|state.power_up   ; CLK          ; CLK         ; 0.000        ; -0.002     ; 0.912      ;
+; 0.771 ; LCD_controller:dut|clk_count[27]    ; LCD_controller:dut|state.power_up   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.923      ;
+; 0.772 ; char[3]                             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.924      ;
+; 0.774 ; LCD_controller:dut|clk_count[10]    ; LCD_controller:dut|clk_count[10]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.926      ;
+; 0.783 ; char[2]                             ; char[1]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.935      ;
+; 0.787 ; LCD_controller:dut|clk_count[2]     ; LCD_controller:dut|clk_count[2]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.939      ;
+; 0.790 ; LCD_controller:dut|clk_count[8]     ; LCD_controller:dut|clk_count[8]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.942      ;
+; 0.791 ; LCD_controller:dut|state.initialize ; LCD_controller:dut|rs               ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.944      ;
+; 0.793 ; LCD_controller:dut|clk_count[3]     ; LCD_controller:dut|clk_count[3]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.945      ;
+; 0.796 ; LCD_controller:dut|busy             ; char[2]                             ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.949      ;
+; 0.796 ; LCD_controller:dut|busy             ; char[3]                             ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.949      ;
+; 0.796 ; LCD_controller:dut|busy             ; char[0]                             ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.949      ;
+; 0.796 ; LCD_controller:dut|clk_count[21]    ; LCD_controller:dut|state.power_up   ; CLK          ; CLK         ; 0.000        ; 0.001      ; 0.949      ;
 +-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -876,15 +876,15 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; e            ; CLK        ; 6.414 ; 6.414 ; Rise       ; CLK             ;
-; lcd_data[*]  ; CLK        ; 5.880 ; 5.880 ; Rise       ; CLK             ;
-;  lcd_data[0] ; CLK        ; 5.376 ; 5.376 ; Rise       ; CLK             ;
-;  lcd_data[1] ; CLK        ; 4.734 ; 4.734 ; Rise       ; CLK             ;
-;  lcd_data[2] ; CLK        ; 5.310 ; 5.310 ; Rise       ; CLK             ;
-;  lcd_data[3] ; CLK        ; 5.002 ; 5.002 ; Rise       ; CLK             ;
-;  lcd_data[4] ; CLK        ; 5.870 ; 5.870 ; Rise       ; CLK             ;
-;  lcd_data[5] ; CLK        ; 5.880 ; 5.880 ; Rise       ; CLK             ;
-; rs           ; CLK        ; 5.803 ; 5.803 ; Rise       ; CLK             ;
+; e            ; CLK        ; 5.142 ; 5.142 ; Rise       ; CLK             ;
+; lcd_data[*]  ; CLK        ; 6.663 ; 6.663 ; Rise       ; CLK             ;
+;  lcd_data[0] ; CLK        ; 6.663 ; 6.663 ; Rise       ; CLK             ;
+;  lcd_data[1] ; CLK        ; 4.965 ; 4.965 ; Rise       ; CLK             ;
+;  lcd_data[2] ; CLK        ; 5.598 ; 5.598 ; Rise       ; CLK             ;
+;  lcd_data[3] ; CLK        ; 4.982 ; 4.982 ; Rise       ; CLK             ;
+;  lcd_data[4] ; CLK        ; 4.901 ; 4.901 ; Rise       ; CLK             ;
+;  lcd_data[5] ; CLK        ; 4.911 ; 4.911 ; Rise       ; CLK             ;
+; rs           ; CLK        ; 6.471 ; 6.471 ; Rise       ; CLK             ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -893,15 +893,15 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; e            ; CLK        ; 6.414 ; 6.414 ; Rise       ; CLK             ;
-; lcd_data[*]  ; CLK        ; 4.734 ; 4.734 ; Rise       ; CLK             ;
-;  lcd_data[0] ; CLK        ; 5.376 ; 5.376 ; Rise       ; CLK             ;
-;  lcd_data[1] ; CLK        ; 4.734 ; 4.734 ; Rise       ; CLK             ;
-;  lcd_data[2] ; CLK        ; 5.310 ; 5.310 ; Rise       ; CLK             ;
-;  lcd_data[3] ; CLK        ; 5.002 ; 5.002 ; Rise       ; CLK             ;
-;  lcd_data[4] ; CLK        ; 5.870 ; 5.870 ; Rise       ; CLK             ;
-;  lcd_data[5] ; CLK        ; 5.880 ; 5.880 ; Rise       ; CLK             ;
-; rs           ; CLK        ; 5.803 ; 5.803 ; Rise       ; CLK             ;
+; e            ; CLK        ; 5.142 ; 5.142 ; Rise       ; CLK             ;
+; lcd_data[*]  ; CLK        ; 4.901 ; 4.901 ; Rise       ; CLK             ;
+;  lcd_data[0] ; CLK        ; 6.663 ; 6.663 ; Rise       ; CLK             ;
+;  lcd_data[1] ; CLK        ; 4.965 ; 4.965 ; Rise       ; CLK             ;
+;  lcd_data[2] ; CLK        ; 5.598 ; 5.598 ; Rise       ; CLK             ;
+;  lcd_data[3] ; CLK        ; 4.982 ; 4.982 ; Rise       ; CLK             ;
+;  lcd_data[4] ; CLK        ; 4.901 ; 4.901 ; Rise       ; CLK             ;
+;  lcd_data[5] ; CLK        ; 4.911 ; 4.911 ; Rise       ; CLK             ;
+; rs           ; CLK        ; 6.471 ; 6.471 ; Rise       ; CLK             ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -910,10 +910,10 @@ No paths to report.
 +------------------+----------+-------+----------+---------+---------------------+
 ; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -7.092   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
-;  CLK             ; -7.092   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
-; Design-wide TNS  ; -294.037 ; 0.0   ; 0.0      ; 0.0     ; -55.38              ;
-;  CLK             ; -294.037 ; 0.000 ; N/A      ; N/A     ; -55.380             ;
+; Worst-case Slack ; -6.921   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  CLK             ; -6.921   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -290.853 ; 0.0   ; 0.0      ; 0.0     ; -55.38              ;
+;  CLK             ; -290.853 ; 0.000 ; N/A      ; N/A     ; -55.380             ;
 +------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -922,15 +922,15 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; e            ; CLK        ; 11.901 ; 11.901 ; Rise       ; CLK             ;
-; lcd_data[*]  ; CLK        ; 11.053 ; 11.053 ; Rise       ; CLK             ;
-;  lcd_data[0] ; CLK        ; 9.703  ; 9.703  ; Rise       ; CLK             ;
-;  lcd_data[1] ; CLK        ; 8.394  ; 8.394  ; Rise       ; CLK             ;
-;  lcd_data[2] ; CLK        ; 9.593  ; 9.593  ; Rise       ; CLK             ;
-;  lcd_data[3] ; CLK        ; 8.952  ; 8.952  ; Rise       ; CLK             ;
-;  lcd_data[4] ; CLK        ; 11.043 ; 11.043 ; Rise       ; CLK             ;
-;  lcd_data[5] ; CLK        ; 11.053 ; 11.053 ; Rise       ; CLK             ;
-; rs           ; CLK        ; 10.633 ; 10.633 ; Rise       ; CLK             ;
+; e            ; CLK        ; 9.246  ; 9.246  ; Rise       ; CLK             ;
+; lcd_data[*]  ; CLK        ; 12.379 ; 12.379 ; Rise       ; CLK             ;
+;  lcd_data[0] ; CLK        ; 12.379 ; 12.379 ; Rise       ; CLK             ;
+;  lcd_data[1] ; CLK        ; 8.906  ; 8.906  ; Rise       ; CLK             ;
+;  lcd_data[2] ; CLK        ; 10.409 ; 10.409 ; Rise       ; CLK             ;
+;  lcd_data[3] ; CLK        ; 8.922  ; 8.922  ; Rise       ; CLK             ;
+;  lcd_data[4] ; CLK        ; 8.722  ; 8.722  ; Rise       ; CLK             ;
+;  lcd_data[5] ; CLK        ; 8.732  ; 8.732  ; Rise       ; CLK             ;
+; rs           ; CLK        ; 12.066 ; 12.066 ; Rise       ; CLK             ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -939,15 +939,15 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; e            ; CLK        ; 6.414 ; 6.414 ; Rise       ; CLK             ;
-; lcd_data[*]  ; CLK        ; 4.734 ; 4.734 ; Rise       ; CLK             ;
-;  lcd_data[0] ; CLK        ; 5.376 ; 5.376 ; Rise       ; CLK             ;
-;  lcd_data[1] ; CLK        ; 4.734 ; 4.734 ; Rise       ; CLK             ;
-;  lcd_data[2] ; CLK        ; 5.310 ; 5.310 ; Rise       ; CLK             ;
-;  lcd_data[3] ; CLK        ; 5.002 ; 5.002 ; Rise       ; CLK             ;
-;  lcd_data[4] ; CLK        ; 5.870 ; 5.870 ; Rise       ; CLK             ;
-;  lcd_data[5] ; CLK        ; 5.880 ; 5.880 ; Rise       ; CLK             ;
-; rs           ; CLK        ; 5.803 ; 5.803 ; Rise       ; CLK             ;
+; e            ; CLK        ; 5.142 ; 5.142 ; Rise       ; CLK             ;
+; lcd_data[*]  ; CLK        ; 4.901 ; 4.901 ; Rise       ; CLK             ;
+;  lcd_data[0] ; CLK        ; 6.663 ; 6.663 ; Rise       ; CLK             ;
+;  lcd_data[1] ; CLK        ; 4.965 ; 4.965 ; Rise       ; CLK             ;
+;  lcd_data[2] ; CLK        ; 5.598 ; 5.598 ; Rise       ; CLK             ;
+;  lcd_data[3] ; CLK        ; 4.982 ; 4.982 ; Rise       ; CLK             ;
+;  lcd_data[4] ; CLK        ; 4.901 ; 4.901 ; Rise       ; CLK             ;
+;  lcd_data[5] ; CLK        ; 4.911 ; 4.911 ; Rise       ; CLK             ;
+; rs           ; CLK        ; 6.471 ; 6.471 ; Rise       ; CLK             ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -956,7 +956,7 @@ No paths to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLK        ; CLK      ; 69582    ; 0        ; 0        ; 0        ;
+; CLK        ; CLK      ; 70430    ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -966,7 +966,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLK        ; CLK      ; 69582    ; 0        ; 0        ; 0        ;
+; CLK        ; CLK      ; 70430    ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1001,9 +1001,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; TimeQuest Timing Analyzer Messages ;
 +------------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Tue Dec 17 19:16:45 2013
+    Info: Processing started: Sat Dec 28 12:20:06 2013
 Info: Command: quartus_sta AES_Penar_Skibiak -c AES_Penar_Skibiak
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
@@ -1016,10 +1016,10 @@ Info (332105): Deriving Clocks
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -7.092
+Info (332146): Worst-case setup slack is -6.921
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -7.092      -294.037 CLK 
+    Info (332119):    -6.921      -290.853 CLK 
 Info (332146): Worst-case hold slack is 0.391
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1033,10 +1033,10 @@ Info (332146): Worst-case minimum pulse width slack is -1.380
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -2.792
+Info (332146): Worst-case setup slack is -2.707
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -2.792      -106.866 CLK 
+    Info (332119):    -2.707      -104.168 CLK 
 Info (332146): Worst-case hold slack is 0.215
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1050,10 +1050,10 @@ Info (332146): Worst-case minimum pulse width slack is -1.380
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 476 megabytes
-    Info: Processing ended: Tue Dec 17 19:16:50 2013
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:06
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 380 megabytes
+    Info: Processing ended: Sat Dec 28 12:20:12 2013
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 

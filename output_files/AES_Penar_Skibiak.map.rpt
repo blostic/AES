@@ -1,6 +1,6 @@
 Analysis & Synthesis report for AES_Penar_Skibiak
-Tue Dec 17 19:15:53 2013
-Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+Sat Dec 28 12:19:12 2013
+Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
 ---------------------
@@ -47,13 +47,13 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 17 19:15:53 2013    ;
-; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
+; Analysis & Synthesis Status        ; Successful - Sat Dec 28 12:19:12 2013    ;
+; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
 ; Revision Name                      ; AES_Penar_Skibiak                        ;
 ; Top-level Entity Name              ; Main                                     ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 210                                      ;
-;     Total combinational functions  ; 210                                      ;
+; Total logic elements               ; 209                                      ;
+;     Total combinational functions  ; 209                                      ;
 ;     Dedicated logic registers      ; 54                                       ;
 ; Total registers                    ; 54                                       ;
 ; Total pins                         ; 12                                       ;
@@ -166,14 +166,14 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                          ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                   ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
-; Main.vhd                         ; yes             ; User VHDL File  ; C:/Users/blost/Desktop/proj/Main.vhd           ;         ;
-; LCD_controller.vhd               ; yes             ; User VHDL File  ; C:/Users/blost/Desktop/proj/LCD_controller.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; Main.vhd                         ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_Mikroprocesory_projekt/Main.vhd           ;         ;
+; LCD_controller.vhd               ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_Mikroprocesory_projekt/LCD_controller.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -181,16 +181,16 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 210   ;
+; Estimated Total logic elements              ; 209   ;
 ;                                             ;       ;
-; Total combinational functions               ; 210   ;
+; Total combinational functions               ; 209   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 114   ;
-;     -- 3 input functions                    ; 17    ;
-;     -- <=2 input functions                  ; 79    ;
+;     -- 4 input functions                    ; 115   ;
+;     -- 3 input functions                    ; 14    ;
+;     -- <=2 input functions                  ; 80    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 179   ;
+;     -- normal mode                          ; 178   ;
 ;     -- arithmetic mode                      ; 31    ;
 ;                                             ;       ;
 ; Total registers                             ; 54    ;
@@ -200,7 +200,7 @@ applicable agreement for further details.
 ; I/O pins                                    ; 12    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out                             ; 54    ;
-; Total fan-out                               ; 790   ;
+; Total fan-out                               ; 787   ;
 ; Average fan-out                             ; 2.86  ;
 +---------------------------------------------+-------+
 
@@ -210,8 +210,8 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
-; |Main                      ; 210 (15)          ; 54 (10)      ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |Main                    ;              ;
-;    |LCD_controller:dut|    ; 195 (195)         ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|LCD_controller:dut ;              ;
+; |Main                      ; 209 (15)          ; 54 (10)      ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |Main                    ;              ;
+;    |LCD_controller:dut|    ; 194 (194)         ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|LCD_controller:dut ;              ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -307,7 +307,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -315,9 +315,9 @@ Encoding Type:  One-Hot
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Tue Dec 17 19:15:47 2013
+    Info: Processing started: Sat Dec 28 12:19:02 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AES_Penar_Skibiak -c AES_Penar_Skibiak
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file main.vhd
@@ -338,6 +338,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file keys.vh
 Info (12021): Found 2 design units, including 1 entities, in source file lcd_controller.vhd
     Info (12022): Found design unit 1: LCD_controller-controller
     Info (12023): Found entity 1: LCD_controller
+Info (12021): Found 2 design units, including 1 entities, in source file s_box.vhd
+    Info (12022): Found design unit 1: S_Box-behavior
+    Info (12023): Found entity 1: S_Box
+Info (12021): Found 2 design units, including 1 entities, in source file inv_s_box.vhd
+    Info (12022): Found design unit 1: Inv_S_Box-behavior
+    Info (12023): Found entity 1: Inv_S_Box
 Info (12127): Elaborating entity "Main" for the top level hierarchy
 Info (12128): Elaborating entity "LCD_controller" for hierarchy "LCD_controller:dut"
 Warning (13024): Output pins are stuck at VCC or GND
@@ -346,14 +352,14 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "lcd_data[7]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 224 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 223 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 212 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 496 megabytes
-    Info: Processing ended: Tue Dec 17 19:15:53 2013
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+    Info (21061): Implemented 211 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 381 megabytes
+    Info: Processing ended: Sat Dec 28 12:19:12 2013
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:10
 
 
