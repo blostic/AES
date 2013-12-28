@@ -34,26 +34,22 @@ ARCHITECTURE behavior OF Shift_Rows IS
         END LOOP;
     END PROCESS vector_to_matrix;
 
-    -- 1st column
     matrix_output(0)  <=  matrix_input(0);
     matrix_output(1)  <=  matrix_input(5);
     matrix_output(2)  <=  matrix_input(10);
     matrix_output(3)  <=  matrix_input(15);
     
-    -- 2nd column
     matrix_output(4)  <=  matrix_input(4);
     matrix_output(5)  <=  matrix_input(9);
     matrix_output(6)  <=  matrix_input(14);
     matrix_output(7)  <=  matrix_input(3);
     
-    -- 3rd column
     matrix_output(8)  <=  matrix_input(8);
     matrix_output(9)  <=  matrix_input(13);
     matrix_output(10) <=  matrix_input(2);
     matrix_output(11) <=  matrix_input(7);
     
-    -- 4th column
-    matrix_output(12) <=  matrix_input(12);
+	 matrix_output(12) <=  matrix_input(12);
     matrix_output(13) <=  matrix_input(1);
     matrix_output(14) <=  matrix_input(6);
     matrix_output(15) <=  matrix_input(11);
