@@ -307,9 +307,7 @@ WITH entry_element(7 downto 0) SELECT
 		"10110000" WHEN "11111100", -- X"B0" 
 		"01010100" WHEN "11111101", -- X"54" 
 		"10111011" WHEN "11111110", -- X"BB" 
-		"00010110" WHEN "11111111", -- X"16"
-		  		
-		"XXXXXXXX" WHEN OTHERS;
+		"00010110" WHEN "11111111"; -- X"16"
 		
 END behavior;
     
