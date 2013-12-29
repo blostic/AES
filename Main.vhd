@@ -1,4 +1,5 @@
 LIBRARY ieee;
+library My_Functions_package;
 USE ieee.std_logic_1164.all;
 
 ENTITY Main IS

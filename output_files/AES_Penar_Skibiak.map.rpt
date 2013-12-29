@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AES_Penar_Skibiak
-Sat Dec 28 13:48:55 2013
+Sun Dec 29 01:03:11 2013
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
@@ -47,7 +47,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec 28 13:48:55 2013    ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 29 01:03:11 2013    ;
 ; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
 ; Revision Name                      ; AES_Penar_Skibiak                        ;
 ; Top-level Entity Name              ; Main                                     ;
@@ -307,7 +307,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -317,7 +317,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Sat Dec 28 13:48:44 2013
+    Info: Processing started: Sun Dec 29 01:03:02 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AES_Penar_Skibiak -c AES_Penar_Skibiak
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file main.vhd
@@ -347,6 +347,18 @@ Info (12021): Found 2 design units, including 1 entities, in source file inv_s_b
 Info (12021): Found 2 design units, including 1 entities, in source file shift_rows.vhd
     Info (12022): Found design unit 1: Shift_Rows-behavior
     Info (12023): Found entity 1: Shift_Rows
+Info (12021): Found 2 design units, including 1 entities, in source file inverse_shift_rows.vhd
+    Info (12022): Found design unit 1: Inverse_Shift_Rows-behavior
+    Info (12023): Found entity 1: Inverse_Shift_Rows
+Info (12021): Found 2 design units, including 1 entities, in source file mix_columns.vhd
+    Info (12022): Found design unit 1: Mix_Columns-behavior
+    Info (12023): Found entity 1: Mix_Columns
+Info (12021): Found 2 design units, including 1 entities, in source file inverse_mix_columns.vhd
+    Info (12022): Found design unit 1: Inverse_Mix_Columns-behavior
+    Info (12023): Found entity 1: Inverse_Mix_Columns
+Info (12021): Found 2 design units, including 0 entities, in source file my_functions_package.vhd
+    Info (12022): Found design unit 1: My_Functions_package
+    Info (12022): Found design unit 2: My_Functions_package-body
 Info (12127): Elaborating entity "Main" for the top level hierarchy
 Info (12128): Elaborating entity "LCD_controller" for hierarchy "LCD_controller:dut"
 Warning (13024): Output pins are stuck at VCC or GND
@@ -360,9 +372,9 @@ Info (21057): Implemented 223 device resources after synthesis - the final resou
     Info (21059): Implemented 11 output pins
     Info (21061): Implemented 211 logic cells
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 381 megabytes
-    Info: Processing ended: Sat Dec 28 13:48:56 2013
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Peak virtual memory: 369 megabytes
+    Info: Processing ended: Sun Dec 29 01:03:11 2013
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:09
 
 
