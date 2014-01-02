@@ -1,4 +1,3 @@
-
 library IEEE;
 
 use IEEE.std_logic_1164.all; 
@@ -7,9 +6,9 @@ package My_Functions_package is
 
 function G_Mul( a , b: in std_logic_vector(7 downto 0) ) 
 	return std_logic_vector;
-
+	
 end package My_Functions_package;  
- 
+
 package body My_Functions_package is 
 		
 function G_Mul( a , b: in std_logic_vector(7 downto 0) ) return std_logic_vector is

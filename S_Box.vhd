@@ -1,313 +1,312 @@
+library IEEE;
+
+use IEEE.std_logic_1164.all; 
+
+package S_Box is 
+
+function S_Box_fun( 
+	entry_element : IN std_logic_vector(7 downto 0) ) 
+	return std_logic_vector;
+	
+end package S_Box;  
+
+package body S_Box is 
+		
+function S_Box_fun(  entry_element: in std_logic_vector(7 downto 0)  ) return std_logic_vector is
+
 --Rijndael S_Box is a table used in SubByte procedure and in KeyScheduler
 
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-
-
-ENTITY S_Box IS
-PORT(
-		entry_element    :	IN  std_logic_vector(7 downto 0);
-		replaced_element :	OUT std_logic_vector(7 downto 0)
-    );
-END S_Box;
-
-ARCHITECTURE behavior OF S_Box IS
-BEGIN
-WITH entry_element(7 downto 0) SELECT
-	replaced_element(7 downto 0) <=
-	
-		--CCCCCCCC WHEN XXXXYYYY
-		-- X < corresponds to row number
-		-- Y < corresponds to columm number
-		-- C < constant at specyfic cell
-		
-		--1st row
-		"01100011" WHEN "00000000", -- X"63"
-		"01111100" WHEN "00000001", -- X"7C" 
-		"01110111" WHEN "00000010", -- X"77"
-		"01111011" WHEN "00000011", -- X"7B"
-		"11110010" WHEN "00000100", -- X"F2"
-		"01101011" WHEN "00000101", -- X"6B"
-		"01101111" WHEN "00000110", -- X"6F" 
-		"11000101" WHEN "00000111", -- X"C5" 
-		"00110000" WHEN "00001000", -- X"30" 
-		"00000001" WHEN "00001001", -- X"01" 
-		"01100111" WHEN "00001010", -- X"67" 
-		"00101011" WHEN "00001011", -- X"2B" 
-		"11111110" WHEN "00001100", -- X"FE" 
-		"11010111" WHEN "00001101", -- X"D7" 
-		"10101011" WHEN "00001110", -- X"AB" 
-		"01110110" WHEN "00001111", -- X"76" 
+begin
+	case entry_element is 
+		WHEN "00000000" => return  X"63";
+		WHEN "00000001" => return  X"7C"; 
+		WHEN "00000010" => return  X"77";
+		WHEN "00000011" => return  X"7B";
+		WHEN "00000100" => return  X"F2";
+		WHEN "00000101" => return  X"6B";
+		WHEN "00000110" => return  X"6F"; 
+		WHEN "00000111" => return  X"C5"; 
+		WHEN "00001000" => return  X"30"; 
+		WHEN "00001001" => return  X"01"; 
+		WHEN "00001010" => return  X"67"; 
+		WHEN "00001011" => return  X"2B"; 
+		WHEN "00001100" => return  X"FE"; 
+		WHEN "00001101" => return  X"D7"; 
+		WHEN "00001110" => return  X"AB"; 
+		WHEN "00001111" => return  X"76"; 
 		
 		--2nd row
-		"11001010" WHEN "00010000", -- X"CA" 
-		"10000010" WHEN "00010001", -- X"82"
-		"11001001" WHEN "00010010", -- X"C9"
-		"01111101" WHEN "00010011", -- X"7D"
-		"11111010" WHEN "00010100", -- X"FA"
-		"01011001" WHEN "00010101", -- X"59"
-		"01000111" WHEN "00010110", -- X"47"
-		"11110000" WHEN "00010111", -- X"F0"
-		"10101101" WHEN "00011000", -- X"AD"
-		"11010100" WHEN "00011001", -- X"D4"
-		"10100010" WHEN "00011010", -- X"A2"
-		"10101111" WHEN "00011011", -- X"AF"
-		"10011100" WHEN "00011100", -- X"9C"
-		"10100100" WHEN "00011101", -- X"A4"
-		"01110010" WHEN "00011110", -- X"72"
-		"11000000" WHEN "00011111", -- X"C0"
+		WHEN "00010000" => return  X"CA"; 
+		WHEN "00010001" => return  X"82";
+		WHEN "00010010" => return  X"C9";
+		WHEN "00010011" => return  X"7D";
+		WHEN "00010100" => return  X"FA";
+		WHEN "00010101" => return  X"59";
+		WHEN "00010110" => return  X"47";
+		WHEN "00010111" => return  X"F0";
+		WHEN "00011000" => return  X"AD";
+		WHEN "00011001" => return  X"D4";
+		WHEN "00011010" => return  X"A2";
+		WHEN "00011011" => return  X"AF";
+		WHEN "00011100" => return  X"9C";
+		WHEN "00011101" => return  X"A4";
+		WHEN "00011110" => return  X"72";
+		WHEN "00011111" => return  X"C0";
 		
 		--3rd row
-		"10110111" WHEN "00100000", -- X"B7"
-		"11111101" WHEN "00100001", -- X"FD"
-		"10010011" WHEN "00100010", -- X"93"
-		"00100110" WHEN "00100011", -- X"26"
-		"00110110" WHEN "00100100", -- X"36"
-		"00111111" WHEN "00100101", -- X"3F"
-		"11110111" WHEN "00100110", -- X"F7"
-		"11001100" WHEN "00100111", -- X"CC"
-		"00110100" WHEN "00101000", -- X"34"
-		"10100101" WHEN "00101001", -- X"A5"
-		"11100101" WHEN "00101010", -- X"E5"
-		"11110001" WHEN "00101011", -- X"F1"
-		"01110001" WHEN "00101100", -- X"71"
-		"11011000" WHEN "00101101", -- X"D8"
-		"00110001" WHEN "00101110", -- X"31"
-		"00010101" WHEN "00101111", -- X"15"
+		WHEN "00100000" => return  X"B7";
+		WHEN "00100001" => return  X"FD";
+		WHEN "00100010" => return  X"93";
+		WHEN "00100011" => return  X"26";
+		WHEN "00100100" => return  X"36";
+		WHEN "00100101" => return  X"3F";
+		WHEN "00100110" => return  X"F7";
+		WHEN "00100111" => return  X"CC";
+		WHEN "00101000" => return  X"34";
+		WHEN "00101001" => return  X"A5";
+		WHEN "00101010" => return  X"E5";
+		WHEN "00101011" => return  X"F1";
+		WHEN "00101100" => return  X"71";
+		WHEN "00101101" => return  X"D8";
+		WHEN "00101110" => return  X"31";
+		WHEN "00101111" => return  X"15";
 		
 		--4th row
-		"00000100" WHEN "00110000", -- X"04"
-		"11000111" WHEN "00110001", -- X"C7"
-		"00100011" WHEN "00110010", -- X"23"
-		"11000011" WHEN "00110011", -- X"C3"
-		"00011000" WHEN "00110100", -- X"18"
-		"10010110" WHEN "00110101", -- X"96"
-		"00000101" WHEN "00110110", -- X"05"
-		"10011010" WHEN "00110111", -- X"9A"
-		"00000111" WHEN "00111000", -- X"07"
-		"00010010" WHEN "00111001", -- X"12"
-		"10000000" WHEN "00111010", -- X"80"
-		"11100010" WHEN "00111011", -- X"E2"
-		"11101011" WHEN "00111100", -- X"EB"
-		"00100111" WHEN "00111101", -- X"27"
-		"10110010" WHEN "00111110", -- X"B2"
-		"01110101" WHEN "00111111", -- X"75"
+		WHEN "00110000" => return  X"04";
+		WHEN "00110001" => return  X"C7";
+		WHEN "00110010" => return  X"23";
+		WHEN "00110011" => return  X"C3";
+		WHEN "00110100" => return  X"18";
+		WHEN "00110101" => return  X"96";
+		WHEN "00110110" => return  X"05";
+		WHEN "00110111" => return  X"9A";
+		WHEN "00111000" => return  X"07";
+		WHEN "00111001" => return  X"12";
+		WHEN "00111010" => return  X"80";
+		WHEN "00111011" => return  X"E2";
+		WHEN "00111100" => return  X"EB";
+		WHEN "00111101" => return  X"27";
+		WHEN "00111110" => return  X"B2";
+		WHEN "00111111" => return  X"75";
 		
 		--5th row
-		"00001001" WHEN "01000000", -- X"09" 
-		"10000011" WHEN "01000001", -- X"83" 
-		"00101100" WHEN "01000010", -- X"2C" 
-		"00011010" WHEN "01000011", -- X"1A" 
-		"00011011" WHEN "01000100", -- X"1B" 
-		"01101110" WHEN "01000101", -- X"6E" 
-		"01011010" WHEN "01000110", -- X"5A" 
-		"10100000" WHEN "01000111", -- X"A0" 
-		"01010010" WHEN "01001000", -- X"52" 
-		"00111011" WHEN "01001001", -- X"3B" 
-		"11010110" WHEN "01001010", -- X"D6" 
-		"10110011" WHEN "01001011", -- X"B3" 
-		"00101001" WHEN "01001100", -- X"29" 
-		"11100011" WHEN "01001101", -- X"E3" 
-		"00101111" WHEN "01001110", -- X"2F" 
-		"10000100" WHEN "01001111", -- X"84" 
+		WHEN "01000000" => return  X"09"; 
+		WHEN "01000001" => return  X"83"; 
+		WHEN "01000010" => return  X"2C"; 
+		WHEN "01000011" => return  X"1A"; 
+		WHEN "01000100" => return  X"1B"; 
+		WHEN "01000101" => return  X"6E"; 
+		WHEN "01000110" => return  X"5A"; 
+		WHEN "01000111" => return  X"A0"; 
+		WHEN "01001000" => return  X"52"; 
+		WHEN "01001001" => return  X"3B"; 
+		WHEN "01001010" => return  X"D6"; 
+		WHEN "01001011" => return  X"B3"; 
+		WHEN "01001100" => return  X"29"; 
+		WHEN "01001101" => return  X"E3"; 
+		WHEN "01001110" => return  X"2F"; 
+		WHEN "01001111" => return  X"84"; 
 		
 		--6th row
-		"01010011" WHEN "01010000", -- X"53" 
-		"11010001" WHEN "01010001", -- X"D1" 
-		"00000000" WHEN "01010010", -- X"00" 
-		"11101101" WHEN "01010011", -- X"ED" 
-		"00100000" WHEN "01010100", -- X"20" 
-		"11111100" WHEN "01010101", -- X"FC" 
-		"10110001" WHEN "01010110", -- X"B1" 
-		"01011011" WHEN "01010111", -- X"5B" 
-		"01101010" WHEN "01011000", -- X"6A" 
-		"11001011" WHEN "01011001", -- X"CB" 
-		"10111110" WHEN "01011010", -- X"BE" 
-		"00111001" WHEN "01011011", -- X"39" 
-		"01001010" WHEN "01011100", -- X"4A" 
-		"01001100" WHEN "01011101", -- X"4C" 
-		"01011000" WHEN "01011110", -- X"58"
-		"11001111" WHEN "01011111", -- X"CF" 
+		WHEN "01010000" => return  X"53"; 
+		WHEN "01010001" => return  X"D1"; 
+		WHEN "01010010" => return  X"00"; 
+		WHEN "01010011" => return  X"ED"; 
+		WHEN "01010100" => return  X"20"; 
+		WHEN "01010101" => return  X"FC"; 
+		WHEN "01010110" => return  X"B1"; 
+		WHEN "01010111" => return  X"5B"; 
+		WHEN "01011000" => return  X"6A"; 
+		WHEN "01011001" => return  X"CB"; 
+		WHEN "01011010" => return  X"BE"; 
+		WHEN "01011011" => return  X"39"; 
+		WHEN "01011100" => return  X"4A"; 
+		WHEN "01011101" => return  X"4C"; 
+		WHEN "01011110" => return  X"58";
+		WHEN "01011111" => return  X"CF"; 
 		
 		--7th row
-		"11010000" WHEN "01100000", -- X"D0" 
-		"11101111" WHEN "01100001", -- X"EF" 
-		"10101010" WHEN "01100010", -- X"AA" 
-		"11111011" WHEN "01100011", -- X"FB" 
-		"01000011" WHEN "01100100", -- X"43" 
-		"01001101" WHEN "01100101", -- X"4D" 
-		"00110011" WHEN "01100110", -- X"33" 
-		"10000101" WHEN "01100111", -- X"85" 
-		"01000101" WHEN "01101000", -- X"45" 
-		"11111001" WHEN "01101001", -- X"F9" 
-		"00000010" WHEN "01101010", -- X"02" 
-		"01111111" WHEN "01101011", -- X"7F" 
-		"01010000" WHEN "01101100", -- X"50" 
-		"00111100" WHEN "01101101", -- X"3C" 
-		"10011111" WHEN "01101110", -- X"9F" 
-		"10101000" WHEN "01101111", -- X"A8" 
+		WHEN "01100000" => return  X"D0"; 
+		WHEN "01100001" => return  X"EF"; 
+		WHEN "01100010" => return  X"AA"; 
+		WHEN "01100011" => return  X"FB"; 
+		WHEN "01100100" => return  X"43"; 
+		WHEN "01100101" => return  X"4D"; 
+		WHEN "01100110" => return  X"33"; 
+		WHEN "01100111" => return  X"85"; 
+		WHEN "01101000" => return  X"45"; 
+		WHEN "01101001" => return  X"F9"; 
+		WHEN "01101010" => return  X"02"; 
+		WHEN "01101011" => return  X"7F"; 
+		WHEN "01101100" => return  X"50"; 
+		WHEN "01101101" => return  X"3C"; 
+		WHEN "01101110" => return  X"9F"; 
+		WHEN "01101111" => return  X"A8"; 
 		
 		--8th row
-		"01010001" WHEN "01110000", -- X"51"
-		"10100011" WHEN "01110001", -- X"A3"
-		"01000000" WHEN "01110010", -- X"40"
-		"10001111" WHEN "01110011", -- X"8F"
-		"10010010" WHEN "01110100", -- X"92"
-		"10011101" WHEN "01110101", -- X"9D"
-		"00111000" WHEN "01110110", -- X"38"
-		"11110101" WHEN "01110111", -- X"F5"
-		"10111100" WHEN "01111000", -- X"BC"
-		"10110110" WHEN "01111001", -- X"B6"
-		"11011010" WHEN "01111010", -- X"DA"
-		"00100001" WHEN "01111011", -- X"21"
-		"00010000" WHEN "01111100", -- X"10"
-		"11111111" WHEN "01111101", -- X"FF"
-		"11110011" WHEN "01111110", -- X"F3"
-		"11010010" WHEN "01111111", -- X"D2"
+		WHEN "01110000" => return  X"51";
+		WHEN "01110001" => return  X"A3";
+		WHEN "01110010" => return  X"40";
+		WHEN "01110011" => return  X"8F";
+		WHEN "01110100" => return  X"92";
+		WHEN "01110101" => return  X"9D";
+		WHEN "01110110" => return  X"38";
+		WHEN "01110111" => return  X"F5";
+		WHEN "01111000" => return  X"BC";
+		WHEN "01111001" => return  X"B6";
+		WHEN "01111010" => return  X"DA";
+		WHEN "01111011" => return  X"21";
+		WHEN "01111100" => return  X"10";
+		WHEN "01111101" => return  X"FF";
+		WHEN "01111110" => return  X"F3";
+		WHEN "01111111" => return  X"D2";
 		
 		--9th row
-		"11001101" WHEN "10000000", -- X"CD" 
-		"00001100" WHEN "10000001", -- X"0C" 
-		"00010011" WHEN "10000010", -- X"13" 
-		"11101100" WHEN "10000011", -- X"EC" 
-		"01011111" WHEN "10000100", -- X"5F" 
-		"10010111" WHEN "10000101", -- X"97" 
-		"01000100" WHEN "10000110", -- X"44" 
-		"00010111" WHEN "10000111", -- X"17" 
-		"11000100" WHEN "10001000", -- X"C4" 
-		"10100111" WHEN "10001001", -- X"A7" 
-		"01111110" WHEN "10001010", -- X"7E" 
-		"00111101" WHEN "10001011", -- X"3D" 
-		"01100100" WHEN "10001100", -- X"64" 
-		"01011101" WHEN "10001101", -- X"5D" 
-		"00011001" WHEN "10001110", -- X"19" 
-		"01110011" WHEN "10001111", -- X"73" 
+		WHEN "10000000" => return  X"CD"; 
+		WHEN "10000001" => return  X"0C"; 
+		WHEN "10000010" => return  X"13"; 
+		WHEN "10000011" => return  X"EC"; 
+		WHEN "10000100" => return  X"5F"; 
+		WHEN "10000101" => return  X"97"; 
+		WHEN "10000110" => return  X"44"; 
+		WHEN "10000111" => return  X"17"; 
+		WHEN "10001000" => return  X"C4"; 
+		WHEN "10001001" => return  X"A7"; 
+		WHEN "10001010" => return  X"7E"; 
+		WHEN "10001011" => return  X"3D"; 
+		WHEN "10001100" => return  X"64"; 
+		WHEN "10001101" => return  X"5D"; 
+		WHEN "10001110" => return  X"19"; 
+		WHEN "10001111" => return  X"73"; 
 		
 		--10th row
-		"01100000" WHEN "10010000", -- X"60" 
-		"10000001" WHEN "10010001", -- X"81" 
-		"01001111" WHEN "10010010", -- X"4F" 
-		"11011100" WHEN "10010011", -- X"DC" 
-		"00100010" WHEN "10010100", -- X"22" 
-		"00101010" WHEN "10010101", -- X"2A" 
-		"10010000" WHEN "10010110", -- X"90" 
-		"10001000" WHEN "10010111", -- X"88" 
-		"01000110" WHEN "10011000", -- X"46" 
-		"11101110" WHEN "10011001", -- X"EE" 
-		"10111000" WHEN "10011010", -- X"B8"
-		"00010100" WHEN "10011011", -- X"14" 
-		"11011110" WHEN "10011100", -- X"DE"
-		"01011110" WHEN "10011101", -- X"5E" 
-		"00001011" WHEN "10011110", -- X"0B"
-		"11011011" WHEN "10011111", -- X"DB" 
+		WHEN "10010000" => return  X"60"; 
+		WHEN "10010001" => return  X"81"; 
+		WHEN "10010010" => return  X"4F"; 
+		WHEN "10010011" => return  X"DC"; 
+		WHEN "10010100" => return  X"22"; 
+		WHEN "10010101" => return  X"2A"; 
+		WHEN "10010110" => return  X"90"; 
+		WHEN "10010111" => return  X"88"; 
+		WHEN "10011000" => return  X"46"; 
+		WHEN "10011001" => return  X"EE"; 
+		WHEN "10011010" => return  X"B8";
+		WHEN "10011011" => return  X"14"; 
+		WHEN "10011100" => return  X"DE";
+		WHEN "10011101" => return  X"5E"; 
+		WHEN "10011110" => return  X"0B";
+		WHEN "10011111" => return  X"DB"; 
 		
 		--11th row
-		"11100000" WHEN "10100000", -- X"E0" 
-		"00110010" WHEN "10100001", -- X"32" 
-		"00111010" WHEN "10100010", -- X"3A" 
-		"00001010" WHEN "10100011", -- X"0A" 
-		"01001001" WHEN "10100100", -- X"49" 
-		"00000110" WHEN "10100101", -- X"06" 
-		"00100100" WHEN "10100110", -- X"24" 
-		"01011100" WHEN "10100111", -- X"5C" 
-		"11000010" WHEN "10101000", -- X"C2" 
-		"11010011" WHEN "10101001", -- X"D3" 
-		"10101100" WHEN "10101010", -- X"AC" 
-		"01100010" WHEN "10101011", -- X"62" 
-		"10010001" WHEN "10101100", -- X"91" 
-		"10010101" WHEN "10101101", -- X"95" 
-		"11100100" WHEN "10101110", -- X"E4" 
-		"01111001" WHEN "10101111", -- X"79" 
+		WHEN "10100000" => return  X"E0"; 
+		WHEN "10100001" => return  X"32"; 
+		WHEN "10100010" => return  X"3A"; 
+		WHEN "10100011" => return  X"0A"; 
+		WHEN "10100100" => return  X"49"; 
+		WHEN "10100101" => return  X"06"; 
+		WHEN "10100110" => return  X"24"; 
+		WHEN "10100111" => return  X"5C"; 
+		WHEN "10101000" => return  X"C2"; 
+		WHEN "10101001" => return  X"D3"; 
+		WHEN "10101010" => return  X"AC"; 
+		WHEN "10101011" => return  X"62"; 
+		WHEN "10101100" => return  X"91"; 
+		WHEN "10101101" => return  X"95"; 
+		WHEN "10101110" => return  X"E4"; 
+		WHEN "10101111" => return  X"79"; 
 		
 		--12th row
-		"11100111" WHEN "10110000", -- X"E7" 
-		"11001000" WHEN "10110001", -- X"C8" 
-		"00110111" WHEN "10110010", -- X"37" 
-		"01101101" WHEN "10110011", -- X"6D" 
-		"10001101" WHEN "10110100", -- X"8D" 
-		"11010101" WHEN "10110101", -- X"D5" 
-		"01001110" WHEN "10110110", -- X"4E" 
-		"10101001" WHEN "10110111", -- X"A9" 
-		"01101100" WHEN "10111000", -- X"6C" 
-		"01010110" WHEN "10111001", -- X"56" 
-		"11110100" WHEN "10111010", -- X"F4" 
-		"11101010" WHEN "10111011", -- X"EA" 
-		"01100101" WHEN "10111100", -- X"65" 
-		"01111010" WHEN "10111101", -- X"7A" 
-		"10101110" WHEN "10111110", -- X"AE" 
-		"00001000" WHEN "10111111", -- X"08" 
+		WHEN "10110000" => return  X"E7"; 
+		WHEN "10110001" => return  X"C8"; 
+		WHEN "10110010" => return  X"37"; 
+		WHEN "10110011" => return  X"6D"; 
+		WHEN "10110100" => return  X"8D"; 
+		WHEN "10110101" => return  X"D5"; 
+		WHEN "10110110" => return  X"4E"; 
+		WHEN "10110111" => return  X"A9"; 
+		WHEN "10111000" => return  X"6C"; 
+		WHEN "10111001" => return  X"56"; 
+		WHEN "10111010" => return  X"F4"; 
+		WHEN "10111011" => return  X"EA"; 
+		WHEN "10111100" => return  X"65"; 
+		WHEN "10111101" => return  X"7A"; 
+		WHEN "10111110" => return  X"AE"; 
+		WHEN "10111111" => return  X"08"; 
 		
 		--13th row
-		"10111010" WHEN "11000000", -- X"BA" 
-		"01111000" WHEN "11000001", -- X"78" 
-		"00100101" WHEN "11000010", -- X"25" 
-		"00101110" WHEN "11000011", -- X"2E" 
-		"00011100" WHEN "11000100", -- X"1C"
-		"10100110" WHEN "11000101", -- X"A6" 
-		"10110100" WHEN "11000110", -- X"B4" 
-		"11000110" WHEN "11000111", -- X"C6" 
-		"11101000" WHEN "11001000", -- X"E8" 
-		"11011101" WHEN "11001001", -- X"DD" 
-		"01110100" WHEN "11001010", -- X"74" 
-		"00011111" WHEN "11001011", -- X"1F" 
-		"01001011" WHEN "11001100", -- X"4B" 
-		"10111101" WHEN "11001101", -- X"BD" 
-		"10001011" WHEN "11001110", -- X"8B" 
-		"10001010" WHEN "11001111", -- X"8A" 
+		WHEN "11000000" => return  X"BA"; 
+		WHEN "11000001" => return  X"78"; 
+		WHEN "11000010" => return  X"25"; 
+		WHEN "11000011" => return  X"2E"; 
+		WHEN "11000100" => return  X"1C";
+		WHEN "11000101" => return  X"A6"; 
+		WHEN "11000110" => return  X"B4"; 
+		WHEN "11000111" => return  X"C6"; 
+		WHEN "11001000" => return  X"E8"; 
+		WHEN "11001001" => return  X"DD"; 
+		WHEN "11001010" => return  X"74"; 
+		WHEN "11001011" => return  X"1F"; 
+		WHEN "11001100" => return  X"4B"; 
+		WHEN "11001101" => return  X"BD"; 
+		WHEN "11001110" => return  X"8B"; 
+		WHEN "11001111" => return  X"8A"; 
 		
 		--14th row
-		"01110000" WHEN "11010000", -- X"70" 
-		"00111110" WHEN "11010001", -- X"3E" 
-		"10110101" WHEN "11010010", -- X"B5" 
-		"01100110" WHEN "11010011", -- X"66" 
-		"01001000" WHEN "11010100", -- X"48" 
-		"00000011" WHEN "11010101", -- X"03" 
-		"11110110" WHEN "11010110", -- X"F6" 
-		"00001110" WHEN "11010111", -- X"0E" 
-		"01100001" WHEN "11011000", -- X"61" 
-		"00110101" WHEN "11011001", -- X"35" 
-		"01010111" WHEN "11011010", -- X"57" 
-		"10111001" WHEN "11011011", -- X"B9" 
-		"10000110" WHEN "11011100", -- X"86" 
-		"11000001" WHEN "11011101", -- X"C1" 
-		"00011101" WHEN "11011110", -- X"1D" 
-		"10011110" WHEN "11011111", -- X"9E" 
+		WHEN "11010000" => return  X"70"; 
+		WHEN "11010001" => return  X"3E"; 
+		WHEN "11010010" => return  X"B5"; 
+		WHEN "11010011" => return  X"66"; 
+		WHEN "11010100" => return  X"48"; 
+		WHEN "11010101" => return  X"03"; 
+		WHEN "11010110" => return  X"F6"; 
+		WHEN "11010111" => return  X"0E"; 
+		WHEN "11011000" => return  X"61"; 
+		WHEN "11011001" => return  X"35"; 
+		WHEN "11011010" => return  X"57"; 
+		WHEN "11011011" => return  X"B9"; 
+		WHEN "11011100" => return  X"86"; 
+		WHEN "11011101" => return  X"C1"; 
+		WHEN "11011110" => return  X"1D"; 
+		WHEN "11011111" => return  X"9E"; 
 		
 		--15th row
-		"11100001" WHEN "11100000", -- X"E1" 
-		"11111000" WHEN "11100001", -- X"F8" 
-		"10011000" WHEN "11100010", -- X"98" 
-		"00010001" WHEN "11100011", -- X"11" 
-		"01101001" WHEN "11100100", -- X"69" 
-		"11011001" WHEN "11100101", -- X"D9" 
-		"10001110" WHEN "11100110", -- X"8E" 
-		"10010100" WHEN "11100111", -- X"94" 
-		"10011011" WHEN "11101000", -- X"9B" 
-		"00011110" WHEN "11101001", -- X"1E" 
-		"10000111" WHEN "11101010", -- X"87" 
-		"11101001" WHEN "11101011", -- X"E9" 
-		"11001110" WHEN "11101100", -- X"CE" 
-		"01010101" WHEN "11101101", -- X"55" 
-		"00101000" WHEN "11101110", -- X"28" 
-		"11011111" WHEN "11101111", -- X"DF" 
+		WHEN "11100000" => return  X"E1"; 
+		WHEN "11100001" => return  X"F8"; 
+		WHEN "11100010" => return  X"98"; 
+		WHEN "11100011" => return  X"11"; 
+		WHEN "11100100" => return  X"69"; 
+		WHEN "11100101" => return  X"D9"; 
+		WHEN "11100110" => return  X"8E"; 
+		WHEN "11100111" => return  X"94"; 
+		WHEN "11101000" => return  X"9B"; 
+		WHEN "11101001" => return  X"1E"; 
+		WHEN "11101010" => return  X"87"; 
+		WHEN "11101011" => return  X"E9"; 
+		WHEN "11101100" => return  X"CE"; 
+		WHEN "11101101" => return  X"55"; 
+		WHEN "11101110" => return  X"28"; 
+		WHEN "11101111" => return  X"DF"; 
 		
 		--16th row
-		"10001100" WHEN "11110000", -- X"8C" 
-		"10100001" WHEN "11110001", -- X"A1" 
-		"10001001" WHEN "11110010", -- X"89" 
-		"00001101" WHEN "11110011", -- X"0D" 
-		"10111111" WHEN "11110100", -- X"BF" 
-		"11100110" WHEN "11110101", -- X"E6" 
-		"01000010" WHEN "11110110", -- X"42" 
-		"01101000" WHEN "11110111", -- X"68" 
-		"01000001" WHEN "11111000", -- X"41" 
-		"10011001" WHEN "11111001", -- X"99" 
-		"00101101" WHEN "11111010", -- X"2D" 
-		"00001111" WHEN "11111011", -- X"0F" 
-		"10110000" WHEN "11111100", -- X"B0" 
-		"01010100" WHEN "11111101", -- X"54" 
-		"10111011" WHEN "11111110", -- X"BB" 
-		"00010110" WHEN "11111111"; -- X"16"
-		
-END behavior;
+		WHEN "11110000" => return  X"8C"; 
+		WHEN "11110001" => return  X"A1"; 
+		WHEN "11110010" => return  X"89"; 
+		WHEN "11110011" => return  X"0D"; 
+		WHEN "11110100" => return  X"BF"; 
+		WHEN "11110101" => return  X"E6"; 
+		WHEN "11110110" => return  X"42"; 
+		WHEN "11110111" => return  X"68"; 
+		WHEN "11111000" => return  X"41"; 
+		WHEN "11111001" => return  X"99"; 
+		WHEN "11111010" => return  X"2D"; 
+		WHEN "11111011" => return  X"0F"; 
+		WHEN "11111100" => return  X"B0"; 
+		WHEN "11111101" => return  X"54"; 
+		WHEN "11111110" => return  X"BB"; 
+		WHEN "11111111" => return  X"16";
+	end case;
+end S_Box_fun;
+
+end package body S_Box; 
+
     

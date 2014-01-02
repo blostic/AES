@@ -1,5 +1,5 @@
 Flow report for AES_Penar_Skibiak
-Sun Dec 29 01:04:23 2013
+Fri Jan 03 00:32:36 2014
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Sun Dec 29 01:04:14 2013    ;
+; Flow Status                        ; Successful - Fri Jan 03 00:32:27 2014    ;
 ; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
 ; Revision Name                      ; AES_Penar_Skibiak                        ;
 ; Top-level Entity Name              ; Main                                     ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/29/2013 01:03:04 ;
+; Start date & time ; 01/03/2014 00:31:18 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; AES_Penar_Skibiak   ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+-------------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value     ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+-------------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 138742084992606.138827538305708       ; --                ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 138742084992606.138870547710848       ; --                ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --                ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --                ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                              ; --                ; Main        ; Top        ;
@@ -91,11 +91,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 369 MB              ; 00:00:08                           ;
-; Fitter                    ; 00:00:42     ; 1.5                     ; 572 MB              ; 00:00:52                           ;
-; Assembler                 ; 00:00:16     ; 1.0                     ; 367 MB              ; 00:00:14                           ;
-; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 380 MB              ; 00:00:06                           ;
-; Total                     ; 00:01:13     ; --                      ; --                  ; 00:01:20                           ;
+; Analysis & Synthesis      ; 00:00:08     ; 1.0                     ; 380 MB              ; 00:00:08                           ;
+; Fitter                    ; 00:00:40     ; 1.4                     ; 583 MB              ; 00:00:48                           ;
+; Assembler                 ; 00:00:15     ; 1.0                     ; 366 MB              ; 00:00:14                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 379 MB              ; 00:00:06                           ;
+; Total                     ; 00:01:09     ; --                      ; --                  ; 00:01:16                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
