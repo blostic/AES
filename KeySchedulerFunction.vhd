@@ -6,29 +6,31 @@ use S_Box.all;
 
 package KeySchedulerFunction is 
 
+	type RoundKeyArrayDoubled is array (0 to 31) of std_logic_vector(7 downto 0);
+	type RESULT_BUFFER is array (0 to 256 ) of STD_LOGIC_VECTOR(7 downto 0);
+	
 function KeyScheduler( 
 		--key_in contains initial key for key generator  
-		key_in : IN std_logic_vector(255 downto 0);
+	
+		key_in : IN RoundKeyArrayDoubled;
 		-- type of key: 
 		-- 00 - 128 bits 
 		-- 01 - 192 bits
 		-- 10 - 256 bits 
-		key_length_type  :  IN  std_logic_vector(2 downto 0))
+		key_length_type  :  IN  std_logic_vector(1 downto 0))
 		--key_out contains round key for at most 14 rounds (14 * 128). 		  
-	return std_logic_vector;
+	return RESULT_BUFFER;
 	
 end package KeySchedulerFunction;  
 
 package body KeySchedulerFunction is 
 		
 function KeyScheduler(
-			key_in  			  :  IN  std_logic_vector(255 downto 0);
-			key_length_type  :  IN  std_logic_vector(2 downto 0)) 
-			return std_logic_vector is
+			key_in  			  :  IN  RoundKeyArrayDoubled;
+			key_length_type  :  IN  std_logic_vector(1 downto 0)) 
+			return RESULT_BUFFER is
 			
-	type RCON_TABLE is array (7 downto 0) of STD_LOGIC_VECTOR(7 downto 0);
-	
-	type RESULT_BUFFER is array (256 downto 0) of STD_LOGIC_VECTOR(7 downto 0);
+	type RCON_TABLE is array (0 to 14) of STD_LOGIC_VECTOR(7 downto 0);
 	
 	variable RCON : RCON_TABLE;
 	variable roundKey : RESULT_BUFFER;
@@ -49,15 +51,15 @@ begin
 	offset := n;
 	
 	FOR i IN 0 TO n-1 LOOP
-		roundKey(i) := key_in(8*i+7 downto 8*i);
+		roundKey(i) := key_in(i);
 	END LOOP;
 	
 	while offset<b loop
 		
-		roundKey(offset) 	 := S_Box_fun( roundKey(offset-3) ) XOR roundKey(offset-n) XOR Rcon(it);
-		roundKey(offset+1) := S_Box_fun( roundKey(offset-2) ) XOR roundKey(offset-n+1);
-		roundKey(offset+2) := S_Box_fun( roundKey(offset-1) ) XOR roundKey(offset-n+2);
-		roundKey(offset+3) := S_Box_fun( roundKey(offset-4) ) XOR roundKey(offset-n+3);
+		roundKey(offset) 	 := S_Box_fun( roundKey( offset-3) ) XOR roundKey( offset-n) XOR Rcon(it);
+		roundKey(offset+1) := S_Box_fun( roundKey( offset-2) ) XOR roundKey( offset-n+1 );
+		roundKey(offset+2) := S_Box_fun( roundKey( offset-1) ) XOR roundKey( offset-n+2 );
+		roundKey(offset+3) := S_Box_fun( roundKey( offset-4) ) XOR roundKey( offset-n+3 );
 
 		for X in 1 to 4 loop
 			for Y in 0 to 4 loop
@@ -69,10 +71,10 @@ begin
 		it := it + 1;
 		
 		if ( key_length_type = "10") then 
-		   roundKey(offset)   := S_Box_fun( roundKey( offset - 4 )) XOR roundKey( offset - n );
-			roundKey(offset+1) := S_Box_fun( roundKey( offset - 3 ) ) XOR roundKey(offset - n + 1 );
-			roundKey(offset+2) := S_Box_fun( roundKey( offset - 2 ) ) XOR roundKey(offset - n + 2 );
-			roundKey(offset+3) := S_Box_fun( roundKey( offset - 1 ) ) XOR roundKey(offset - n + 3 );
+		   roundKey(offset)   := S_Box_fun( roundKey( offset - 4 ) ) XOR roundKey( offset - n );
+			roundKey(offset+1) := S_Box_fun( roundKey( offset - 3 ) ) XOR roundKey( offset - n + 1 );
+			roundKey(offset+2) := S_Box_fun( roundKey( offset - 2 ) ) XOR roundKey( offset - n + 2 );
+			roundKey(offset+3) := S_Box_fun( roundKey( offset - 1 ) ) XOR roundKey( offset - n + 3 );
 			for X in 1 to 4 loop
 				for Y in 0 to 4 loop
 					roundKey(offset+x*4+y) := roundKey(offset+x*4+y-4) XOR roundKey(offset+x*4+y-n);
@@ -91,7 +93,7 @@ begin
 		
 	end loop;
 	
-   return key_in;
+   return roundKey;
 end KeyScheduler;
 
 end package body KeySchedulerFunction; 

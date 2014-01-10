@@ -15,6 +15,7 @@ END Shift_Rows;
 ARCHITECTURE behavior OF Shift_Rows IS
   TYPE byte_matrix IS array (15 downto 0) OF std_logic_vector(7 downto 0);
 
+  
 	----
 	-- Arrangement of matrix (number in matrix identifies position of element)  
 	--
