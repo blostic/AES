@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AES_Penar_Skibiak
-Fri Jan 10 18:46:04 2014
+Fri Jan 10 20:27:15 2014
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
@@ -18,9 +18,11 @@ Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
  10. Removed Registers Triggering Further Register Optimizations
  11. General Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Port Connectivity Checks: "LCD_controller:dut"
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 13. Port Connectivity Checks: "AddRoundKey:RoundKeyAdder"
+ 14. Port Connectivity Checks: "Mix_Columns:mixcolumn_s"
+ 15. Port Connectivity Checks: "LCD_controller:dut"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -46,7 +48,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jan 10 18:46:04 2014    ;
+; Analysis & Synthesis Status        ; Successful - Fri Jan 10 20:27:15 2014    ;
 ; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
 ; Revision Name                      ; AES_Penar_Skibiak                        ;
 ; Top-level Entity Name              ; Main                                     ;
@@ -184,6 +186,8 @@ applicable agreement for further details.
 ; Inverse_Mix_Columns.vhd          ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_Mikroprocesory_projekt/Inverse_Mix_Columns.vhd  ;         ;
 ; My_Functions_package.vhd         ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_Mikroprocesory_projekt/My_Functions_package.vhd ;         ;
 ; KeySchedulerFunction.vhd         ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_Mikroprocesory_projekt/KeySchedulerFunction.vhd ;         ;
+; AddRoundKey.vhd                  ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_Mikroprocesory_projekt/AddRoundKey.vhd          ;         ;
+; mypackage.vhd                    ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_Mikroprocesory_projekt/mypackage.vhd            ;         ;
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
 
 
@@ -290,6 +294,24 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "AddRoundKey:RoundKeyAdder"                                                                       ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; round_state_xored ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mix_Columns:mixcolumn_s"                                                                            ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                 ; Type   ; Severity ; Details                                                                             ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; mixcolumn_vector_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "LCD_controller:dut"                                                                    ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
@@ -305,7 +327,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -315,7 +337,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Fri Jan 10 18:45:55 2014
+    Info: Processing started: Fri Jan 10 20:27:06 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AES_Penar_Skibiak -c AES_Penar_Skibiak
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file main.vhd
@@ -360,12 +382,25 @@ Info (12021): Found 2 design units, including 0 entities, in source file my_func
 Info (12021): Found 2 design units, including 0 entities, in source file keyschedulerfunction.vhd
     Info (12022): Found design unit 1: KeySchedulerFunction
     Info (12022): Found design unit 2: KeySchedulerFunction-body
+Info (12021): Found 2 design units, including 1 entities, in source file addroundkey.vhd
+    Info (12022): Found design unit 1: AddRoundKey-behavior
+    Info (12023): Found entity 1: AddRoundKey
+Info (12021): Found 2 design units, including 0 entities, in source file mypackage.vhd
+    Info (12022): Found design unit 1: mypackage
+    Info (12022): Found design unit 2: mypackage-body
 Info (12127): Elaborating entity "Main" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at Main.vhd(19): used implicit default value for signal "lcd_enable" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Main.vhd(20): used implicit default value for signal "lcd_bus" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at Main.vhd(21): object "lcd_busy" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Main.vhd(34): object "GeneratedKey" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at Main.vhd(21): used implicit default value for signal "lcd_enable" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at Main.vhd(22): used implicit default value for signal "lcd_bus" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at Main.vhd(23): object "lcd_busy" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at Main.vhd(43): used implicit default value for signal "round_state_to_xor_S" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at Main.vhd(44): used implicit default value for signal "round_key_S" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at Main.vhd(45): object "round_state_xored_S" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at Main.vhd(63): used implicit default value for signal "shiftrow" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at Main.vhd(64): object "mixcolumn" assigned a value but never read
 Info (12128): Elaborating entity "LCD_controller" for hierarchy "LCD_controller:dut"
+Info (12128): Elaborating entity "Mix_Columns" for hierarchy "Mix_Columns:mixcolumn_s"
+Info (12128): Elaborating entity "AddRoundKey" for hierarchy "AddRoundKey:RoundKeyAdder"
+Warning (10492): VHDL Process Statement warning at AddRoundKey.vhd(20): signal "round_key" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rw" is stuck at GND
     Warning (13410): Pin "rs" is stuck at GND
@@ -377,9 +412,9 @@ Info (21057): Implemented 164 device resources after synthesis - the final resou
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 11 output pins
     Info (21061): Implemented 152 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 9 warnings
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 14 warnings
     Info: Peak virtual memory: 381 megabytes
-    Info: Processing ended: Fri Jan 10 18:46:04 2014
+    Info: Processing ended: Fri Jan 10 20:27:15 2014
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:09
 
