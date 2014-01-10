@@ -1,0 +1,194 @@
+x"4D", x"49", x"4B", x"52", x"4F", x"50", x"52", x"4F", x"43", x"45", x"53", x"4F", x"52", x"59"
+x"4D",
+
+
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+	--Define The Core Entity
+ENTITY hello_world IS
+PORT(   
+		CLK		: IN STD_LOGIC;
+		KEY 		: IN STD_LOGIC;
+		LED         : OUT STD_LOGIC;			
+		--LCD Control Signals
+		LCD_ENABLE 	: OUT STD_LOGIC;
+		LCD_RW 		: OUT STD_LOGIC;
+		LCD_RS 		: OUT STD_LOGIC;
+
+	
+		--LCD Data Signals
+		LCD_DATA 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0));
+	 
+end hello_world;
+
+	--Define The Architecture Of The Entity
+ARCHITECTURE behavior of hello_world IS
+
+type state_type is (	S0, S1, S2, S3, S4, S5, S6, S7, S8, S9, 
+							S10, S11, IDLE);
+
+type char_array is array (15 downto 0) of STD_LOGIC_VECTOR(7 DOWNTO 0);
+							
+signal current_state: state_type;
+signal char_table: char_array;
+
+BEGIN
+
+PROCESS
+VARIABLE cnt: INTEGER RANGE 0 TO 1750000;
+VARIABLE table_index: INTEGER RANGE 0 TO 32;
+
+BEGIN
+
+char_table <= (0 => x"4D",1 =>  x"49",2 =>  x"4B",3 =>  x"52",4 =>  x"4F",5 =>  x"50",6 =>  x"52",7 =>  x"4F",8 => x"43",
+9 =>  x"45",10 =>  x"53",11 =>  x"4F",12 =>  x"52",13 =>  x"59",14 =>  x"21",15 =>  x"21");
+
+--WAIT UNTIL(CLK'EVENT) AND (CLK = '1');
+process(CLK)
+	
+	IF (KEY = '1') then
+		LED <= '1';
+		
+	--Count Clock Ticks
+	IF(cnt = 1750000)THEN		
+		cnt := 0;
+	ELSE
+		cnt := cnt  + 1;
+	END IF;
+
+	IF(cnt = 1500000)THEN		
+	--Next State Logic
+	
+		case current_state is
+
+		
+-------------------Function Set-------------------
+			 when S0 =>
+				current_state <= S1;
+				
+				LCD_DATA		<= "00110000";
+				
+				LCD_ENABLE	<= '0';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '0';
+
+			 when S1 =>
+				current_state <= S2;
+
+				LCD_DATA		<= "00110000";
+				
+				LCD_ENABLE	<= '1';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '0';
+				
+			 when S2 =>
+				current_state <= S3;
+
+				LCD_DATA		<= "00110000";
+				
+				LCD_ENABLE	<= '0';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '0';
+
+-------------------Reset Display-------------------				
+			 when S3 =>
+				current_state <= S4;
+
+				LCD_DATA		<= "00000001";
+				
+				LCD_ENABLE	<= '0';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '0';
+				
+			 when S4 =>
+				current_state <= S5;
+
+				LCD_DATA		<= "00000001";
+				
+				LCD_ENABLE	<= '1';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '0';	
+				
+			 when S5 =>
+				current_state <= S6;				
+				
+				LCD_DATA		<= "00000001";
+				
+				LCD_ENABLE	<= '0';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '0';
+
+-------------------Display On-------------------				
+			 when S6 =>
+				current_state <= S7;					
+
+				LCD_DATA		<= "00001110";
+				
+				LCD_ENABLE	<= '0';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '0';
+				
+			 when S7 =>
+				current_state <= S8;
+	
+				LCD_DATA		<= "00001110";
+				
+				LCD_ENABLE	<= '1';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '0';
+				
+			 when S8 =>
+				current_state <= S9;	
+
+				LCD_DATA		<= "00001110";
+				
+				LCD_ENABLE	<= '0';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '1';
+				
+-------------------Write String -------------------				
+			 when S9 =>
+				current_state <= S10;			
+
+				LCD_DATA		<= char_table(table_index);
+				
+				LCD_ENABLE	<= '1';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '1';		
+				
+			 when S10 =>
+				IF (table_index < 32) THEN
+					table_index := table_index + 1;
+					current_state <= S9;
+				else
+					current_state <= S11;
+				end if;
+				
+				LCD_DATA		<= char_table(table_index);
+				LCD_ENABLE	<= '0';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '1';		
+				
+			 when S11 =>
+				cnt := 0;		
+				
+			 when IDLE	=>
+				cnt := 0;
+				
+		    when others =>
+				cnt := 0;			
+	
+		end case;	
+
+		END IF;
+
+	ELSE
+		current_state <= S0;
+		LED <= '0';
+	END IF;
+END PROCESS;
+
+END behavior;

@@ -1,0 +1,33 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+library work;
+use work.chars.ALL;
+
+ENTITY LCD IS
+
+PORT(
+	CLK   	: in  STD_LOGIC;
+	LCD_RS   : out STD_LOGIC;
+	LCD_RW   : out STD_LOGIC;
+	LCD_E    : out STD_LOGIC;
+	LCD_D    : out STD_LOGIC_VECTOR(7 downto 4);
+	Chars 	: in LCD_CHARS
+); 
+
+end LCD;
+
+ARCHITECTURE behavior of LCD IS
+BEGIN
+
+PROCESS
+	VARIABLE cnt: INTEGER RANGE 0 TO 1750000;
+	BEGIN
+
+		WAIT UNTIL(clk'EVENT) AND (clk = '1');
+
+	END PROCESS;
+
+END behavior;
