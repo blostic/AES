@@ -55,8 +55,8 @@ ARCHITECTURE behavior OF Main IS
 						 X"0c", X"0d", X"0e", X"0f", X"10", X"11", X"12", X"13", X"14", X"15", X"16", X"17",
 						 X"00", X"00", X"00", X"00", X"00", X"00", X"00", X"00" ); 
   
-  state		  <= ( X"00", X"01", X"02", X"03", X"04", X"05", X"06", X"07", X"08", X"09", X"0a", X"0b", X"0c", X"0d", X"0e", X"0f",
-						 X"10", X"11", X"12", X"13", X"14", X"15", X"16", X"17" );
+  --state		  <= ( X"00", X"01", X"02", X"03", X"04", X"05", X"06", X"07", X"08", X"09", X"0a", X"0b", X"0c", X"0d", X"0e", X"0f",
+  --						 X"10", X"11", X"12", X"13", X"14", X"15", X"16", X"17" );
 						 
   PROCESS(CLK)
     VARIABLE char  :  INTEGER RANGE 0 TO 10 := 0;
