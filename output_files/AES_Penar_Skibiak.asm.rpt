@@ -1,5 +1,5 @@
 Assembler report for AES_Penar_Skibiak
-Mon Jan 13 12:28:55 2014
+Mon Jan 13 16:52:59 2014
 Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Jan 13 12:28:55 2014 ;
+; Assembler Status      ; Successful - Mon Jan 13 16:52:59 2014 ;
 ; Revision Name         ; AES_Penar_Skibiak                     ;
 ; Top-level Entity Name ; Main                                  ;
 ; Family                ; Cyclone II                            ;
@@ -95,7 +95,7 @@ applicable agreement for further details.
 +----------------+-----------------------------------------------------------------------------------------------+
 ; Device         ; EP2C70F896C6                                                                                  ;
 ; JTAG usercode  ; 0xFFFFFFFF                                                                                    ;
-; Checksum       ; 0x00621624                                                                                    ;
+; Checksum       ; 0x00606341                                                                                    ;
 +----------------+-----------------------------------------------------------------------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+-------------------------------------------------------------------------------------------+
 ; Device             ; EPCS16                                                                                    ;
 ; JTAG usercode      ; 0x00000000                                                                                ;
-; Checksum           ; 0x187ADBE6                                                                                ;
+; Checksum           ; 0x1880360B                                                                                ;
 ; Compression Ratio  ; 3                                                                                         ;
 +--------------------+-------------------------------------------------------------------------------------------+
 
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Mon Jan 13 12:28:42 2014
+    Info: Processing started: Mon Jan 13 16:52:47 2014
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off AES_Penar_Skibiak -c AES_Penar_Skibiak
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 427 megabytes
-    Info: Processing ended: Mon Jan 13 12:28:55 2014
-    Info: Elapsed time: 00:00:13
+    Info: Peak virtual memory: 435 megabytes
+    Info: Processing ended: Mon Jan 13 16:52:59 2014
+    Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:12
 
 

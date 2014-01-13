@@ -1,6 +1,8 @@
 library IEEE;
 USE ieee.numeric_std.ALL;
 use IEEE.std_logic_1164.all; 
+use STD.textio.all;                     -- basic I/O
+use IEEE.std_logic_textio.all;          -- I/O for logic types
 
 package S_Box is 
 
@@ -36,9 +38,11 @@ function S_Box_fun(  entry_element: in std_logic_vector(7 downto 0)  ) return st
 	);
 		
 variable position : integer;
-
+variable my_line : line;  -- type 'line' comes from textio
 begin
-	position := to_integer(signed(entry_element));
+   write(my_line, string'("Hello World"));   -- formatting
+	writeline(output, my_line);               -- write to "output"
+	position := to_integer(unsigned(entry_element));
 	return (S_Box(position/16,position mod 16));
 end S_Box_fun;
 

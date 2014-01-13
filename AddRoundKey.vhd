@@ -14,7 +14,7 @@ END AddRoundKey;
 ARCHITECTURE behavior OF AddRoundKey IS
 
 BEGIN
-	ArraysXoring:PROCESS(round_state_to_xor)
+	ArraysXoring:PROCESS(round_state_to_xor,round_key)
 	BEGIN
 		 FOR i IN 15 downto 0 LOOP
 			round_state_xored(i)(7 downto 0) <= round_state_to_xor(i)(7 downto 0) XOR round_key(i)(7 downto 0);

@@ -39,7 +39,7 @@ function KeyScheduler(
 begin
 	--component instantiation
 	Rcon := (x"01", x"02", x"04", x"08", x"10", x"20", x"40", x"80", x"1b", x"36", x"6c", x"d8", x"ab", x"4d", x"9a");
-	 
+
 	CASE key_length_type IS
 		 WHEN  "00"  =>  b := 176; n := 16;
 		 WHEN  "01"  =>  b := 208; n := 24; 

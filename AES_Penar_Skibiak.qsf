@@ -90,4 +90,5 @@ set_global_assignment -name EDA_TEST_BENCH_FILE Main.vhd -section_id NewTest
 set_global_assignment -name VHDL_FILE AddRoundKey.vhd
 set_global_assignment -name VHDL_FILE mypackage.vhd
 set_global_assignment -name VHDL_FILE SubBytes.vhd
+set_global_assignment -name VHDL_FILE Round.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,143 +1,190 @@
-
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE work.mypackage.all;
+	--Define The Core Entity
 ENTITY LCD_controller IS
-  PORT(
-    clk        : IN    STD_LOGIC;  --system clock
-    reset_n    : IN    STD_LOGIC;  --active low reinitializes lcd
-    lcd_enable : IN    STD_LOGIC;  --latches data into lcd controller
-    lcd_bus    : IN    STD_LOGIC_VECTOR(9 DOWNTO 0);  --data and control signals
-    busy       : OUT   STD_LOGIC := '1';  --lcd controller busy/idle feedback
-    rw, rs, e  : OUT   STD_LOGIC;  --read/write, setup/data, and enable for lcd
-    lcd_data   : OUT   STD_LOGIC_VECTOR(7 DOWNTO 0)); --data signals for lcd
-END LCD_controller;
+PORT(   
+		CLK_LCD		: IN STD_LOGIC;
+		--KEY 		: IN STD_LOGIC;
+		--LED         : OUT STD_LOGIC_VECTOR(10 DOWNTO 0);			
+		--LCD Control Signals
+		LCD_ENABLE 	: OUT STD_LOGIC;
+		LCD_RW 		: OUT STD_LOGIC;
+		LCD_RS 		: OUT STD_LOGIC;
+		
+		LCD_ON		: out std_logic;     --jd->  Tego brakowało! 
+	
+		--LCD Data Signals
+		LCD_DATA 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+		
+		--Char_array
+		char_table  : IN char_array; --text to display
+		
+		RESET       : INOUT STD_LOGIC;
+		IS_WORKING  : OUT STD_LOGIC);
+end LCD_controller;
 
-ARCHITECTURE controller OF LCD_controller IS
-  TYPE CONTROL IS(power_up, initialize, ready, send);
-  SIGNAL    state      : CONTROL;
-  CONSTANT  freq       : INTEGER := 50; --system clock frequency in MHz
+	--Define The Architecture Of The Entity
+ARCHITECTURE behavior of LCD_controller IS
+
+type state_type is (	S0, S1, S2, S3, S4, S5, S6, S7, S8, S9, IDLE);
+							
+signal current_state: state_type;
+
+shared variable l1, l1b: std_logic;
+
 BEGIN
-  PROCESS(clk)
-    VARIABLE clk_count : INTEGER := 0; --event counter for timing
-  BEGIN
-  IF(clk'EVENT and clk = '1') THEN
-    
-      CASE state IS
-        
-        --wait 50 ms to ensure Vdd has risen and required LCD wait is met
-        WHEN power_up =>
-          busy <= '1';
-          IF(clk_count < (50000 * freq)) THEN    --wait 50 ms
-            clk_count := clk_count + 1;
-            state <= power_up;
-          ELSE                                   --power-up complete
-            clk_count := 0;
-            rs <= '0';
-            rw <= '0';
-            lcd_data <= "00110000";
-            state <= initialize;
-          END IF;
-          
-        --cycle through initialization sequence  
-        WHEN initialize =>
-          busy <= '1';
-          clk_count := clk_count + 1;
-          IF(clk_count < (10 * freq)) THEN       --function set
-            lcd_data <= "00111100";      --2-line mode, display on
-            --lcd_data <= "00110100";    --1-line mode, display on
-            --lcd_data <= "00110000";    --1-line mdoe, display off
-            --lcd_data <= "00111000";    --2-line mode, display off
-            e <= '1';
-            state <= initialize;
-          ELSIF(clk_count < (60 * freq)) THEN    --wait 50 us
-            lcd_data <= "00000000";
-            e <= '0';
-            state <= initialize;
-          ELSIF(clk_count < (70 * freq)) THEN    --display on/off control
-            lcd_data <= "00001100";      --display on, cursor off, blink off
-            --lcd_data <= "00001101";    --display on, cursor off, blink on
-            --lcd_data <= "00001110";    --display on, cursor on, blink off
-            --lcd_data <= "00001111";    --display on, cursor on, blink on
-            --lcd_data <= "00001000";    --display off, cursor off, blink off
-            --lcd_data <= "00001001";    --display off, cursor off, blink on
-            --lcd_data <= "00001010";    --display off, cursor on, blink off
-            --lcd_data <= "00001011";    --display off, cursor on, blink on            
-            e <= '1';
-            state <= initialize;
-          ELSIF(clk_count < (120 * freq)) THEN   --wait 50 us
-            lcd_data <= "00000000";
-            e <= '0';
-            state <= initialize;
-          ELSIF(clk_count < (130 * freq)) THEN   --display clear
-            lcd_data <= "00000001";
-            e <= '1';
-            state <= initialize;
-          ELSIF(clk_count < (2130 * freq)) THEN  --wait 2 ms
-            lcd_data <= "00000000";
-            e <= '0';
-            state <= initialize;
-          ELSIF(clk_count < (2140 * freq)) THEN  --entry mode set
-            lcd_data <= "00000110";      --increment mode, entire shift off
-            --lcd_data <= "00000111";    --increment mode, entire shift on
-            --lcd_data <= "00000100";    --decrement mode, entire shift off
-            --lcd_data <= "00000101";    --decrement mode, entire shift on
-            e <= '1';
-            state <= initialize;
-          ELSIF(clk_count < (2200 * freq)) THEN  --wait 60 us
-            lcd_data <= "00000000";
-            e <= '0';
-            state <= initialize;
-          ELSE                                   --initialization complete
-            clk_count := 0;
-            busy <= '0';
-            state <= ready;
-          END IF;    
-       
-        --wait for the enable signal and then latch in the instruction
-        WHEN ready =>
-          IF(lcd_enable = '1') THEN
-            busy <= '1';
-            rs <= lcd_bus(9);
-            rw <= lcd_bus(8);
-            lcd_data <= lcd_bus(7 DOWNTO 0);
-            clk_count := 0;            
-            state <= send;
-          ELSE
-            busy <= '0';
-            rs <= '0';
-            rw <= '0';
-            lcd_data <= "00000000";
-            clk_count := 0;
-            state <= ready;
-          END IF;
-        
-        --send instruction to lcd        
-        WHEN send =>
-        busy <= '1';
-        IF(clk_count < (5000 * freq)) THEN  --do not exit for 50us
-           busy <= '1';
-           IF(clk_count < freq) THEN      --negative enable
-            e <= '0';
-           ELSIF(clk_count < (14 * freq)) THEN  --positive enable half-cycle
-            e <= '1';
-           ELSIF(clk_count < (27 * freq)) THEN  --negative enable half-cycle
-            e <= '0';
-           END IF;
-           clk_count := clk_count + 1;
-           state <= send;
-        ELSE
-          clk_count := 0;
-          state <= ready;
-        END IF;
 
-      END CASE;    
-    
-      --reset
-      IF(reset_n = '0') THEN
-          state <= power_up;
-      END IF;
-    
-    END IF;
-  END PROCESS;
-END controller;
+PROCESS
+VARIABLE cnt: INTEGER RANGE 0 TO 150_000_000;
+VARIABLE table_index: INTEGER RANGE 0 TO 32;
+
+BEGIN
+
+WAIT UNTIL(CLK_LCD'EVENT) AND (CLK_LCD = '1') AND (RESET = '1');
+--oznaczać stany kombinacją reset i is_working (jedną zmienna sterujemy stąd a drugą z maina, da sie?)
+--Count Clock Ticks
+	IS_WORKING <= '1';
+	
+	IF(cnt = 2_500_000)THEN		
+		cnt := 0;
+		l1:= not l1;
+	ELSE
+		cnt := cnt  + 1;
+	END IF;
+	
+	
+
+IF(l1 /= l1b)THEN		
+		l1b:=l1;
+	--Next State Logic
+		case current_state is
+
+-------------------Function Set-------------------
+			 when S0 =>
+				current_state <= S1;
+				--LED <= ('0','0','0','0','0','0','0','0','0','0','0');
+				--LED(0) <= '1';
+
+				LCD_ON 	<= '1';   --jd->  Tego brakowało!  (po resecie LCD wyłącza się)
+
+-------------------Reset Display-------------------				
+			 when S1 =>
+				current_state <= S2;
+
+				--LED(1) <= '1';
+				
+				LCD_DATA		<= "00000001";
+				
+				LCD_ENABLE	<= '0';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '0';
+				
+			 when S2 =>
+				current_state <= S3;
+
+				--LED(2) <= '1';
+				
+				LCD_DATA		<= "00000001";
+				
+				LCD_ENABLE	<= '1';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '0';	
+				
+			 when S3 =>
+				current_state <= S4;				
+				
+				--LED(3) <= '1';
+				
+				LCD_DATA		<= "00000001";
+				
+				LCD_ENABLE	<= '0';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '0';
+
+-------------------Display On-------------------				
+			 when S4 =>
+				current_state <= S5;					
+
+				--LED(4) <= '1';
+				
+				LCD_DATA		<= "00001110";
+				
+				LCD_ENABLE	<= '0';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '0';
+				
+			 when S5 =>
+				current_state <= S6;
+	
+				--LED(5) <= '1';
+				
+				LCD_DATA		<= "00001110";
+				
+				LCD_ENABLE	<= '1';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '0';
+				
+			 when S6 =>
+				current_state <= S7;	
+
+				--LED(6) <= '1';
+				
+				LCD_DATA		<= "00001110";
+				
+				LCD_ENABLE	<= '0';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '1';
+				
+-------------------Write String -------------------				
+			 when S7 =>
+				current_state <= S8;			
+				
+				--LED(8) <= '0';
+				--LED(7) <= '1';
+				
+				LCD_DATA		<= char_table(table_index);
+				
+				LCD_ENABLE	<= '1';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '1';		
+				
+			 when S8 =>
+				IF (table_index < 32) THEN
+					table_index := table_index + 1;
+					current_state <= S7;
+					--LED(8) <= '1';
+					--LED(9) <= '0';
+				else
+					current_state <= S9;
+					--LED(8) <= '1';
+				end if;
+
+				LCD_DATA		<= char_table(table_index);
+				LCD_ENABLE	<= '0';
+				LCD_RW 		<= '0';
+				LCD_RS		<= '1';		
+				
+			 when S9 =>
+			   --LED(9) <= '1';
+
+				current_state <= IDLE;
+				
+			 when IDLE	=>
+			 --LED(10) <= '1';
+			 IS_WORKING <= '0';
+			 --RESET <= '0';
+			 current_state <= IDLE;
+				
+		    when others =>
+			 current_state <= S0;
+	
+		end case;	
+
+	END IF;
+
+END PROCESS;
+
+END behavior;
