@@ -1,64 +1,66 @@
-LIBRARY ieee;
-library My_Functions_package;
-library S_Box;
-library Inv_S_Box;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE work.all;
 
-USE ieee.std_logic_1164.all;
-USE work.ALL;
 USE work.mypackage.ALL;
-
 USE KeySchedulerFunction.ALL;
 USE S_Box.ALL;
 
+
+	--Define The Core Entity
 ENTITY Main IS
-  PORT(
-      CLK           : IN  STD_LOGIC;  --system clock
-		lcd_rw        : OUT STD_LOGIC;
-		lcd_rs        : OUT STD_LOGIC;
-		lcd_enable    : OUT STD_LOGIC;
-		lcd_on        : OUT STD_LOGIC;  --read/write, setup/data, enable, on turn on/off for lcd
-      lcd_data      : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)); --data signals for lcd
-
-END Main;
-
-ARCHITECTURE behavior OF Main IS
-  SIGNAL   lcd_bus    : STD_LOGIC_VECTOR(9 DOWNTO 0);
-  SIGNAL   lcd_busy   : STD_LOGIC;
+PORT(   
+		CLK		   : IN STD_LOGIC;
+		KEY 		   : IN STD_LOGIC;
+		LED         : OUT STD_LOGIC_VECTOR(17 DOWNTO 0);			
+		--LCD Control Signals
+		LCD_ENABLE 	: OUT STD_LOGIC;
+		LCD_RW 		: OUT STD_LOGIC;
+		LCD_RS 		: OUT STD_LOGIC;
+		
+		LCD_ON		: out std_logic;     --jd->  Tego brakowało! 
+		--LCD Data Signals
+		LCD_DATA 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);	
+	 
+end Main;
   
-  SIGNAL   char_table : char_array;
-  SIGNAL   reset : STD_LOGIC;
-  SIGNAL   is_working : std_logic;
+ARCHITECTURE behavior of Main IS
+	
+	COMPONENT Round 
+	PORT(
+		 data_in         :	IN  STATE_array;
+		 round_key	     :	IN  STATE_array;
+		 data_out        :	OUT STATE_array
+		 );
+	END COMPONENT; 
   
-  
-  COMPONENT lcd_controller IS
+  COMPONENT LCD_controller IS
     PORT(
-	   CLK_LCD		: IN STD_LOGIC;
-      --LCD Control Signals
-      LCD_ENABLE 	: OUT STD_LOGIC; --latches data into lcd controller
-      LCD_RW 		: OUT STD_LOGIC; --read/write 
-      LCD_RS 		: OUT STD_LOGIC; --setup/data
-
-      LCD_ON		: OUT STD_LOGIC; --turns on lcd
-
-      --LCD Data Signals
-      LCD_DATA 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);  --data signals for lcd
-		
-		CHAR_TABLE  : IN char_array;  -- text to display
-		
-		RESET       : INOUT STD_LOGIC;
-		IS_WORKING  : OUT STD_LOGIC);
-
+		CLK		   : IN STD_LOGIC;
+		KEY 		   : IN STD_LOGIC;
+		LED         : OUT STD_LOGIC_VECTOR(17 DOWNTO 0);			
+		--LCD Control Signals
+		LCD_ENABLE 	: OUT STD_LOGIC;
+		LCD_RW 		: OUT STD_LOGIC;
+		LCD_RS 		: OUT STD_LOGIC;
+		RESET  		: IN STD_LOGIC;
+		LCD_ON		: out std_logic;     --jd->  Tego brakowało! 
+	
+		--LCD Data Signals
+		LCD_DATA 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+		char_table  : IN char_array
+		);
   END COMPONENT;
- 
-COMPONENT Round 
-PORT(
-    data_in         :	IN  STATE_array;
-    round_key	     :	IN  STATE_array;
-    data_out        :	OUT STATE_array
-    );
-END COMPONENT; 
   
-  -- RESULT_BUFFER is defined in KeySchedulerFunction 
+  SIGNAL reset_signal : std_LOGIC;
+  SIGNAL CHAR_table : char_array;
+
+  
+
+	   -- RESULT_BUFFER is defined in KeySchedulerFunction 
   signal GeneratedKey: RESULT_BUFFER; 
   
   -- RoundKeyArrayDoubled is defined in KeySchedulerFunction   
@@ -78,38 +80,49 @@ END COMPONENT;
 												X"44", X"55", X"66", X"77",
 											   X"88", X"99", X"aa", X"bb",
 											   X"cc", X"dd", X"ee", X"ff" );
-  signal NEXT_STATE : STATE_array;
-  
-  BEGIN
+  signal NEXT_STATE : STATE_array;											
 
-  --instantiate the lcd controller
-    dut: lcd_controller
-    PORT MAP(CLK_LCD => CLK, 
-         LCD_ENABLE => lcd_enable, 
-         LCD_RS => lcd_rs, 
-         LCD_RW => lcd_rw,
-			LCD_DATA => lcd_DATA,
-			LCD_ON => lcd_ON,
-			CHAR_TABLE => char_table,
-			RESET => reset,
-			IS_WORKING => is_working
-     );
-		
+BEGIN
 
-   	FirstRound: Round	
-		PORT MAP(
-			data_in         =>	STATE,
-			round_key	    =>	STATE,
-			data_out        =>	NEXT_STATE
-		);
-		
-  PROCESS(CLK)
-    VARIABLE char  :  INTEGER RANGE 0 TO 10 := 0;
-  BEGIN
-    IF(CLK'EVENT AND CLK = '1') THEN
-		GeneratedKey <= KeyScheduler(initialKey,keyType);
-		STATE(1)(7 downto 0) <= GeneratedKey(1)(7 downto 0) XOR STATE(1)(7 downto 0);
-    END IF;
-  END PROCESS;
-  
+	dut: LCD_controller
+    PORT MAP( 
+	 	CLK		   => CLK,
+		KEY 		   => KEY,
+		LED         => LED,
+		--LCD Control Signals
+		LCD_ENABLE 	=> LCD_ENABLE,
+		LCD_RW	   => LCD_RW,
+		LCD_RS 		=> LCD_RS,
+		LCD_ON		=> LCD_ON, 
+		RESET 		=> reset_signal,
+		LCD_DATA    => LCD_DATA,
+		CHAR_table => CHAR_table
+    );
+
+  FirstRound: Round	
+	PORT MAP(
+		data_in         =>	STATE,
+		round_key	    =>	STATE,
+		data_out        =>	NEXT_STATE
+	);
+			  
+	  
+	PROCESS
+			VARIABLE round_count : INTEGER RANGE 10 to 14 := 10;
+		BEGIN
+			WAIT UNTIL(CLK'EVENT AND CLK = '1');
+				
+				CASE keyType IS
+					WHEN  "00"  =>  round_count := 10;
+					WHEN  "01"  =>  round_count := 12; 
+					WHEN  "10"  =>  round_count := 14; 
+					WHEN OTHERS =>  round_count := 0;
+				END CASE;
+
+			char_table <= (0 => x"4D",1 =>  x"49",2 =>  x"4B",3 =>  x"52",4 =>  x"4F",5 =>  x"50",6 =>  x"52",7 =>  x"4F",8 => x"43",
+				9 =>  x"45",10 =>  x"53",11 =>  x"4F",12 =>  x"52",13 =>  x"59",14 =>  x"21",15 =>  x"21");
+			
+			 reset_signal <= '1';
+			 
+	END PROCESS;
 END behavior;

@@ -8,7 +8,7 @@
 
 ENTITY Mix_Columns IS
 PORT(
-      input_matrix_to_mix          :   IN   STATE_array;
+      input_matrix_to_mix    :   IN   STATE_array;
       matrix_after_mixing    :   OUT  STATE_array
     );
 END Mix_Columns;

@@ -3,7 +3,7 @@
     <hash md5_digest_80b="00000000000000000000"/>
   </project>
   <file_info>
-    <file checksum="0x00606341" device="EP2C70F896C6" path="AES_Penar_Skibiak.sof" usercode="0xFFFFFFFF"/>
-    <file checksum="0x1880360B" device="EPCS16" path="AES_Penar_Skibiak.pof" usercode="0x00000000"/>
+    <file checksum="0x0061805B" device="EP2C70F896C6" path="AES_Penar_Skibiak.sof" usercode="0xFFFFFFFF"/>
+    <file checksum="0x187F495C" device="EPCS16" path="AES_Penar_Skibiak.pof" usercode="0x00000000"/>
   </file_info>
 </sld_project_info>

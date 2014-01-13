@@ -1,6 +1,6 @@
 Analysis & Synthesis report for AES_Penar_Skibiak
-Mon Jan 13 16:52:12 2014
-Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+Mon Jan 13 20:31:02 2014
+Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
 ---------------------
@@ -19,9 +19,8 @@ Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
  11. General Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
  13. Port Connectivity Checks: "Round:FirstRound"
- 14. Port Connectivity Checks: "LCD_controller:dut"
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +46,16 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jan 13 16:52:12 2014    ;
-; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
+; Analysis & Synthesis Status        ; Successful - Mon Jan 13 20:31:02 2014    ;
+; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
 ; Revision Name                      ; AES_Penar_Skibiak                        ;
 ; Top-level Entity Name              ; Main                                     ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 0                                        ;
-;     Total combinational functions  ; 0                                        ;
-;     Dedicated logic registers      ; 0                                        ;
-; Total registers                    ; 0                                        ;
-; Total pins                         ; 13                                       ;
+; Total logic elements               ; 113                                      ;
+;     Total combinational functions  ; 105                                      ;
+;     Dedicated logic registers      ; 66                                       ;
+; Total registers                    ; 66                                       ;
+; Total pins                         ; 32                                       ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 0                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                        ;
@@ -197,108 +196,222 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
+; Estimated Total logic elements              ; 113   ;
 ;                                             ;       ;
-; Total combinational functions               ; 0     ;
+; Total combinational functions               ; 105   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
+;     -- 4 input functions                    ; 31    ;
+;     -- 3 input functions                    ; 27    ;
+;     -- <=2 input functions                  ; 47    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
+;     -- normal mode                          ; 73    ;
+;     -- arithmetic mode                      ; 32    ;
 ;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
+; Total registers                             ; 66    ;
+;     -- Dedicated logic registers            ; 66    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 13    ;
+; I/O pins                                    ; 32    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out                             ; 66    ;
+; Total fan-out                               ; 492   ;
+; Average fan-out                             ; 2.42  ;
 +---------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |Main                      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |Main               ;              ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
+; |Main                      ; 105 (0)           ; 66 (0)       ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |Main                    ;              ;
+;    |LCD_controller:dut|    ; 105 (105)         ; 66 (66)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|LCD_controller:dut ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Main|LCD_controller:dut|current_state                                                                                                                                                                                ;
-+--------------------+--------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
-; Name               ; current_state.IDLE ; current_state.S9 ; current_state.S8 ; current_state.S7 ; current_state.S6 ; current_state.S5 ; current_state.S4 ; current_state.S3 ; current_state.S2 ; current_state.S1 ; current_state.S0 ;
-+--------------------+--------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
-; current_state.S0   ; 0                  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ;
-; current_state.S1   ; 0                  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 1                ;
-; current_state.S2   ; 0                  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 1                ;
-; current_state.S3   ; 0                  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 1                ;
-; current_state.S4   ; 0                  ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 1                ;
-; current_state.S5   ; 0                  ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 1                ;
-; current_state.S6   ; 0                  ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
-; current_state.S7   ; 0                  ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
-; current_state.S8   ; 0                  ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
-; current_state.S9   ; 0                  ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
-; current_state.IDLE ; 1                  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
-+--------------------+--------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Main|LCD_controller:dut|current_state                                                                                                                                                                                                                        ;
++--------------------+--------------------+-------------------+-------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
+; Name               ; current_state.IDLE ; current_state.S11 ; current_state.S10 ; current_state.S9 ; current_state.S8 ; current_state.S7 ; current_state.S6 ; current_state.S5 ; current_state.S4 ; current_state.S3 ; current_state.S2 ; current_state.S1 ; current_state.S0 ;
++--------------------+--------------------+-------------------+-------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
+; current_state.S0   ; 0                  ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ;
+; current_state.S1   ; 0                  ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 1                ;
+; current_state.S2   ; 0                  ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 1                ;
+; current_state.S3   ; 0                  ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 1                ;
+; current_state.S4   ; 0                  ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 1                ;
+; current_state.S5   ; 0                  ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; current_state.S6   ; 0                  ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; current_state.S7   ; 0                  ; 0                 ; 0                 ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; current_state.S8   ; 0                  ; 0                 ; 0                 ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; current_state.S9   ; 0                  ; 0                 ; 0                 ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; current_state.S10  ; 0                  ; 0                 ; 1                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; current_state.S11  ; 0                  ; 1                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; current_state.IDLE ; 1                  ; 0                 ; 0                 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
++--------------------+--------------------+-------------------+-------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                   ;
-+----------------------------------------+---------------------------------------------+
-; Register name                          ; Reason for Removal                          ;
-+----------------------------------------+---------------------------------------------+
-; LCD_controller:dut|LCD_RW              ; Stuck at GND due to stuck port data_in      ;
-; LCD_controller:dut|LCD_ON              ; Stuck at VCC due to stuck port data_in      ;
-; LCD_controller:dut|LCD_DATA[4..7]      ; Stuck at GND due to stuck port data_in      ;
-; LCD_controller:dut|LCD_DATA[2,3]       ; Merged with LCD_controller:dut|LCD_DATA[1]  ;
-; LCD_controller:dut|l1                  ; Stuck at GND due to stuck port clock_enable ;
-; LCD_controller:dut|cnt[0..27]          ; Stuck at GND due to stuck port clock_enable ;
-; LCD_controller:dut|l1b                 ; Lost fanout                                 ;
-; LCD_controller:dut|current_state.S1    ; Stuck at GND due to stuck port clock_enable ;
-; LCD_controller:dut|current_state.S3    ; Stuck at GND due to stuck port clock_enable ;
-; LCD_controller:dut|LCD_RS              ; Stuck at GND due to stuck port clock_enable ;
-; LCD_controller:dut|LCD_ENABLE          ; Stuck at GND due to stuck port clock_enable ;
-; LCD_controller:dut|current_state.S0    ; Lost fanout                                 ;
-; LCD_controller:dut|current_state.S9    ; Lost fanout                                 ;
-; LCD_controller:dut|current_state.S2    ; Lost fanout                                 ;
-; LCD_controller:dut|LCD_DATA[0,1]       ; Stuck at GND due to stuck port clock_enable ;
-; LCD_controller:dut|current_state.S6    ; Stuck at GND due to stuck port clock_enable ;
-; LCD_controller:dut|current_state.S5    ; Lost fanout                                 ;
-; LCD_controller:dut|current_state.S4    ; Lost fanout                                 ;
-; LCD_controller:dut|current_state.S7    ; Stuck at GND due to stuck port clock_enable ;
-; LCD_controller:dut|current_state.S8    ; Lost fanout                                 ;
-; LCD_controller:dut|table_index[0..5]   ; Stuck at GND due to stuck port clock_enable ;
-; LCD_controller:dut|current_state.IDLE  ; Lost fanout                                 ;
-; Total Number of Removed Registers = 59 ;                                             ;
-+----------------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; CHAR_table[15][7]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[15][6]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[15][5]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[15][4]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[15][3]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[15][2]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[15][1]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[15][0]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[14][7]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[14][6]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[14][5]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[14][4]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[14][3]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[14][2]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[14][1]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[14][0]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[13][7]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[13][6]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[13][5]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[13][4]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[13][3]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[13][2]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[13][1]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[13][0]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[12][7]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[12][6]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[12][5]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[12][4]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[12][3]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[12][2]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[12][1]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[12][0]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[11][7]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[11][6]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[11][5]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[11][4]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[11][3]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[11][2]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[11][1]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[11][0]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[10][7]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[10][6]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[10][5]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[10][4]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[10][3]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[10][2]                       ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[10][1]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[10][0]                       ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[9][7]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[9][6]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[9][5]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[9][4]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[9][3]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[9][2]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[9][1]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[9][0]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[8][7]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[8][6]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[8][5]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[8][4]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[8][3]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[8][2]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[8][1]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[8][0]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[7][7]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[7][6]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[7][5]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[7][4]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[7][3]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[7][2]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[7][1]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[7][0]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[6][7]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[6][6]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[6][5]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[6][4]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[6][3]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[6][2]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[6][1]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[6][0]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[5][7]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[5][6]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[5][5]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[5][4]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[5][3]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[5][2]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[5][1]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[5][0]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[4][7]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[4][6]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[4][5]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[4][4]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[4][3]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[4][2]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[4][1]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[4][0]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[3][7]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[3][6]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[3][5]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[3][4]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[3][3]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[3][2]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[3][1]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[3][0]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[2][7]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[2][6]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[2][5]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[2][4]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[2][3]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[2][2]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[2][1]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[2][0]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[1][7]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[1][6]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[1][5]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[1][4]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[1][3]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[1][2]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[1][1]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[1][0]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[0][7]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[0][6]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[0][5]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[0][4]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[0][3]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[0][2]                        ; Stuck at VCC due to stuck port data_in ;
+; CHAR_table[0][1]                        ; Stuck at GND due to stuck port data_in ;
+; CHAR_table[0][0]                        ; Stuck at VCC due to stuck port data_in ;
+; reset_signal                            ; Stuck at VCC due to stuck port data_in ;
+; LCD_controller:dut|LCD_RW               ; Stuck at GND due to stuck port data_in ;
+; LCD_controller:dut|LCD_ON               ; Stuck at VCC due to stuck port data_in ;
+; LCD_controller:dut|LED[0]               ; Stuck at VCC due to stuck port data_in ;
+; LCD_controller:dut|LED[12..16]          ; Stuck at GND due to stuck port data_in ;
+; LCD_controller:dut|LCD_DATA[7]          ; Stuck at GND due to stuck port data_in ;
+; LCD_controller:dut|current_state.S1     ; Stuck at GND due to stuck port data_in ;
+; LCD_controller:dut|LED[1]               ; Stuck at GND due to stuck port data_in ;
+; LCD_controller:dut|current_state.S2     ; Stuck at GND due to stuck port data_in ;
+; LCD_controller:dut|LED[2]               ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 142 ;                                        ;
++-----------------------------------------+----------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                      ;
-+---------------------------+--------------------------------+-------------------------------------------------------------------------------------+
-; Register name             ; Reason for Removal             ; Registers Removed due to This Register                                              ;
-+---------------------------+--------------------------------+-------------------------------------------------------------------------------------+
-; LCD_controller:dut|cnt[1] ; Stuck at GND                   ; LCD_controller:dut|cnt[5], LCD_controller:dut|cnt[7], LCD_controller:dut|cnt[8],    ;
-;                           ; due to stuck port clock_enable ; LCD_controller:dut|cnt[10], LCD_controller:dut|cnt[13], LCD_controller:dut|cnt[18], ;
-;                           ;                                ; LCD_controller:dut|cnt[21], LCD_controller:dut|current_state.S1,                    ;
-;                           ;                                ; LCD_controller:dut|current_state.S3, LCD_controller:dut|LCD_RS,                     ;
-;                           ;                                ; LCD_controller:dut|LCD_ENABLE, LCD_controller:dut|current_state.S0,                 ;
-;                           ;                                ; LCD_controller:dut|current_state.S9, LCD_controller:dut|current_state.S2,           ;
-;                           ;                                ; LCD_controller:dut|LCD_DATA[0], LCD_controller:dut|LCD_DATA[1],                     ;
-;                           ;                                ; LCD_controller:dut|current_state.S6, LCD_controller:dut|current_state.S5,           ;
-;                           ;                                ; LCD_controller:dut|current_state.S4, LCD_controller:dut|current_state.S7,           ;
-;                           ;                                ; LCD_controller:dut|current_state.S8, LCD_controller:dut|table_index[5],             ;
-;                           ;                                ; LCD_controller:dut|table_index[4], LCD_controller:dut|table_index[3],               ;
-;                           ;                                ; LCD_controller:dut|table_index[2], LCD_controller:dut|table_index[1],               ;
-;                           ;                                ; LCD_controller:dut|table_index[0], LCD_controller:dut|current_state.IDLE            ;
-; LCD_controller:dut|LCD_RW ; Stuck at GND                   ; LCD_controller:dut|l1b                                                              ;
-;                           ; due to stuck port data_in      ;                                                                                     ;
-+---------------------------+--------------------------------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                         ;
++-------------------+---------------------------+-------------------------------------------------------------------------------------+
+; Register name     ; Reason for Removal        ; Registers Removed due to This Register                                              ;
++-------------------+---------------------------+-------------------------------------------------------------------------------------+
+; reset_signal      ; Stuck at VCC              ; LCD_controller:dut|LCD_RW, LCD_controller:dut|LCD_ON, LCD_controller:dut|LED[0],    ;
+;                   ; due to stuck port data_in ; LCD_controller:dut|LED[12], LCD_controller:dut|LED[13], LCD_controller:dut|LED[14], ;
+;                   ;                           ; LCD_controller:dut|LED[15], LCD_controller:dut|LED[16], LCD_controller:dut|LED[1],  ;
+;                   ;                           ; LCD_controller:dut|LED[2]                                                           ;
+; CHAR_table[15][7] ; Stuck at GND              ; LCD_controller:dut|LCD_DATA[7]                                                      ;
+;                   ; due to stuck port data_in ;                                                                                     ;
++-------------------+---------------------------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -306,24 +419,24 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 66    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 5     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 36    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Main|LCD_controller:dut|LCD_DATA[0]      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Main|LCD_controller:dut|current_state.S1 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |Main|LCD_controller:dut|LCD_DATA[1] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Main|LCD_controller:dut|LCD_DATA[4] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -332,6 +445,10 @@ Encoding Type:  One-Hot
 ; Port                ; Type   ; Severity ; Details                                                                             ;
 +---------------------+--------+----------+-------------------------------------------------------------------------------------+
 ; data_in[0]          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_in[1][7..5]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_in[1][3..1]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_in[1][4]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; data_in[1][0]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; data_in[2][7..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; data_in[2][4..2]    ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; data_in[2][5]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
@@ -400,6 +517,10 @@ Encoding Type:  One-Hot
 ; data_in[14][0]      ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; data_in[15]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; round_key[0]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; round_key[1][7..5]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; round_key[1][3..1]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; round_key[1][4]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; round_key[1][0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; round_key[2][7..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; round_key[2][4..2]  ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; round_key[2][5]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
@@ -471,16 +592,6 @@ Encoding Type:  One-Hot
 +---------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "LCD_controller:dut"                                                                       ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; reset      ; Bidir  ; Warning  ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; is_working ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -494,9 +605,9 @@ Encoding Type:  One-Hot
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Mon Jan 13 16:52:02 2014
+    Info: Processing started: Mon Jan 13 20:30:50 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AES_Penar_Skibiak -c AES_Penar_Skibiak
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file main.vhd
@@ -554,43 +665,40 @@ Info (12021): Found 2 design units, including 1 entities, in source file round.v
     Info (12022): Found design unit 1: Round-behavior
     Info (12023): Found entity 1: Round
 Info (12127): Elaborating entity "Main" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at Main.vhd(28): used implicit default value for signal "char_table" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at Main.vhd(30): object "is_working" assigned a value but never read
-Warning (10540): VHDL Signal Declaration warning at Main.vhd(65): used explicit default value for signal "initialKey" because signal was never assigned a value
-Warning (10036): Verilog HDL or VHDL warning at Main.vhd(81): object "NEXT_STATE" assigned a value but never read
+Warning (10540): VHDL Signal Declaration warning at Main.vhd(79): used explicit default value for signal "STATE" because signal was never assigned a value
+Warning (10036): Verilog HDL or VHDL warning at Main.vhd(83): object "NEXT_STATE" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Main.vhd(111): object "round_count" assigned a value but never read
+Warning (10037): Verilog HDL or VHDL warning at Main.vhd(115): conditional expression evaluates to a constant
 Info (12128): Elaborating entity "LCD_controller" for hierarchy "LCD_controller:dut"
 Info (12128): Elaborating entity "Round" for hierarchy "Round:FirstRound"
 Info (12128): Elaborating entity "AddRoundKey" for hierarchy "Round:FirstRound|AddRoundKey:AddRoundKey_S"
 Info (12128): Elaborating entity "SubBytes" for hierarchy "Round:FirstRound|SubBytes:SubBytes_S"
 Info (12128): Elaborating entity "Shift_Rows" for hierarchy "Round:FirstRound|Shift_Rows:Shift_Rows_S"
 Info (12128): Elaborating entity "Mix_Columns" for hierarchy "Round:FirstRound|Mix_Columns:Mix_Columns_S"
-Warning (12161): Node "LCD_controller:dut|RESET" is stuck at GND because node is in wire loop and does not have a source
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "lcd_rw" is stuck at GND
-    Warning (13410): Pin "lcd_rs" is stuck at GND
-    Warning (13410): Pin "lcd_enable" is stuck at GND
-    Warning (13410): Pin "lcd_on" is stuck at VCC
-    Warning (13410): Pin "lcd_data[0]" is stuck at GND
-    Warning (13410): Pin "lcd_data[1]" is stuck at GND
-    Warning (13410): Pin "lcd_data[2]" is stuck at GND
-    Warning (13410): Pin "lcd_data[3]" is stuck at GND
-    Warning (13410): Pin "lcd_data[4]" is stuck at GND
-    Warning (13410): Pin "lcd_data[5]" is stuck at GND
-    Warning (13410): Pin "lcd_data[6]" is stuck at GND
-    Warning (13410): Pin "lcd_data[7]" is stuck at GND
-Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+    Warning (13410): Pin "LED[0]" is stuck at VCC
+    Warning (13410): Pin "LED[1]" is stuck at GND
+    Warning (13410): Pin "LED[2]" is stuck at GND
+    Warning (13410): Pin "LED[12]" is stuck at GND
+    Warning (13410): Pin "LED[13]" is stuck at GND
+    Warning (13410): Pin "LED[14]" is stuck at GND
+    Warning (13410): Pin "LED[15]" is stuck at GND
+    Warning (13410): Pin "LED[16]" is stuck at GND
+    Warning (13410): Pin "LCD_RW" is stuck at GND
+    Warning (13410): Pin "LCD_ON" is stuck at VCC
+    Warning (13410): Pin "LCD_DATA[7]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLK"
-Info (21057): Implemented 13 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 12 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 501 megabytes
-    Info: Processing ended: Mon Jan 13 16:52:12 2014
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:09
+    Warning (15610): No output dependent on input pin "KEY"
+Info (21057): Implemented 150 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 30 output pins
+    Info (21061): Implemented 118 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 376 megabytes
+    Info: Processing ended: Mon Jan 13 20:31:02 2014
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:11
 
 

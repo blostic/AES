@@ -38,10 +38,11 @@ function S_Box_fun(  entry_element: in std_logic_vector(7 downto 0)  ) return st
 	);
 		
 variable position : integer;
-variable my_line : line;  -- type 'line' comes from textio
+    variable s : line;
 begin
-   write(my_line, string'("Hello World"));   -- formatting
-	writeline(output, my_line);               -- write to "output"
+       write(s,"Counter overflow - ");
+        write(s,position);
+        writeline(output,s);
 	position := to_integer(unsigned(entry_element));
 	return (S_Box(position/16,position mod 16));
 end S_Box_fun;
