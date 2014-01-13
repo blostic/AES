@@ -8,6 +8,7 @@ USE work.ALL;
 USE work.mypackage.ALL;
 
 USE KeySchedulerFunction.ALL;
+USE S_Box.ALL;
 
 ENTITY Main IS
   PORT(
@@ -35,8 +36,8 @@ ARCHITECTURE behavior OF Main IS
 
   COMPONENT Mix_Columns
   PORT(
-		 mixcolumn_vector_in     :   IN  std_logic_vector(127 downto 0);
-		 mixcolumn_vector_out    :   OUT std_logic_vector(127 downto 0)
+			input_matrix           :   IN  STATE_array;
+			matrix_after_mixing    :   OUT  STATE_array
 		 );
 	END COMPONENT;
 	
@@ -60,8 +61,8 @@ ARCHITECTURE behavior OF Main IS
   
   signal STATE : STATE_array;
 	
-  SIGNAL shiftrow  : std_logic_vector(127 downto 0);
-  SIGNAL mixcolumn   : std_logic_vector(127 downto 0);
+  SIGNAL shiftrow    : STATE_array;
+  SIGNAL mixcolumn   : STATE_array;
   
   BEGIN
 
@@ -79,9 +80,9 @@ ARCHITECTURE behavior OF Main IS
      );
 	  
 	  mixcolumn_s: Mix_Columns
-		PORT MAP(   
-			mixcolumn_vector_in  => shiftrow,
-			mixcolumn_vector_out => mixcolumn
+		PORT MAP(
+		      input_matrix 			 => shiftrow,
+				matrix_after_mixing   => mixcolumn
 		);
 	
 	RoundKeyAdder: AddRoundKey
