@@ -9,8 +9,8 @@ USE work.mypackage.ALL;
 	--Define The Core Entity
 ENTITY LCD_controller IS
 PORT(   
-		CLK		: IN STD_LOGIC;
-		KEY 		: IN STD_LOGIC;
+		CLK			: IN STD_LOGIC;
+		KEY 			: IN STD_LOGIC;
 		LED         : OUT STD_LOGIC_VECTOR(17 DOWNTO 0);			
 		--LCD Control Signals
 		LCD_ENABLE 	: OUT STD_LOGIC;
@@ -48,7 +48,7 @@ PROCESS
 	VARIABLE cnt: INTEGER RANGE 0 TO 150_000_000;
 	VARIABLE table_index: INTEGER RANGE 0 TO 32;
 	VARIABLE tmp : INTEGER RANGE 0 TO 1;
-
+	VARIABLE CHAR_VALUE : STD_LOGIC_VECTOR(3 downto 0);
 BEGIN
 
 
@@ -192,8 +192,8 @@ IF(l1 /= l1b)THEN
 				
 			 when S10 =>
 				IF (table_index < 32) THEN
-					table_index := table_index + 1;
-					current_state <= S9;
+					current_state <= S9;					
+					table_index  := table_index + 1;
 					LED(10) <= '1';
 					LED(9) <= '0';
 				else
@@ -201,8 +201,32 @@ IF(l1 /= l1b)THEN
 					LED(10) <= '1';
 				end if;
 				
-				--LED(13) <= '1';
-				LCD_DATA		<= char_table(table_index);
+				IF (table_index mod 2 = 0 ) THEN
+					CHAR_VALUE := char_table(table_index / 2)(7 downto 4);
+				ELSE
+					CHAR_VALUE := char_table(table_index / 2)(3 downto 0);
+				END IF;
+	
+				CASE CHAR_VALUE iS
+					 WHEN "0000" => LCD_DATA <= x"30";
+					 WHEN "0001" => LCD_DATA <= x"31";
+					 WHEN "0010" => LCD_DATA <= x"32";
+					 WHEN "0011" => LCD_DATA <= x"33";
+					 WHEN "0100" => LCD_DATA <= x"34";	
+					 WHEN "0101" => LCD_DATA <= x"35";
+					 WHEN "0110" => LCD_DATA <= x"36";
+					 WHEN "0111" => LCD_DATA <= x"37";
+					 WHEN "1000" => LCD_DATA <= x"38";
+					 WHEN "1001" => LCD_DATA <= x"39";
+					 WHEN "1010" => LCD_DATA <= x"41";
+					 WHEN "1011" => LCD_DATA <= x"42";
+					 WHEN "1100" => LCD_DATA <= x"43";
+					 WHEN "1101" => LCD_DATA <= x"44"; 
+					 WHEN "1110" => LCD_DATA <= x"45";
+					 WHEN "1111" => LCD_DATA <= x"46";
+				END CASE;
+		
+			 --LED(13) <= '1';
 				LCD_ENABLE	<= '0';
 				LCD_RW 		<= '0';
 				LCD_RS		<= '1';		

@@ -121,8 +121,22 @@ BEGIN
 					WHEN OTHERS =>  round_count := 0;
 				END CASE;
 
-			char_table <= (0 => x"4D",1 =>  x"49",2 =>  x"4B",3 =>  x"52",4 =>  x"4F",5 =>  x"50",6 =>  x"52",7 =>  x"4F",8 => x"43",
-				9 =>  x"45",10 =>  x"53",11 =>  x"4F",12 =>  x"52",13 =>  x"59",14 =>  x"21",15 =>  x"21");
+			char_table <= (0  => STATE(0),
+								1  => STATE(1),
+								2  => STATE(2),
+								3  => STATE(3),
+								4  => STATE(4),
+								5  => STATE(5),
+								6  => STATE(6),
+								7  => STATE(7),
+								8  => STATE(8),
+								9  => STATE(9),
+								10 => STATE(10),
+								11 => STATE(11),
+								12 => STATE(12),
+								13 => STATE(13),
+								14 => STATE(14),
+								15 => STATE(15));
 			
 			 reset_signal <= '1';
 			 
