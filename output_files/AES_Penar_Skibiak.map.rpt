@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AES_Penar_Skibiak
-Mon Jan 13 20:31:02 2014
+Mon Jan 13 20:49:42 2014
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
@@ -46,7 +46,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jan 13 20:31:02 2014    ;
+; Analysis & Synthesis Status        ; Successful - Mon Jan 13 20:49:42 2014    ;
 ; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
 ; Revision Name                      ; AES_Penar_Skibiak                        ;
 ; Top-level Entity Name              ; Main                                     ;
@@ -607,7 +607,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Mon Jan 13 20:30:50 2014
+    Info: Processing started: Mon Jan 13 20:49:29 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AES_Penar_Skibiak -c AES_Penar_Skibiak
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file main.vhd
@@ -665,10 +665,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file round.v
     Info (12022): Found design unit 1: Round-behavior
     Info (12023): Found entity 1: Round
 Info (12127): Elaborating entity "Main" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at Main.vhd(79): used explicit default value for signal "STATE" because signal was never assigned a value
-Warning (10036): Verilog HDL or VHDL warning at Main.vhd(83): object "NEXT_STATE" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Main.vhd(111): object "round_count" assigned a value but never read
-Warning (10037): Verilog HDL or VHDL warning at Main.vhd(115): conditional expression evaluates to a constant
+Warning (10540): VHDL Signal Declaration warning at Main.vhd(80): used explicit default value for signal "STATE" because signal was never assigned a value
+Warning (10036): Verilog HDL or VHDL warning at Main.vhd(84): object "NEXT_STATE" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at Main.vhd(85): used implicit default value for signal "RUN" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at Main.vhd(113): object "round_count" assigned a value but never read
+Warning (10037): Verilog HDL or VHDL warning at Main.vhd(117): conditional expression evaluates to a constant
 Info (12128): Elaborating entity "LCD_controller" for hierarchy "LCD_controller:dut"
 Info (12128): Elaborating entity "Round" for hierarchy "Round:FirstRound"
 Info (12128): Elaborating entity "AddRoundKey" for hierarchy "Round:FirstRound|AddRoundKey:AddRoundKey_S"
@@ -695,10 +696,10 @@ Info (21057): Implemented 150 device resources after synthesis - the final resou
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 30 output pins
     Info (21061): Implemented 118 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 376 megabytes
-    Info: Processing ended: Mon Jan 13 20:31:02 2014
-    Info: Elapsed time: 00:00:12
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 378 megabytes
+    Info: Processing ended: Mon Jan 13 20:49:42 2014
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:11
 
 

@@ -9,7 +9,8 @@ ENTITY Round IS
 PORT(
 		 data_in         :	IN  STATE_array;
 		 round_key	     :	IN  STATE_array;
-		 data_out        :	OUT STATE_array
+		 data_out        :	OUT STATE_array;
+		 run 				  :   in  std_logic
     );
 END Round;
 

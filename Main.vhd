@@ -33,7 +33,8 @@ ARCHITECTURE behavior of Main IS
 	PORT(
 		 data_in         :	IN  STATE_array;
 		 round_key	     :	IN  STATE_array;
-		 data_out        :	OUT STATE_array
+		 data_out        :	OUT STATE_array;
+		 run 				  :   IN  std_LOGIC
 		 );
 	END COMPONENT; 
   
@@ -81,7 +82,7 @@ ARCHITECTURE behavior of Main IS
 											   X"88", X"99", X"aa", X"bb",
 											   X"cc", X"dd", X"ee", X"ff" );
   signal NEXT_STATE : STATE_array;											
-
+  signal RUN 		  : std_LOGIC;
 BEGIN
 
 	dut: LCD_controller
@@ -101,6 +102,7 @@ BEGIN
 
   FirstRound: Round	
 	PORT MAP(
+		run      	    =>   RUN,
 		data_in         =>	STATE,
 		round_key	    =>	STATE,
 		data_out        =>	NEXT_STATE
