@@ -398,7 +398,8 @@ int main(int argc, char** argv){
     SubBytes();
     ShiftRows();
     MixColumns();
-    AddRoundKey();   
+   print(state);
+   AddRoundKey();   
   }
   SubBytes();
   ShiftRows()
