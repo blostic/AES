@@ -51,6 +51,7 @@ ARCHITECTURE behavior OF Round IS
 	SIGNAL mixcolumn : STATE_array;
 
 BEGIN
+
 		AddRoundKey_S:  AddRoundKey 
 		PORT MAP(
 				 round_state_to_xor     =>   data_in,

@@ -401,7 +401,7 @@ int main(int argc, char** argv){
     AddRoundKey();   
   }
   SubBytes();
-  ShiftRows();
+  ShiftRows()
   AddRoundKey();
 
   print(state); /*encrypted*/

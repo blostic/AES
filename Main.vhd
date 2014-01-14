@@ -69,13 +69,13 @@ ARCHITECTURE behavior of Main IS
 																 X"04", X"05", X"06", X"07", 
 																 X"08", X"09", X"0a", X"0b", 
 																 X"0c", X"0d", X"0e", X"0f", 
-																 X"10", X"11", X"12", X"13", 
-																 X"14", X"15", X"16", X"17",
+																 X"00", X"00", X"00", X"00", 
+																 X"00", X"00", X"00", X"00",
 																 X"00", X"00", X"00", X"00", 
 																 X"00", X"00", X"00", X"00" ); 
 										 
   
-  constant keyType : std_LOGIC_VECTOR(1 downto 0) := "01"; 
+  constant keyType : std_LOGIC_VECTOR(1 downto 0) := "00"; 
   
   signal STATE  : STATE_array :=  ( X"00", X"11", X"22", X"33",
 												X"44", X"55", X"66", X"77",
@@ -83,8 +83,8 @@ ARCHITECTURE behavior of Main IS
 											   X"cc", X"dd", X"ee", X"ff" );
   signal NEXT_STATE : STATE_array;											
   signal RUN 		  : std_LOGIC;
+  
 BEGIN
-
 	dut: LCD_controller
     PORT MAP( 
 	 	CLK		   => CLK,
@@ -120,24 +120,26 @@ BEGIN
 					WHEN  "10"  =>  round_count := 14; 
 					WHEN OTHERS =>  round_count := 0;
 				END CASE;
-
-			char_table <= (0  => STATE(0),
-								1  => STATE(1),
-								2  => STATE(2),
-								3  => STATE(3),
-								4  => STATE(4),
-								5  => STATE(5),
-								6  => STATE(6),
-								7  => STATE(7),
-								8  => STATE(8),
-								9  => STATE(9),
-								10 => STATE(10),
-								11 => STATE(11),
-								12 => STATE(12),
-								13 => STATE(13),
-								14 => STATE(14),
-								15 => STATE(15));
+		
+			GeneratedKey <= KeyScheduler(initialKey,keyType);
 			
+			char_table <= (0  => GeneratedKey(128),
+								1  => GeneratedKey(129),
+								2  => GeneratedKey(130),
+								3  => GeneratedKey(131),
+								4  => GeneratedKey(132),
+								5  => GeneratedKey(133),
+								6  => GeneratedKey(134),
+								7  => GeneratedKey(135),
+								8  => GeneratedKey(136),
+								9  => GeneratedKey(137),
+								10 => GeneratedKey(138),
+								11 => GeneratedKey(139),
+								12 => GeneratedKey(140),
+								13 => GeneratedKey(141),
+								14 => GeneratedKey(142),
+								15 => GeneratedKey(143));
+								
 			 reset_signal <= '1';
 			 
 	END PROCESS;

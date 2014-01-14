@@ -184,7 +184,30 @@ IF(l1 /= l1b)THEN
 				LED(9) <= '1';
 				LED(10) <= '0';
 				
-				LCD_DATA		<= char_table(table_index);
+				IF (table_index mod 2 = 0 ) THEN
+					CHAR_VALUE := char_table(table_index / 2)(7 downto 4);
+				ELSE
+					CHAR_VALUE := char_table(table_index / 2)(3 downto 0);
+				END IF;
+	
+				CASE CHAR_VALUE iS
+					 WHEN "0000" => LCD_DATA <= x"30";
+					 WHEN "0001" => LCD_DATA <= x"31";
+					 WHEN "0010" => LCD_DATA <= x"32";
+					 WHEN "0011" => LCD_DATA <= x"33";
+					 WHEN "0100" => LCD_DATA <= x"34";	
+					 WHEN "0101" => LCD_DATA <= x"35";
+					 WHEN "0110" => LCD_DATA <= x"36";
+					 WHEN "0111" => LCD_DATA <= x"37";
+					 WHEN "1000" => LCD_DATA <= x"38";
+					 WHEN "1001" => LCD_DATA <= x"39";
+					 WHEN "1010" => LCD_DATA <= x"41";
+					 WHEN "1011" => LCD_DATA <= x"42";
+					 WHEN "1100" => LCD_DATA <= x"43";
+					 WHEN "1101" => LCD_DATA <= x"44"; 
+					 WHEN "1110" => LCD_DATA <= x"45";
+					 WHEN "1111" => LCD_DATA <= x"46";
+				END CASE;
 				
 				LCD_ENABLE	<= '1';
 				LCD_RW 		<= '0';
