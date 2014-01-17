@@ -9,7 +9,9 @@ use work.mypackage.all;
 ENTITY Shift_Rows IS
   PORT(
         matrix_to_shift     		:    IN  STATE_array;
-        matrix_after_shifting    :    OUT  STATE_array
+        matrix_after_shifting    :    OUT  STATE_array;
+		  shift_rows_on            :    IN STD_LOGIC;
+		  shift_rows_in            :    out std_logic
       );
 END Shift_Rows;
 
@@ -25,6 +27,10 @@ ARCHITECTURE behavior OF Shift_Rows IS
   -----
 
   BEGIN
+	PROCESS
+	BEGIN
+	WAIT UNTIL (SHIft_rows_on = '1');
+		shift_rows_in <= '1';
   
     matrix_after_shifting(0)  <=  matrix_to_shift(0);
     matrix_after_shifting(1)  <=  matrix_to_shift(5);
@@ -46,5 +52,8 @@ ARCHITECTURE behavior OF Shift_Rows IS
     matrix_after_shifting(14) <=  matrix_to_shift(6);
     matrix_after_shifting(15) <=  matrix_to_shift(11);
 
+	 shift_rows_in <= '0';
+	 
+	 end process;
 END behavior;
 

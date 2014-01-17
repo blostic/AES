@@ -22,7 +22,9 @@ PORT(
 		char_table  : in char_array;
 
 		--LCD Data Signals
-		LCD_DATA 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+		LCD_DATA 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+		PRINT_IN    : OUT STD_LOGIC;
+		PRINT_ON    : IN STD_LOGIC
 	);
 	 
 end LCD_controller;
@@ -52,10 +54,10 @@ PROCESS
 BEGIN
 
 
-WAIT UNTIL(CLK'EVENT) AND (CLK = '1') AND (RESET='1');
+WAIT UNTIL(CLK'EVENT) AND (CLK = '1') AND (PRINT_ON='1');
 
 --Count Clock Ticks
-
+	PRINT_IN <= '1';
 	
 	IF(cnt = 2_500_000)THEN		
 		cnt := 0;
@@ -261,6 +263,7 @@ IF(l1 /= l1b)THEN
 				
 			 when IDLE	=>
 			 LED(17) <= '1';
+			 PRINT_IN <= '0';
 			 current_state <= IDLE;
 				
 		    when others =>

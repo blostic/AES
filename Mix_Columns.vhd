@@ -9,7 +9,9 @@
 ENTITY Mix_Columns IS
 PORT(
       input_matrix_to_mix    :   IN   STATE_array;
-      matrix_after_mixing    :   OUT  STATE_array
+      matrix_after_mixing    :   OUT  STATE_array;
+		mix_columns_in          :   out std_logic;
+		mix_columns_on         :   in std_logic
     );
 END Mix_Columns;
 
@@ -17,7 +19,11 @@ ARCHITECTURE behavior OF Mix_Columns IS
     
 
 BEGIN
-
+  PROCESS
+  BEGIN
+  wait until(mix_columns_on = '1');
+  
+  mix_columns_in <= '1';
   --1st row
   matrix_after_mixing(0)  <= G_Mul(input_matrix_to_mix(0),x"02")  XOR G_Mul(input_matrix_to_mix(1),x"03")  XOR input_matrix_to_mix(2)  XOR input_matrix_to_mix(3);
   matrix_after_mixing(4)  <= G_Mul(input_matrix_to_mix(4),x"02")  XOR G_Mul(input_matrix_to_mix(5),x"03")  XOR input_matrix_to_mix(6)  XOR input_matrix_to_mix(7);
@@ -39,4 +45,6 @@ BEGIN
   matrix_after_mixing(11) <= G_Mul(input_matrix_to_mix(8),x"03")  XOR input_matrix_to_mix(9)  XOR input_matrix_to_mix(10) XOR G_Mul(input_matrix_to_mix(11),x"02");
   matrix_after_mixing(15) <= G_Mul(input_matrix_to_mix(12),x"03") XOR input_matrix_to_mix(13) XOR input_matrix_to_mix(14) XOR G_Mul(input_matrix_to_mix(15),x"02");
   
+  mix_columns_in <='0';
+  end process;
 END behavior;  

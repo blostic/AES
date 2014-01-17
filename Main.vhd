@@ -23,7 +23,7 @@ PORT(
 		LCD_ON		: out std_logic;     --jd->  Tego brakowało! 
 		--LCD Data Signals
 		LCD_DATA 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
-	);	
+		);	
 	 
 end Main;
   
@@ -34,7 +34,8 @@ ARCHITECTURE behavior of Main IS
 		 data_in         :	IN  STATE_array;
 		 round_key	     :	IN  STATE_array;
 		 data_out        :	OUT STATE_array;
-		 run 				  :   IN  std_LOGIC
+		 round_on 		  :   IN  std_LOGIC;
+		 round_in        :   out std_LOGIC
 		 );
 	END COMPONENT; 
   
@@ -47,18 +48,22 @@ ARCHITECTURE behavior of Main IS
 		LCD_ENABLE 	: OUT STD_LOGIC;
 		LCD_RW 		: OUT STD_LOGIC;
 		LCD_RS 		: OUT STD_LOGIC;
-		RESET  		: IN STD_LOGIC;
 		LCD_ON		: out std_logic;     --jd->  Tego brakowało! 
 	
 		--LCD Data Signals
 		LCD_DATA 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+		
+		PRINT_IN    : OUT STD_LOGIC;
+		PRINT_ON    : IN STD_LOGIC;
+		
 		char_table  : IN char_array
 		);
   END COMPONENT;
   
   SIGNAL reset_signal : std_LOGIC;
   SIGNAL CHAR_table : char_array;
-
+  SIGNAL PRINT_IN : STD_LOGIC;
+  SIGNAL PRINT_ON : STD_LOGIC;
   
 
 	   -- RESULT_BUFFER is defined in KeySchedulerFunction 
@@ -82,7 +87,8 @@ ARCHITECTURE behavior of Main IS
 											   X"88", X"99", X"aa", X"bb",
 											   X"cc", X"dd", X"ee", X"ff" );
   signal NEXT_STATE : STATE_array;											
-  signal RUN 		  : std_LOGIC;
+  signal ROUND_IN : STD_LOGIC;
+  SIGNAL ROUND_ON : STD_LOGIC;
   
 BEGIN
 	dut: LCD_controller
@@ -94,18 +100,20 @@ BEGIN
 		LCD_ENABLE 	=> LCD_ENABLE,
 		LCD_RW	   => LCD_RW,
 		LCD_RS 		=> LCD_RS,
-		LCD_ON		=> LCD_ON, 
-		RESET 		=> reset_signal,
+		LCD_ON		=> LCD_ON,
 		LCD_DATA    => LCD_DATA,
-		CHAR_table => CHAR_table
+		CHAR_table => CHAR_table,
+		PRINT_IN    => PRINT_IN,
+		PRINT_ON   => PRINT_ON
     );
 
   FirstRound: Round	
 	PORT MAP(
-		run      	    =>   RUN,
 		data_in         =>	STATE,
 		round_key	    =>	STATE,
-		data_out        =>	NEXT_STATE
+		data_out        =>	NEXT_STATE,
+		ROUND_IN        => ROUND_IN,
+		ROUND_ON        => ROUND_ON
 	);
 			  
 	  
@@ -139,8 +147,18 @@ BEGIN
 								13 => GeneratedKey(141),
 								14 => GeneratedKey(142),
 								15 => GeneratedKey(143));
-								
-			 reset_signal <= '1';
+          
+          --chyba jeszcze char_table <= data_out;			 
+          round_on <= '1';
+			 WAIT on ROUND_IN; --aż zacznie
+			 WAIT on ROUND_IN; --aż skończy
+			 round_on <= '0';
+			 
+			 PRINT_ON <= '1';
+			 WAIT on PRINT_IN;
+			 WAIT on PRINT_IN; 
+			 PRINT_ON <= '0';
+			 
 			 
 	END PROCESS;
 END behavior;
