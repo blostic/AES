@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AES_Penar_Skibiak
-Fri Jan 17 09:24:43 2014
+Fri Jan 17 09:37:20 2014
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Jan 17 09:24:43 2014        ;
+; Analysis & Synthesis Status        ; Failed - Fri Jan 17 09:37:20 2014        ;
 ; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
 ; Revision Name                      ; AES_Penar_Skibiak                        ;
 ; Top-level Entity Name              ; Main                                     ;
@@ -155,7 +155,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Fri Jan 17 09:24:42 2014
+    Info: Processing started: Fri Jan 17 09:37:18 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AES_Penar_Skibiak -c AES_Penar_Skibiak
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file main.vhd
@@ -220,12 +220,12 @@ Warning (10036): Verilog HDL or VHDL warning at Main.vhd(89): object "NEXT_STATE
 Warning (10036): Verilog HDL or VHDL warning at Main.vhd(90): object "ROUND_IN" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at Main.vhd(121): object "round_count" assigned a value but never read
 Warning (10037): Verilog HDL or VHDL warning at Main.vhd(125): conditional expression evaluates to a constant
-Error (10533): VHDL Wait Statement error at Main.vhd(153): Wait Statement must contain condition clause with UNTIL keyword File: C:/Users/Kasia/Documents/GitHub/AES/Main.vhd Line: 153
+Error (10533): VHDL Wait Statement error at Main.vhd(158): Wait Statement must contain condition clause with UNTIL keyword File: C:/Users/Kasia/Documents/GitHub/AES/Main.vhd Line: 158
 Error (12153): Can't elaborate top-level user hierarchy
 Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 2 errors, 8 warnings
     Error: Peak virtual memory: 359 megabytes
-    Error: Processing ended: Fri Jan 17 09:24:43 2014
-    Error: Elapsed time: 00:00:01
+    Error: Processing ended: Fri Jan 17 09:37:20 2014
+    Error: Elapsed time: 00:00:02
     Error: Total CPU time (on all processors): 00:00:02
 
 

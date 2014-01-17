@@ -150,7 +150,7 @@ BEGIN
           
           --chyba jeszcze char_table <= data_out;			 
           round_on <= '1';
-			 WAIT on ROUND_IN; --aż zacznie
+			 WAIT on ROUND_IN; --aż zacznie -- TO NIE JEST BŁĄD TYLKO TRZEBA COŚ ZMIENIĆ W qUARTUSIE 
 			 WAIT on ROUND_IN; --aż skończy
 			 round_on <= '0';
 			 
