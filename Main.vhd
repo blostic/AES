@@ -84,6 +84,8 @@ ARCHITECTURE behavior of Main IS
   signal NEXT_STATE : STATE_array;											
   signal RUN 		  : std_LOGIC;
   
+  SIGNAL round_key_s : STATE_array;
+	
 BEGIN
 	dut: LCD_controller
     PORT MAP( 
@@ -99,16 +101,16 @@ BEGIN
 		LCD_DATA    => LCD_DATA,
 		CHAR_table => CHAR_table
     );
-
-  FirstRound: Round	
+	
+   FirstRound: Round	
 	PORT MAP(
 		run      	    =>   RUN,
 		data_in         =>	STATE,
-		round_key	    =>	STATE,
+		round_key	    =>	round_key_s,
 		data_out        =>	NEXT_STATE
 	);
-			  
-	  
+
+
 	PROCESS
 			VARIABLE round_count : INTEGER RANGE 10 to 14 := 10;
 		BEGIN
@@ -120,7 +122,7 @@ BEGIN
 					WHEN  "10"  =>  round_count := 14; 
 					WHEN OTHERS =>  round_count := 0;
 				END CASE;
-		
+				
 			GeneratedKey <= KeyScheduler(initialKey,keyType);
 			
 			char_table <= (0  => GeneratedKey(128),
