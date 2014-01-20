@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 32-bit"
 -- VERSION "Version 12.1 Build 177 11/07/2012 SJ Web Edition"
 
--- DATE "01/20/2014 02:33:02"
+-- DATE "01/20/2014 12:59:53"
 
 -- 
 -- Device: Altera EP2C70F896C6 Package FBGA896

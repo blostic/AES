@@ -1,5 +1,5 @@
 EDA Netlist Writer report for AES_Penar_Skibiak
-Mon Jan 20 02:33:02 2014
+Mon Jan 20 12:59:53 2014
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Jan 20 02:33:02 2014 ;
+; EDA Netlist Writer Status ; Successful - Mon Jan 20 12:59:53 2014 ;
 ; Revision Name             ; AES_Penar_Skibiak                     ;
 ; Top-level Entity Name     ; Main                                  ;
 ; Family                    ; Cyclone II                            ;
@@ -66,16 +66,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                             ;
-+----------------------------------------------------------------------------------------+
-; Generated Files                                                                        ;
-+----------------------------------------------------------------------------------------+
-; C:/Users/Kasia/Documents/GitHub/AES/simulation/modelsim/AES_Penar_Skibiak.vho          ;
-; C:/Users/Kasia/Documents/GitHub/AES/simulation/modelsim/AES_Penar_Skibiak_fast.vho     ;
-; C:/Users/Kasia/Documents/GitHub/AES/simulation/modelsim/AES_Penar_Skibiak_vhd.sdo      ;
-; C:/Users/Kasia/Documents/GitHub/AES/simulation/modelsim/AES_Penar_Skibiak_vhd_fast.sdo ;
-+----------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                               ;
++------------------------------------------------------------------------------------------+
+; Generated Files                                                                          ;
++------------------------------------------------------------------------------------------+
+; C:/Users/blost/Dropbox/AES_finall/AES/simulation/modelsim/AES_Penar_Skibiak.vho          ;
+; C:/Users/blost/Dropbox/AES_finall/AES/simulation/modelsim/AES_Penar_Skibiak_fast.vho     ;
+; C:/Users/blost/Dropbox/AES_finall/AES/simulation/modelsim/AES_Penar_Skibiak_vhd.sdo      ;
+; C:/Users/blost/Dropbox/AES_finall/AES/simulation/modelsim/AES_Penar_Skibiak_vhd_fast.sdo ;
++------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -84,13 +84,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit EDA Netlist Writer
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Mon Jan 20 02:33:01 2014
+    Info: Processing started: Mon Jan 20 12:59:51 2014
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off AES_Penar_Skibiak -c AES_Penar_Skibiak
-Info (204026): Generated files "AES_Penar_Skibiak.vho", "AES_Penar_Skibiak_fast.vho", "AES_Penar_Skibiak_vhd.sdo" and "AES_Penar_Skibiak_vhd_fast.sdo" in directory "C:/Users/Kasia/Documents/GitHub/AES/simulation/modelsim/" for EDA simulation tool
+Info (204026): Generated files "AES_Penar_Skibiak.vho", "AES_Penar_Skibiak_fast.vho", "AES_Penar_Skibiak_vhd.sdo" and "AES_Penar_Skibiak_vhd_fast.sdo" in directory "C:/Users/blost/Dropbox/AES_finall/AES/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 308 megabytes
-    Info: Processing ended: Mon Jan 20 02:33:02 2014
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 323 megabytes
+    Info: Processing ended: Mon Jan 20 12:59:53 2014
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

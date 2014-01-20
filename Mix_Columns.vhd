@@ -12,14 +12,14 @@ PACKAGE CORE_FUN IS
 	FUNCTION MIX_COLUMNS(input_matrix_to_mix : IN STATE_array)
          RETURN STATE_array;
 
-	FUNCTION SHIFT_ROWS(matrix_to_shift : IN STATE_array)
+	FUNCTION SHIFT_ROWS_F(matrix_to_shift : IN STATE_array)
         RETURN STATE_array;
     
 	FUNCTION ADD_ROUND_KEY(round_state_to_xor : IN STATE_array;
 		round_key: IN  STATE_array)
 		RETURN STATE_array;
 	
-	FUNCTION SUBBYTES(round_state_to_sub_S_box : IN STATE_array)
+	FUNCTION SUBBYTES_F(round_state_to_sub_S_box : IN STATE_array)
 		RETURN STATE_array;
 	
 	FUNCTION ROUND_ENC(data_in : IN STATE_array;
@@ -58,7 +58,7 @@ PACKAGE BODY CORE_FUN IS
 		 RETURN matrix_after_mixing; 
 	END MIX_COLUMNS;
 	
-	FUNCTION SHIFT_ROWS(matrix_to_shift : IN STATE_array)
+	FUNCTION SHIFT_ROWS_F(matrix_to_shift : IN STATE_array)
 		RETURN STATE_array
 		IS
         VARIABLE matrix_after_shifting : STATE_array;
@@ -83,10 +83,11 @@ PACKAGE BODY CORE_FUN IS
 			matrix_after_shifting(14) :=  matrix_to_shift(6);
 			matrix_after_shifting(15) :=  matrix_to_shift(11);
 		RETURN matrix_after_shifting;
-	END SHIFT_ROWS;
+	END SHIFT_ROWS_F;
 	
 	
-	FUNCTION ADD_ROUND_KEY(round_state_to_xor : IN STATE_array;
+	FUNCTION ADD_ROUND_KEY(
+	   round_state_to_xor : IN STATE_array;
 		round_key: IN  STATE_array)
 		RETURN STATE_array
 		IS
@@ -99,7 +100,7 @@ PACKAGE BODY CORE_FUN IS
 		RETURN round_state_xored;
 	END ADD_ROUND_KEY;
 	
-	FUNCTION SUBBYTES(round_state_to_sub_S_box : IN STATE_array)
+	FUNCTION SUBBYTES_F(round_state_to_sub_S_box : IN STATE_array)
 		RETURN STATE_array
 		IS
 		VARIABLE round_state_converted: STATE_array;
@@ -109,7 +110,7 @@ PACKAGE BODY CORE_FUN IS
 			round_state_converted(i)(7 downto 0) := S_Box_fun( round_state_to_sub_S_box(i)(7 downto 0));
 		 END LOOP;
 		 RETURN round_state_converted;
-	END SUBBYTES;
+	END SUBBYTES_F;
 	
 	FUNCTION ROUND_ENC(data_in : IN STATE_array;
 		round_key :	IN STATE_array)
@@ -122,8 +123,8 @@ PACKAGE BODY CORE_FUN IS
 
 		BEGIN
 			xored := ADD_ROUND_KEY(data_in, round_key);
-			bytesub := SUBBYTES(xored);
-			shiftrow := SHIFT_ROWS(bytesub);
+			bytesub := SUBBYTES_F(xored);
+			shiftrow := SHIFT_ROWS_F(bytesub);
 			mixcolumn := MIX_COLUMNS(shiftrow);
 		RETURN mixcolumn;
 	END ROUND_ENC;

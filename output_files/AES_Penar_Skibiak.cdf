@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C70F896) Path("C:/Users/blost/Dropbox/AES_Mikroprocesory_projekt/output_files/") File("AES_Penar_Skibiak.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C70F896) Path("C:/Users/blost/Dropbox/AES_finall/AES/output_files/") File("AES_Penar_Skibiak.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

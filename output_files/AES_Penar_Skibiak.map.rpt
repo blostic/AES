@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AES_Penar_Skibiak
-Mon Jan 20 02:32:30 2014
+Mon Jan 20 12:58:36 2014
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
@@ -44,7 +44,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jan 20 02:32:30 2014    ;
+; Analysis & Synthesis Status        ; Successful - Mon Jan 20 12:58:36 2014    ;
 ; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
 ; Revision Name                      ; AES_Penar_Skibiak                        ;
 ; Top-level Entity Name              ; Main                                     ;
@@ -146,41 +146,47 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 4      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                        ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                 ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
-; Main.vhd                         ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/Main.vhd                 ;         ;
-; AES_decrypt.vhd                  ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/AES_decrypt.vhd          ;         ;
-; AES_encrypt.vhd                  ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/AES_encrypt.vhd          ;         ;
-; AES_core.vhd                     ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/AES_core.vhd             ;         ;
-; Keys.vhd                         ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/Keys.vhd                 ;         ;
-; LCD_controller.vhd               ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/LCD_controller.vhd       ;         ;
-; S_Box.vhd                        ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/S_Box.vhd                ;         ;
-; Inv_S_Box.vhd                    ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/Inv_S_Box.vhd            ;         ;
-; Shift_Rows.vhd                   ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/Shift_Rows.vhd           ;         ;
-; Inverse_Shift_Rows.vhd           ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/Inverse_Shift_Rows.vhd   ;         ;
-; Mix_Columns.vhd                  ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/Mix_Columns.vhd          ;         ;
-; Inverse_Mix_Columns.vhd          ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/Inverse_Mix_Columns.vhd  ;         ;
-; My_Functions_package.vhd         ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/My_Functions_package.vhd ;         ;
-; KeySchedulerFunction.vhd         ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/KeySchedulerFunction.vhd ;         ;
-; AddRoundKey.vhd                  ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/AddRoundKey.vhd          ;         ;
-; mypackage.vhd                    ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/mypackage.vhd            ;         ;
-; SubBytes.vhd                     ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/SubBytes.vhd             ;         ;
-; Round.vhd                        ; yes             ; User VHDL File  ; C:/Users/Kasia/Documents/GitHub/AES/Round.vhd                ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                   ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+; Main.vhd                         ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/Main.vhd                 ;         ;
+; AES_decrypt.vhd                  ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/AES_decrypt.vhd          ;         ;
+; AES_encrypt.vhd                  ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/AES_encrypt.vhd          ;         ;
+; AES_core.vhd                     ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/AES_core.vhd             ;         ;
+; Keys.vhd                         ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/Keys.vhd                 ;         ;
+; LCD_controller.vhd               ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/LCD_controller.vhd       ;         ;
+; S_Box.vhd                        ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/S_Box.vhd                ;         ;
+; Inv_S_Box.vhd                    ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/Inv_S_Box.vhd            ;         ;
+; Shift_Rows.vhd                   ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/Shift_Rows.vhd           ;         ;
+; Inverse_Shift_Rows.vhd           ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/Inverse_Shift_Rows.vhd   ;         ;
+; Mix_Columns.vhd                  ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/Mix_Columns.vhd          ;         ;
+; Inverse_Mix_Columns.vhd          ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/Inverse_Mix_Columns.vhd  ;         ;
+; My_Functions_package.vhd         ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/My_Functions_package.vhd ;         ;
+; KeySchedulerFunction.vhd         ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/KeySchedulerFunction.vhd ;         ;
+; AddRoundKey.vhd                  ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/AddRoundKey.vhd          ;         ;
+; mypackage.vhd                    ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/mypackage.vhd            ;         ;
+; SubBytes.vhd                     ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/SubBytes.vhd             ;         ;
+; Round.vhd                        ; yes             ; User VHDL File  ; C:/Users/blost/Dropbox/AES_finall/AES/Round.vhd                ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -429,7 +435,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -439,9 +445,9 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Mon Jan 20 02:32:26 2014
+    Info: Processing started: Mon Jan 20 12:58:27 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AES_Penar_Skibiak -c AES_Penar_Skibiak
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file main.vhd
     Info (12022): Found design unit 1: Main-behavior
     Info (12023): Found entity 1: Main
@@ -499,8 +505,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file round.v
 Info (12127): Elaborating entity "Main" for the top level hierarchy
 Warning (10540): VHDL Signal Declaration warning at Main.vhd(59): used explicit default value for signal "initialKey" because signal was never assigned a value
 Warning (10540): VHDL Signal Declaration warning at Main.vhd(71): used explicit default value for signal "STATE" because signal was never assigned a value
-Warning (10037): Verilog HDL or VHDL warning at Main.vhd(101): conditional expression evaluates to a constant
-Warning (10873): Using initial value X (don't care) for net "NEXT_STATE" at Main.vhd(75)
+Warning (10036): Verilog HDL or VHDL warning at Main.vhd(100): object "round_count" assigned a value but never read
+Warning (10542): VHDL Variable Declaration warning at Main.vhd(101): used initial value expression for variable "actual_round" because variable was never assigned a value
+Warning (10037): Verilog HDL or VHDL warning at Main.vhd(105): conditional expression evaluates to a constant
+Warning (10873): Using initial value X (don't care) for net "AFTER_MIX" at Main.vhd(78)
 Info (12128): Elaborating entity "LCD_controller" for hierarchy "LCD_controller:dut"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LED[0]" is stuck at VCC
@@ -523,10 +531,10 @@ Info (21057): Implemented 122 device resources after synthesis - the final resou
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 30 output pins
     Info (21061): Implemented 90 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 20 warnings
-    Info: Peak virtual memory: 392 megabytes
-    Info: Processing ended: Mon Jan 20 02:32:30 2014
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 374 megabytes
+    Info: Processing ended: Mon Jan 20 12:58:38 2014
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:08
 
 

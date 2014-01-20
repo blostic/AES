@@ -21,7 +21,7 @@ PORT(
 		LCD_RW 		: OUT STD_LOGIC;
 		LCD_RS 		: OUT STD_LOGIC;
 		
-		LCD_ON		: out std_logic;     --jd->  Tego brakowaĹ‚o! 
+		LCD_ON		: out std_logic;     --jd->  Tego brakowaÄąâ€šo! 
 		--LCD Data Signals
 		LCD_DATA 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);	
@@ -41,7 +41,7 @@ ARCHITECTURE behavior of Main IS
 		LCD_RW 		: OUT STD_LOGIC;
 		LCD_RS 		: OUT STD_LOGIC;
 		RESET  		: IN STD_LOGIC;
-		LCD_ON		: out std_logic;     --jd->  Tego brakowaĹ‚o! 
+		LCD_ON		: out std_logic;     --jd->  Tego brakowaÄąâ€šo! 
 	
 		--LCD Data Signals
 		LCD_DATA 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -72,7 +72,11 @@ ARCHITECTURE behavior of Main IS
 												X"44", X"55", X"66", X"77",
 											   X"88", X"99", X"aa", X"bb",
 											   X"cc", X"dd", X"ee", X"ff" );
-  signal NEXT_STATE : STATE_array;											  
+  signal NEXT_STATE : STATE_array; 
+  signal AFTER_SUB : STATE_array;													  
+  signal AFTER_SHIFT : STATE_array;													  
+  signal AFTER_MIX : STATE_array;													  
+  
   SIGNAL round_key_s : STATE_array;
 	
 BEGIN
@@ -107,8 +111,8 @@ BEGIN
 				
 			GeneratedKey <= KeyScheduler(initialKey,keyType);
 			
-			for actual_round in 1 to round_count-1
-			LOOP
+			--for actual_round in 1 to round_count-1
+			--LOOP
 				round_key_S <= (0 => GeneratedKey(actual_round),
 									1  => GeneratedKey(actual_round+1),
 									2  => GeneratedKey(actual_round+2),
@@ -126,29 +130,34 @@ BEGIN
 									14 => GeneratedKey(actual_round+14),
 									15 => GeneratedKey(actual_round+15));
 			
-				NEXT_STATE <= ROUND_ENC(STATE, round_key_s);
+			--end loop;
+
 			
-				char_table <= (0  => NEXT_STATE(0),
-								1  => NEXT_STATE(1),
-								2  => NEXT_STATE(2),
-								3  => NEXT_STATE(3),
-								4  => NEXT_STATE(4),
-								5  => NEXT_STATE(5),
-								6  => NEXT_STATE(6),
-								7  => NEXT_STATE(7),
-								8  => NEXT_STATE(8),
-								9  => NEXT_STATE(9),
-								10 => NEXT_STATE(10),
-								11 => NEXT_STATE(11),
-								12 => NEXT_STATE(12),
-								13 => NEXT_STATE(13),
-								14 => NEXT_STATE(14),
-								15 => NEXT_STATE(15));
-				reset_signal <= '1';
-				
-				end loop;
-			--round_key_s <= generatedKey(round_count); --round_count czy cos innego?
-			--xored := ADD_ROUND_KEY(nexT_STATE, round_key_s);
+				--NEXT_STATE <= ROUND_ENC(STATE, round_key_s);
+			NEXT_STATE <= ADD_ROUND_KEY(STATE, round_key_s);
+			AFTER_SUB <= SUBBYTES_F(NEXT_STATE);
+			AFTER_SHIFT<= SHIFT_ROWS_F(AFTER_SUB);
+			AFTER_MIX <= MIX_COLUMNS(AFTER_SHIFT);
+			char_table <= (0  => AFTER_MIX(0),
+								1  => AFTER_MIX(1),
+								2  => AFTER_MIX(2),
+								3  => AFTER_MIX(3),
+								4  => AFTER_MIX(4),
+								5  => AFTER_MIX(5),
+								6  => AFTER_MIX(6),
+								7  => AFTER_MIX(7),
+								8  => AFTER_MIX(8),
+								9  => AFTER_MIX(9),
+								10 => AFTER_MIX(10),
+								11 => AFTER_MIX(11),
+								12 => AFTER_MIX(12),
+								13 => AFTER_MIX(13),
+								14 => AFTER_MIX(14),
+								15 => AFTER_MIX(15));	
+								
+								
+			 reset_signal <= '1';
+			
 			--bytesub := SUBBYTES(xored);
 			--shiftrow := SHIFT_ROWS(bytesub);
 			--nexT_STATE := ADD_ROUND_KEY(shiftrow, round_key_s);
