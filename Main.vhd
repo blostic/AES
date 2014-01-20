@@ -72,10 +72,11 @@ ARCHITECTURE behavior of Main IS
 												X"44", X"55", X"66", X"77",
 											   X"88", X"99", X"aa", X"bb",
 											   X"cc", X"dd", X"ee", X"ff" );
-  signal NEXT_STATE : STATE_array; 
-  signal AFTER_SUB : STATE_array;													  
-  signal AFTER_SHIFT : STATE_array;													  
-  signal AFTER_MIX : STATE_array;													  
+												
+  signal AFTER_SUB   	: STATE_array;													  
+  signal AFTER_SHIFT 	: STATE_array;													  
+  signal AFTER_MIX   	: STATE_array;													  
+  signal AFTER_KEY_ADD  : STATE_array;
   
   SIGNAL round_key_s : STATE_array;
 	
@@ -111,8 +112,6 @@ BEGIN
 				
 			GeneratedKey <= KeyScheduler(initialKey,keyType);
 			
-			--for actual_round in 1 to round_count-1
-			--LOOP
 				round_key_S <= (0 => GeneratedKey(actual_round),
 									1  => GeneratedKey(actual_round+1),
 									2  => GeneratedKey(actual_round+2),
@@ -129,38 +128,57 @@ BEGIN
 									13 => GeneratedKey(actual_round+13),
 									14 => GeneratedKey(actual_round+14),
 									15 => GeneratedKey(actual_round+15));
+		
 			
-			--end loop;
+			AFTER_KEY_ADD <= ADD_ROUND_KEY(STATE, round_key_s);
+			
+			for  actual_round in 1 to round_count-1
+			LOOP
+			
+				AFTER_SUB <= SUBBYTES_F(AFTER_KEY_ADD);
+				AFTER_SHIFT<= SHIFT_ROWS_F(AFTER_SUB);
+				AFTER_MIX <= MIX_COLUMNS(AFTER_SHIFT);
+				round_key_S <= (0 => GeneratedKey(actual_round),
+										1  => GeneratedKey(actual_round+1),
+										2  => GeneratedKey(actual_round+2),
+										3  => GeneratedKey(actual_round+3),
+										4  => GeneratedKey(actual_round+4),
+										5  => GeneratedKey(actual_round+5),
+										6  => GeneratedKey(actual_round+6),
+										7  => GeneratedKey(actual_round+7),
+										8  => GeneratedKey(actual_round+8),
+										9  => GeneratedKey(actual_round+9),
+										10 => GeneratedKey(actual_round+10),
+										11 => GeneratedKey(actual_round+11),
+										12 => GeneratedKey(actual_round+12),
+										13 => GeneratedKey(actual_round+13),
+										14 => GeneratedKey(actual_round+14),
+										15 => GeneratedKey(actual_round+15));
+
+				AFTER_KEY_ADD <= ADD_ROUND_KEY(STATE, round_key_s);
+				
+			end loop;
 
 			
-				--NEXT_STATE <= ROUND_ENC(STATE, round_key_s);
-			NEXT_STATE <= ADD_ROUND_KEY(STATE, round_key_s);
-			AFTER_SUB <= SUBBYTES_F(NEXT_STATE);
-			AFTER_SHIFT<= SHIFT_ROWS_F(AFTER_SUB);
-			AFTER_MIX <= MIX_COLUMNS(AFTER_SHIFT);
-			char_table <= (0  => AFTER_MIX(0),
-								1  => AFTER_MIX(1),
-								2  => AFTER_MIX(2),
-								3  => AFTER_MIX(3),
-								4  => AFTER_MIX(4),
-								5  => AFTER_MIX(5),
-								6  => AFTER_MIX(6),
-								7  => AFTER_MIX(7),
-								8  => AFTER_MIX(8),
-								9  => AFTER_MIX(9),
-								10 => AFTER_MIX(10),
-								11 => AFTER_MIX(11),
-								12 => AFTER_MIX(12),
-								13 => AFTER_MIX(13),
-								14 => AFTER_MIX(14),
-								15 => AFTER_MIX(15));	
-								
+			
+			char_table <= (0  => AFTER_KEY_ADD(0),
+								1  => AFTER_KEY_ADD(1),
+								2  => AFTER_KEY_ADD(2),
+								3  => AFTER_KEY_ADD(3),
+								4  => AFTER_KEY_ADD(4),
+								5  => AFTER_KEY_ADD(5),
+								6  => AFTER_KEY_ADD(6),
+								7  => AFTER_KEY_ADD(7),
+								8  => AFTER_KEY_ADD(8),
+								9  => AFTER_KEY_ADD(9),
+								10 => AFTER_KEY_ADD(10),
+								11 => AFTER_KEY_ADD(11),
+								12 => AFTER_KEY_ADD(12),
+								13 => AFTER_KEY_ADD(13),
+								14 => AFTER_KEY_ADD(14),
+								15 => AFTER_KEY_ADD(15));	
 								
 			 reset_signal <= '1';
-			
-			--bytesub := SUBBYTES(xored);
-			--shiftrow := SHIFT_ROWS(bytesub);
-			--nexT_STATE := ADD_ROUND_KEY(shiftrow, round_key_s);
 
 			
 	END PROCESS;

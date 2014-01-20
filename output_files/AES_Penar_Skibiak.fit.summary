@@ -1,14 +1,14 @@
-Fitter Status : Successful - Mon Jan 20 13:24:59 2014
+Fitter Status : Successful - Mon Jan 20 15:37:29 2014
 Quartus II 32-bit Version : 12.1 Build 177 11/07/2012 SJ Web Edition
 Revision Name : AES_Penar_Skibiak
 Top-level Entity Name : Main
 Family : Cyclone II
 Device : EP2C70F896C6
 Timing Models : Final
-Total logic elements : 85 / 68,416 ( < 1 % )
-    Total combinational functions : 82 / 68,416 ( < 1 % )
-    Dedicated logic registers : 62 / 68,416 ( < 1 % )
-Total registers : 62
+Total logic elements : 132 / 68,416 ( < 1 % )
+    Total combinational functions : 126 / 68,416 ( < 1 % )
+    Dedicated logic registers : 65 / 68,416 ( < 1 % )
+Total registers : 65
 Total pins : 32 / 622 ( 5 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,152,000 ( 0 % )
