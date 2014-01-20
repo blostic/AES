@@ -5,7 +5,11 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 USE work.all;
 
 USE work.mypackage.ALL;
-
+--PACKAGE LCD IS
+--function PRINT(CLK, 
+--END PACKAGE LCD;
+--PACKAGE BODY LCD_B IS
+--END PACKAGE BODY LCD_B;
 	--Define The Core Entity
 ENTITY LCD_controller IS
 PORT(   

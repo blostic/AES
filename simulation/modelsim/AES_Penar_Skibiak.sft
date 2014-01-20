@@ -1,0 +1,5 @@
+set tool_name "ModelSim-Altera (VHDL)"
+set corner_file_list {
+	{{"Slow Model"} {AES_Penar_Skibiak.vho AES_Penar_Skibiak_vhd.sdo}}
+	{{"Fast Model"} {AES_Penar_Skibiak_fast.vho AES_Penar_Skibiak_vhd_fast.sdo}}
+}
