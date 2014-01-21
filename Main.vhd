@@ -21,7 +21,7 @@ PORT(
 		LCD_RW 		: OUT STD_LOGIC;
 		LCD_RS 		: OUT STD_LOGIC;
 		
-		LCD_ON		: out std_logic;     --jd->  Tego brakowaÄąâ€šo! 
+		LCD_ON		: out std_logic;     --jd->  Tego brakowaĂ„â€šĂ˘â‚¬ĹľÄ‚â€žĂ˘â‚¬Â¦Ă„â€šĂ‹ÂÄ‚ËĂ˘â‚¬ĹˇĂ‚Â¬Ă„Ä…Ă‹â€ˇo! 
 		--LCD Data Signals
 		LCD_DATA 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);	
@@ -41,7 +41,7 @@ ARCHITECTURE behavior of Main IS
 		LCD_RW 		: OUT STD_LOGIC;
 		LCD_RS 		: OUT STD_LOGIC;
 		RESET  		: IN STD_LOGIC;
-		LCD_ON		: out std_logic;     --jd->  Tego brakowaÄąâ€šo! 
+		LCD_ON		: out std_logic;     --jd->  Tego brakowaĂ„â€šĂ˘â‚¬ĹľÄ‚â€žĂ˘â‚¬Â¦Ă„â€šĂ‹ÂÄ‚ËĂ˘â‚¬ĹˇĂ‚Â¬Ă„Ä…Ă‹â€ˇo! 
 	
 		--LCD Data Signals
 		LCD_DATA 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -155,7 +155,7 @@ BEGIN
 										14 => GeneratedKey(actual_round+14),
 										15 => GeneratedKey(actual_round+15));
 
-				AFTER_KEY_ADD <= ADD_ROUND_KEY(STATE, round_key_s);
+				AFTER_KEY_ADD <= ADD_ROUND_KEY(AFTER_MIX, round_key_s);
 				
 			end loop;
 
